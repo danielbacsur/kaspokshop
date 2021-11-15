@@ -741,7 +741,7 @@
     if ( $( '#subscribe-popup' ).length > 0 ) {
         var delaySecond = 1,
             expireDays  = 30,
-            cookieName  = 'litho-promo-popup';
+            cookieName  = 'subscribe-popup';
         if( getCookie( cookieName ) != 'shown' ) {
             setTimeout( function () {
                 $.magnificPopup.open({
