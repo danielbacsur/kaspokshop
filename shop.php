@@ -1,66 +1,12 @@
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
-        <title>Shop - Kaspók</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="author" content="Kaspók">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
-        <meta name="description" content="Leiras a Googlenak">
-        <!-- favicon icon -->
-        <link rel="shortcut icon" href="images/favicon.png">
-        <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-        <!-- style sheets and font icons  -->
-        <link rel="stylesheet" type="text/css" href="css/font-icons.min.css">
-        <link rel="stylesheet" type="text/css" href="css/theme-vendors.min.css">
-        <link rel="stylesheet" type="text/css" href="css/style.css" />
-        <link rel="stylesheet" type="text/css" href="css/responsive.css" />
-    </head>
+    <?php
+		include("head.php");
+	?>
     <body data-mobile-nav-style="classic">
-        <!-- start header -->
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-transparent header-light fixed-top navbar-boxed header-reverse-scroll">
-                <div class="container-fluid nav-header-container">
-                    <div class="col-5 col-lg-2 ps-lg-0 me-auto me-lg-0">
-                        <a class="navbar-brand" href="index.html">
-                            <img src="images/logo-black.png" data-at2x="images/logo-black@2x.png" alt="" class="default-logo">
-                            <img src="images/logo-black.png" data-at2x="images/logo-black@2x.png" alt="" class="alt-logo">
-                            <img src="images/logo-black.png" data-at2x="images/logo-black@2x.png" class="mobile-logo" alt="">
-                        </a>
-                    </div>
-                    <div class="col-auto col-lg-8 md-position-initial md-no-padding">
-                        <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-line"></span>
-                            <span class="navbar-toggler-line"></span>
-                            <span class="navbar-toggler-line"></span>
-                            <span class="navbar-toggler-line"></span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                            <ul class="navbar-nav alt-font">
-                                <li class="nav-item">
-                                    <a href="index.html" class="nav-link">Főoldal</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">Kapcsolat</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="shop.html" class="nav-link">Shop</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-auto col-lg-2 text-end hidden-xs px-lg-0">
-                        <div class="header-social-icon d-inline-block">
-                            <a href="http://www.facebook.com/kaspokshop" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/kaspokshop" target="_blank"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        <!-- end header -->
+		<?php
+			include("header.php");
+		?>
         <!-- start subscription popup -->
         <div id="subscribe-popup" class="mfp-hide subscribe-popup">
             <div class="container">
@@ -268,44 +214,8 @@
         <!-- end section -->
 
         </div>
-        <!-- start footer -->
-        <footer class="padding-six-tb xs-padding-thirteen-tb footer-design-agency border-top border-width-1px border-color-medium-gray footer-sticky">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-12 col-lg-3 order-3 order-lg-1 text-center text-lg-start last-paragraph-no-margin md-margin-25px-top">
-                        <a href="index.html" class="footer-logo margin-20px-bottom d-block"><img src="images/logo-black.png" data-at2x="images/logo-black@2x.png" alt=""></a>
-                        &copy; Copyright 2021 <a href="index.html" class="text-decoration-line-bottom text-extra-dark-gray text-extra-dark-gray-hover font-weight-500">Kaspók</a>
-                    </div>
-                    <div class="col-12 col-md-6 order-1 order-lg-2 text-center text-md-start text-lg-center sm-margin-50px-bottom xs-margin-30px-bottom">
-                        <span class="line-height-normal d-block margin-25px-bottom md-w-80 sm-w-100"><span class="font-weight-500 text-extra-dark-gray">Ne maradj le semmiről!</span> Iratkozz fel hírlevelünkre.</span>
-                        <div class="newsletter-style-03 position-relative w-75 mx-auto mx-md-0 mx-lg-auto xs-w-95">
-                            <form action="email-templates/subscribe-newsletter.php" method="post">
-                                <input type="email" name="email" placeholder="Az email címed" class="small-input border-color-medium-gray m-0 required">
-                                <input type="hidden" name="redirect" value="">
-                                <button class="btn submit" type="submit"><i class="feather icon-feather-mail text-extra-dark-gray icon-extra-small m-0"></i></button>
-                                <div class="form-results position-absolute d-none"></div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-3 col-md-6 order-2 order-lg-3 text-center text-md-end">
-                        <div class="social-icon-style-12 margin-10px-bottom">
-                            <span class="line-height-normal d-block margin-15px-bottom">Közzösségi médiáink</span>
-                            <ul class="extra-small-icon">
-                                <li><a class="facebook" href="https://www.facebook.com/kaspokshop" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a class="instagram" href="http://www.instagram.com/kaspokshop" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- end footer -->
-        <!-- start scroll to top -->
-        <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
-        <!-- end scroll to top -->
-        <!-- javascript -->
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/theme-vendors.min.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+        <?php
+			include("footer.php");
+		?>
     </body>
 </html>
