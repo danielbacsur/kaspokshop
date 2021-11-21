@@ -32,8 +32,26 @@
 			$pro_video = $row_product['product_video'];
 			$status = $row_product['status'];
 			$pro_url = $row_product['product_url'];
+            $get_p_cat = "select * from product_categories where p_cat_id='$p_cat_id'";
+            $run_p_cat = mysqli_query($con,$get_p_cat);
+            $row_p_cat = mysqli_fetch_array($run_p_cat);
+            $p_cat_title = $row_p_cat['p_cat_title'];
 		?>
         <div class="main-content">
+        <!-- start section -->
+        <section class="fix-background bg-light-gray gb-light-gray">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 text-center z-index-0">
+                        <div class="tilt-box" data-tilt-options='{ "maxTilt": 20, "perspective": 1000, "easing": "cubic-bezier(.03,.98,.52,.99)", "scale": 1, "speed": 500, "transition": true, "reset": true, "glare": false, "maxGlare": 1 }'>
+                            <div class="margin-20px-bottom d-block"><span class="alt-font font-weight-500 text-extra-dark-gray text-uppercase text-small letter-spacing-1px d-inline-block padding-20px-lr padding-5px-tb">Üdv a shopban! Valamit vegyél, ne csak legyél!</span></div>
+                            <span class="title-extra-large alt-font text-uppercase text-extra-dark-gray font-weight-700 letter-spacing-minus-5px image-mask cover-background xs-letter-spacing-minus-1px" style="background-image: url('images/header-fill.png')">Shop</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end section -->
         <section class="big-section wow animate__fadeIn">
             <div class="container">
                 <div class="row">
@@ -113,9 +131,9 @@
                                 </div>
                             </div>
                             <div class="last-paragraph-no-margin">
-                                <p><?php echo $pro_desc; ?></p>
+                                <p><?php echo $pro_features; ?></p>
                             </div>
-                            <div class="margin-4-rem-top">
+                            <form id="order_form" class="margin-4-rem-top" action="" method="post">
                                 <div class="margin-20px-bottom">
                                     <label class="text-extra-dark-gray text-extra-small font-weight-500 alt-font text-uppercase w-60px">Szín</label>
                                     <ul class="alt-font shop-color">
@@ -137,36 +155,66 @@
                                     <label class="text-extra-dark-gray text-extra-small font-weight-500 alt-font text-uppercase w-60px">Méret</label>
                                     <ul class="text-extra-small shop-size">
                                         <li>
-                                            <input class="d-none" type="radio" id="size-1" name="size" checked />
+                                            <input class="d-none" type="radio" id="size-1" value="Small" name="size" checked />
                                             <label for="size-1" class="width-80"><span>S</span></label>
                                         </li>
                                         <li>
-                                            <input class="d-none" type="radio" id="size-2" name="size" />
+                                            <input class="d-none" type="radio" id="size-2" value="Medium" name="size" />
                                             <label for="size-2" class="width-80"><span>M</span></label>
                                         </li>
                                         <li>
-                                            <input class="d-none" type="radio" id="size-3" name="size" />
+                                            <input class="d-none" type="radio" id="size-3" value="Large" name="size" />
                                             <label for="size-3" class="width-80"><span>L</span></label>
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
-                            <div>
                                 <div class="quantity margin-15px-right">
-                                    <label class="screen-reader-text">Quantity</label>
+                                    <label class="screen-reader-text">Mennyiség</label>
                                     <input type="button" value="-" class="qty-minus qty-btn" data-quantity="minus" data-field="quantity">
                                     <input class="input-text qty-text" type="number" name="quantity" value="1">
                                     <input type="button" value="+" class="qty-plus qty-btn" data-quantity="plus" data-field="quantity">
                                 </div>
-                                <a href="#" class="btn btn-dark-gray btn-medium">Kosárhoz adás</a>
+                                <a href="#" onclick="document.getElementById('order_form').submit();" class="btn btn-dark-gray btn-medium">Kosárhoz adás</a>
+                                <input type="hidden" name="add_to_cart">
                                 <div class="margin-25px-top">
                                     <a href="#" class="text-uppercase text-extra-small alt-font margin-20px-right font-weight-500 "><i class="feather icon-feather-heart align-middle margin-5px-right"></i>Kívánságlista</a>
                                     <a href="#" class="text-uppercase text-extra-small alt-font margin-20px-right font-weight-500 "><i class="feather icon-feather-shuffle align-middle margin-5px-right"></i>Megosztás</a>
                                 </div>
-                            </div>
+                            </form>
+                            <?php
+                                if(isset($_POST['add_to_cart'])){
+                                    $ip_add = getRealUserIp();
+                                    $p_id = $pro_id;
+                                    $product_qty = $_POST['quantity'];
+                                    $product_size = $_POST['size'];
+                                    $check_product = "select * from cart where ip_add='$ip_add' AND p_id='$p_id' AND size='$product_size'";
+                                    $run_check = mysqli_query($con,$check_product);
+                                    if(mysqli_num_rows($run_check)>0) {
+                                        echo "<script>alert('This Product is already added in cart')</script>";
+                                        echo "<script>window.open('$pro_url','_self')</script>";
+                                    }
+                                    else {
+                                        $get_price = "select * from products where product_id='$p_id'";
+                                        $run_price = mysqli_query($con,$get_price);
+                                        $row_price = mysqli_fetch_array($run_price);
+                                        $pro_price = $row_price['product_price'];
+                                        $pro_psp_price = $row_price['product_psp_price'];
+                                        $pro_label = $row_price['product_label'];
+                                        if($pro_label == "Sale" or $pro_label == "Gift"){
+                                            $product_price = $pro_psp_price;
+                                        }
+                                        else{
+                                            $product_price = $pro_price;
+                                        }
+                                        $query = "insert into cart (p_id,ip_add,qty,p_price,size) values ('$p_id','$ip_add','$product_qty','$product_price','$product_size')";
+                                        $run_query = mysqli_query($db,$query);
+                                        echo "<script>window.open('$pro_url','_self')</script>";
+                                    }
+                                }
+                            ?>
                             <div class="d-flex alt-font margin-4-rem-top align-items-center">
                                 <div class="flex-grow-1">
-                                    <span class="text-uppercase text-extra-small font-weight-500 text-extra-dark-gray d-block">#: <a href="shop-wide.html" class="font-weight-400">Lather bag</a></span>
+                                    <span class="text-uppercase text-extra-small font-weight-500 text-extra-dark-gray d-block">#: <a href="shop-wide.html" class="font-weight-400"><?php echo $p_cat_title; ?></a></span>
                                 </div>
                                 <div class="text-end social-icon-style-02 w-50">
                                     <ul class="extra-small-icon">
@@ -188,122 +236,18 @@
                 <div class="row">
                     <div class="col-12 p-0 tab-style-07">
                         <ul class="nav nav-tabs justify-content-center text-center alt-font font-weight-500 text-uppercase margin-9-rem-bottom border-bottom border-color-medium-gray md-margin-50px-bottom sm-margin-35px-bottom">
-                            <li class="nav-item"><a data-bs-toggle="tab" href="#description" class="nav-link active">Description</a></li>
-                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#additionalinformation">Additional information</a></li>
-                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#reviews">Reviews (2)</a></li>
+                            <li class="nav-item"><a data-bs-toggle="tab" href="#description" class="nav-link active">Leírás</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="container">
                 <div class="tab-content">
-                    <!-- start tab item -->
                     <div id="description" class="tab-pane fade in active show">
                         <div class="row align-items-center">
-                            <div class="col-12 col-xl-5 col-lg-6 md-margin-50px-bottom">
-                                <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the ‘s standard dummy text. Lorem ipsum has been the industry’s standard dummy text ever since. Lorem ipsum is simply dummy text. Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                <ul class="list-style-03">
-                                    <li>Made from soft yet durable 100% organic cotton twill</li>
-                                    <li>Front and back yoke seams allow a full range of motion</li>
-                                    <li>Comfortable nylon-bound elastic cuffs seal in warmth</li> 
-                                    <li>Hem adjusts by pulling cord in handwarmer pockets</li> 
-                                    <li>Interior storm flap and zipper garage at chin for comfort</li> 
-                                </ul>
-                            </div>
-                            <div class="col-12 col-lg-6 offset-xl-1">
-                                <img src="https://via.placeholder.com/800x800" alt="">
-                            </div>
+                            <?php echo $pro_desc; ?>
                         </div>
                     </div>
-                    <!-- end tab item -->
-                    <!-- start tab item -->
-                    <div id="additionalinformation" class="tab-pane fade">
-                        <div class="row align-items-center">
-                            <div class="col-12">
-                                <table class="table-style-02">
-                                    <tbody>
-                                        <tr>
-                                            <th class="text-extra-dark-gray font-weight-500">Color</th>
-                                            <td>Black, Blue, Brown, Red, Silver</td>
-                                        </tr>
-                                        <tr class="bg-light-gray">
-                                            <th class="text-extra-dark-gray font-weight-500">Size</th>
-                                            <td>L, M, S, XL</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="text-extra-dark-gray font-weight-500">Style/Type</th>
-                                            <td>Sports, Formal</td>
-                                        </tr>
-                                        <tr class="bg-light-gray">
-                                            <th class="text-extra-dark-gray font-weight-500">Lining</th>
-                                            <td>100% polyester taffeta with a DWR finish</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="text-extra-dark-gray font-weight-500">Material</th>
-                                            <td>Lather, Cotton, Silk</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>                                
-                        </div>
-                    </div>
-                    <!-- end tab item -->
-                    <!-- start tab item -->
-                    <div id="reviews" class="tab-pane fade">
-                        <div class="row align-items-center justify-content-center">
-                            <div class="col-12 col-lg-10">
-                                <ul class="blog-comment margin-5-half-rem-bottom">
-                                    <li>
-                                        <div class="d-block d-md-flex w-100 align-items-center align-items-md-start">
-                                            <div class="w-75px sm-w-50px sm-margin-10px-bottom">
-                                                <img src="https://via.placeholder.com/125x125" class="rounded-circle w-95 sm-w-100" alt=""/>
-                                            </div>
-                                            <div class="w-100 padding-25px-left last-paragraph-no-margin sm-no-padding-left">
-                                                <a href="#" class="text-extra-dark-gray text-fast-blue-hover alt-font font-weight-500 text-medium">Herman Miller</a>
-                                                <span class="text-orange text-extra-small float-end letter-spacing-2px"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
-                                                <div class="text-medium text-medium-gray margin-15px-bottom">17 July 2020, 6:05 PM</div>
-                                                <p class="w-85">Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the industry's standard dummy text ever since the make a type specimen book.</p>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>                            
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-lg-10 margin-4-rem-bottom ">
-                                <h6 class="alt-font text-extra-dark-gray font-weight-500 margin-5px-bottom">Add a review</h6>
-                                <div class="margin-5px-bottom">Your email address will not be published. Required fields are marked <span class="text-radical-red">*</span></div>
-                            </div>
-                        </div>
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-lg-10">
-                                <form action="#" method="post">
-                                    <div class="row align-items-center">
-                                        <div class="col-md-6 col-sm-12 col-xs-12">
-                                            <label class="margin-15px-bottom" for="basic-name">Your name <span class="text-radical-red">*</span></label>
-                                            <input id="basic-name" class="medium-input border-radius-4px bg-white margin-30px-bottom" type="text" name="name" placeholder="Enter your name">
-                                        </div>
-                                        <div class="col-md-6 col-sm-12 col-xs-12">
-                                            <label class="margin-15px-bottom">Your email address <span class="text-radical-red">*</span></label>                                    
-                                            <input class="medium-input border-radius-4px bg-white margin-30px-bottom" type="text" name="email" placeholder="Enter your email">
-                                        </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12 margin-30px-bottom">
-                                            <label class="margin-15px-bottom">Your rating <span class="text-radical-red">*</span></label>                                    
-                                            <span class="text-orange text-extra-small d-block"><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span>
-                                        </div>
-                                        <div class="col-md-12 col-sm-12 col-xs-12">
-                                            <div class="margin-15px-bottom">Your comment</div>
-                                            <textarea class="medium-textarea border-radius-4px bg-white h-120px margin-2-half-rem-bottom" rows="6" name="comment" placeholder="Enter your comment"></textarea>
-                                        </div>
-                                        <div class="col-12 sm-margin-20px-bottom">
-                                            <input class="btn btn-medium btn-dark-gray mb-0 btn-round-edge-small" type="button" name="submit" value="Submit">
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end tab item -->
                 </div>
             </div>
         </section>
