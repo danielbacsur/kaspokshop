@@ -1,6 +1,5 @@
 <?php
 
-session_start();
 
 include("includes/db.php");
 include("includes/header.php");
@@ -47,7 +46,7 @@ include("includes/main.php");
 
 </div><!-- box-header Ends -->
 
-<form action="customer_register.php" method="post" enctype="multipart/form-data" ><!-- form Starts -->
+<form action="" method="post" enctype="multipart/form-data" ><!-- form Starts -->
 
 <div class="form-group" ><!-- form-group Starts -->
 
@@ -333,7 +332,7 @@ if(isset($_POST['register'])){
 
 // $response = $_POST['g-recaptcha-response'];
 
-$remoteip = $_SERVER['REMOTE_ADDR'];
+$remoteip = getRealUserIP();
 
 // $url = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteip");
 

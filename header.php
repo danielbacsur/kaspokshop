@@ -31,8 +31,8 @@
                     </div>
                     <div class="col-auto col-lg-2 text-end hidden-xs px-lg-0">
                         <div class="header-social-icon d-inline-block">
-                            <a href="http://www.facebook.com/kaspokshop" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://www.instagram.com/kaspokshop" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="account.php"><i class="far fa-user-circle"></i></a>
+                            <a href="cart.php"><i class="fas fa-shopping-cart"></i></a>
                         </div>
                     </div>
                 </div>

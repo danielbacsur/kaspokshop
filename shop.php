@@ -2,40 +2,12 @@
 <html class="no-js" lang="en">
     <?php
 		include("head.php");
+        include("includes/db.php");
 	?>
     <body data-mobile-nav-style="classic">
 		<?php
 			include("header.php");
 		?>
-        <!-- start subscription popup -->
-        <div id="subscribe-popup" class="mfp-hide subscribe-popup">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-8 col-md-10 bg-white modal-popup-main">
-                        <div class="row">
-                            <div class="col-12 col-sm-7 order-2 order-sm-1 newsletter-popup padding-6-rem-all lg-padding-4-rem-all xs-padding-3-rem-all">
-                                <span class="text-extra-large font-weight-500 text-extra-dark-gray d-block margin-10px-bottom">Iratkozz fel hírlevelünkre!</span>
-                                <p class="margin-30px-bottom xs-margin-20px-bottom">Iratkozz fel hírlevelünkre és havi egy emailben küldjük majd az újdonságokat és a projekttel kapcsolatos híreket.</p>
-                                <form action="email-templates/subscribe-newsletter.php" method="post">
-                                    <div class="newsletter-style-03 position-relative margin-25px-bottom xs-margin-15px-bottom">
-                                        <input class="medium-input bg-white m-0 required" name="email" placeholder="Add meg az email címedet" type="email">
-                                        <input type="hidden" name="redirect" value="">
-                                        <button class="btn no-border text-medium submit" type="submit"><i class="feather icon-feather-mail m-0"></i></button>
-                                        <div class="form-results position-absolute d-none"></div>
-                                    </div>
-                                </form>
-                                <input id="newsletter-off" class="d-none" type="checkbox" name="newsletter-off" />
-                                <label for="newsletter-off" class="text-small"><span></span>Ne jelenjen meg mégegyszer</label>
-                            </div>
-                            <div class="col-12 col-sm-5 cover-background order-1 order-sm-2 xs-h-150px" style="background-image:url('images/newsletter.png');">
-                                <button title="Bezárás (Esc)" type="button" class="mfp-close">×</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- end subscription popup -->
         <div class="main-content">
         <!-- start section -->
         <section class="fix-background bg-light-gray gb-light-gray">
@@ -66,146 +38,60 @@
                     <div class="col-12 shopping-content">
                         <ul class="product-listing shop-wrapper grid grid-loading grid-5col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large text-center">
                             <li class="grid-sizer"></li>
-                            <!-- start shop item -->
-                            <li class="grid-item wow animate__fadeIn">
-                                <div class="product-box paddingtop margin-45px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
-                                    <!-- start product image -->
-                                    <div class="product-image border-radius-6px">
-                                        <a href="single-product.html">
-                                            <img class="default-image" src="images/shop-skull-a.png" alt=""/>
-                                            <img class="hover-image" src="images/shop-skull-b.png" alt=""/>
-                                            <span class="product-badge orange">hot</span>
-                                        </a>
-                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent"></div>
-                                        <div class="product-hover-bottom text-center padding-30px-tb">
-                                            <a href="#" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kosárhoz adás"><i class="feather icon-feather-shopping-cart"></i></a>
-                                            <a href="#" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Megtekintés"><i class="feather icon-feather-zoom-in"></i></a>
-                                            <a href="#" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kívánságlista"><i class="feather icon-feather-heart"></i></a>
+                            <?php
+                                global $db;
+                                $get_products = "select * from products order by 1 DESC LIMIT 0,8";
+                                $run_products = mysqli_query($con,$get_products);
+                                while($row_products=mysqli_fetch_array($run_products)){
+                                    $pro_id = $row_products['product_id'];
+                                    $pro_title = $row_products['product_title'];
+                                    $pro_price = $row_products['product_price'];
+                                    $pro_img1 = $row_products['product_img1'];
+                                    $pro_img2 = $row_products['product_img2'];
+                                    $pro_label = $row_products['product_label'];
+                                    $manufacturer_id = $row_products['manufacturer_id'];
+                                    $get_manufacturer = "select * from manufacturers where manufacturer_id='$manufacturer_id'";
+                                    $run_manufacturer = mysqli_query($con,$get_manufacturer);
+                                    $row_manufacturer = mysqli_fetch_array($run_manufacturer);
+                                    $manufacturer_name = $row_manufacturer['manufacturer_title'];
+                                    $pro_psp_price = $row_products['product_psp_price'];
+                                    $pro_url = $row_products['product_url']; ?>
+                                    <!-- start shop item -->
+                                    <li class="grid-item wow animate__fadeIn">
+                                        <div class="product-box paddingtop margin-45px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
+                                            <!-- start product image -->
+                                            <div class="product-image border-radius-6px">
+                                                <a href="<?php echo $pro_url; ?>">
+                                                    <img class="default-image" src="admin_area/product_images/<?php echo $pro_img1; ?>" alt=""/>
+                                                    <img class="hover-image" src="admin_area/product_images/<?php echo $pro_img2; ?>" alt=""/>
+                                                    <?php if($pro_label != "NaN") { ?>
+                                                        <span class="product-badge orange"><?php echo $pro_label; ?></span>
+                                                    <?php } ?>
+                                                </a>
+                                                <div class="product-overlay bg-gradient-extra-midium-gray-transparent"></div>
+                                                <div class="product-hover-bottom text-center padding-30px-tb">
+                                                    <a href="<?php if($pro_label != "HAMAROSAN") echo $pro_url; ?>" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kosárhoz adás"><i class="feather icon-feather-shopping-cart"></i></a>
+                                                    <a href="<?php if($pro_label != "HAMAROSAN") echo $pro_url; ?>" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Megtekintés"><i class="feather icon-feather-zoom-in"></i></a>
+                                                    <a href="<?php if($pro_label != "HAMAROSAN") echo $pro_url; ?>" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kívánságlista"><i class="feather icon-feather-heart"></i></a>
+                                                </div>
+                                            </div>
+                                            <!-- end product image -->
+                                            <!-- start product footer -->
+                                            <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
+                                                <a href="single-product.html" class="text-extra-dark-gray font-weight-500 d-inline-block"><?php echo $pro_title; ?></a>
+                                                <div class="product-price text-medium">
+                                                    <?php if($pro_psp_price != $pro_price) { ?>
+                                                        <del><?php echo $pro_price; ?></del>
+                                                    <?php } ?>
+                                                    <?php echo $pro_psp_price; ?>
+                                                </div>
+                                            </div>
+                                            <!-- end product footer -->
                                         </div>
-                                    </div>
-                                    <!-- end product image -->
-                                    <!-- start product footer -->
-                                    <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
-                                        <a href="single-product.html" class="text-extra-dark-gray font-weight-500 d-inline-block">Koponya</a>
-                                        <div class="product-price text-medium">1990 FT</div>
-                                    </div>
-                                    <!-- end product footer -->
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item wow animate__fadeIn" data-wow-delay="0.2s">
-                                <div class="product-box margin-45px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
-                                    <!-- start product image -->
-                                    <div class="product-image border-radius-6px">
-                                        <a href="single-product.html">
-                                            <img class="default-image" src="images/shop-hexa-a.png" alt=""/>
-                                            <img class="hover-image" src="images/shop-hexa-b.png" alt=""/>
-                                        </a>
-                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent"></div>
-                                        <div class="product-hover-bottom text-center padding-35px-tb">
-                                            <a href="#" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kosárhoz Adás"><i class="feather icon-feather-shopping-cart"></i></a>
-                                            <a href="#" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Megtekintés"><i class="feather icon-feather-zoom-in"></i></a>
-                                            <a href="#" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kívánságlista"><i class="feather icon-feather-heart"></i></a>
-                                        </div>
-                                    </div>
-                                    <!-- end product image -->
-                                    <!-- start product footer -->
-                                    <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
-                                        <a href="single-product.html" class="text-extra-dark-gray font-weight-500 d-inline-block">Hexa</a>
-                                        <div class="product-price text-medium"><del>1990 FT</del>1490 FT</div>
-                                    </div>
-                                    <!-- end product footer -->
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item wow animate__fadeIn" data-wow-delay="0.4s">
-                                <div class="product-box margin-45px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
-                                    <!-- start product image -->
-                                    <div class="product-image border-radius-6px">
-                                        <a href="single-product.html">
-                                            <img class="default-image" src="images/shop-missing-a.gif" alt=""/>
-                                            <img class="hover-image" src="images/shop-missing-b.gif" alt=""/>
-                                            <span class="product-badge orange">Hamarosan</span>
-                                        </a>
-                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent"></div>
-                                        <!--
-                                        <div class="product-hover-bottom text-center padding-35px-tb">
-                                            <a href="#" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kosárhoz Adás"><i class="feather icon-feather-shopping-cart"></i></a>
-                                            <a href="#" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Megtekintés"><i class="feather icon-feather-zoom-in"></i></a>
-                                            <a href="#" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kívánságlista"><i class="feather icon-feather-heart"></i></a>
-                                        </div>
-                                    -->
-                                    </div>
-                                    <!-- end product image -->
-                                    <!-- start product footer -->
-                                    <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
-                                        <a href="single-product.html" class="text-extra-dark-gray font-weight-500 d-inline-block">Cilinder</a>
-                                        <div class="product-price text-medium"></div>
-                                    </div>
-                                    <!-- end product footer -->
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item wow animate__fadeIn" data-wow-delay="0.6s">
-                                <div class="product-box margin-45px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
-                                    <!-- start product image -->
-                                    <div class="product-image border-radius-6px">
-                                        <a href="single-product.html">
-                                            <img class="default-image" src="images/shop-missing-a.gif" alt=""/>
-                                            <img class="hover-image" src="images/shop-missing-b.gif" alt=""/>
-                                            <span class="product-badge orange">Hamarosan</span>
-                                        </a>
-                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent"></div>
-                                        <!--
-                                        <div class="product-hover-bottom text-center padding-35px-tb">
-                                            <a href="#" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kosárhoz Adás"><i class="feather icon-feather-shopping-cart"></i></a>
-                                            <a href="#" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Megtekintés"><i class="feather icon-feather-zoom-in"></i></a>
-                                            <a href="#" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kívánságlista"><i class="feather icon-feather-heart"></i></a>
-                                        </div>
-                                    -->
-                                    </div>
-                                    <!-- end product image -->
-                                    <!-- start product footer -->
-                                    <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
-                                        <a href="single-product.html" class="text-extra-dark-gray font-weight-500 d-inline-block">Négyzet</a>
-                                        <div class="product-price text-medium"></div>
-                                    </div>
-                                    <!-- end product footer -->
-                                </div>
-                            </li>
-                            <!-- end shop item -->
-                            <!-- start shop item -->
-                            <li class="grid-item wow animate__fadeIn" data-wow-delay="0.8s">
-                                <div class="product-box margin-45px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
-                                    <!-- start product image -->
-                                    <div class="product-image border-radius-6px">
-                                        <a href="single-product.html">
-                                            <img class="default-image" src="images/shop-missing-a.gif" alt=""/>
-                                            <img class="hover-image" src="images/shop-missing-b.gif" alt=""/>
-                                            <span class="product-badge orange">Hamarosan</span>
-                                        </a>
-                                        <div class="product-overlay bg-gradient-extra-midium-gray-transparent"></div>
-                                        <!--
-                                        <div class="product-hover-bottom text-center padding-35px-tb">
-                                            <a href="#" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kosárhoz Adás"><i class="feather icon-feather-shopping-cart"></i></a>
-                                            <a href="#" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Megtekintés"><i class="feather icon-feather-zoom-in"></i></a>
-                                            <a href="#" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kívánságlista"><i class="feather icon-feather-heart"></i></a>
-                                        </div>
-                                    -->
-                                    </div>
-                                    <!-- end product image -->
-                                    <!-- start product footer -->
-                                    <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
-                                        <a href="single-product.html" class="text-extra-dark-gray font-weight-500 d-inline-block">Hexa Mono</a>
-                                        <div class="product-price text-medium"></div>
-                                    </div>
-                                    <!-- end product footer -->
-                                </div>
-                            </li>
-                            <!-- end shop item -->
+                                    </li>
+                                    <!-- end shop item -->
+                                <?php } ?>
+                            <?php?>
                         </ul>
                     </div>
                 </div>
