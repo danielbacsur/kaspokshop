@@ -38,11 +38,23 @@ $p_image2 = $row_edit['product_img2'];
 
 $p_image3 = $row_edit['product_img3'];
 
+$p_image4 = $row_edit['product_img4'];
+
+$p_image5 = $row_edit['product_img5'];
+
+$p_image6 = $row_edit['product_img6'];
+
 $new_p_image1 = $row_edit['product_img1'];
 
 $new_p_image2 = $row_edit['product_img2'];
 
 $new_p_image3 = $row_edit['product_img3'];
+
+$new_p_image4 = $row_edit['product_img4'];
+
+$new_p_image5 = $row_edit['product_img5'];
+
+$new_p_image6 = $row_edit['product_img6'];
 
 $p_price = $row_edit['product_price'];
 
@@ -334,6 +346,45 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <div class="form-group" ><!-- form-group Starts -->
 
+<label class="col-md-3 control-label" > Product Image 4 </label>
+
+<div class="col-md-6" >
+
+<input type="file" name="product_img1" class="form-control" >
+<br><img src="product_images/<?php echo $p_image4; ?>" width="70" height="70" >
+
+</div>
+
+</div><!-- form-group Ends -->
+
+<div class="form-group" ><!-- form-group Starts -->
+
+<label class="col-md-3 control-label" > Product Image 5 </label>
+
+<div class="col-md-6" >
+
+<input type="file" name="product_img1" class="form-control" >
+<br><img src="product_images/<?php echo $p_image5; ?>" width="70" height="70" >
+
+</div>
+
+</div><!-- form-group Ends -->
+
+<div class="form-group" ><!-- form-group Starts -->
+
+<label class="col-md-3 control-label" > Product Image 6 </label>
+
+<div class="col-md-6" >
+
+<input type="file" name="product_img1" class="form-control" >
+<br><img src="product_images/<?php echo $p_image6; ?>" width="70" height="70" >
+
+</div>
+
+</div><!-- form-group Ends -->
+
+<div class="form-group" ><!-- form-group Starts -->
+
 <label class="col-md-3 control-label" > Product Price </label>
 
 <div class="col-md-6" >
@@ -511,10 +562,16 @@ $status = "product";
 $product_img1 = $_FILES['product_img1']['name'];
 $product_img2 = $_FILES['product_img2']['name'];
 $product_img3 = $_FILES['product_img3']['name'];
+$product_img1 = $_FILES['img4']['name'];
+$product_img2 = $_FILES['img5']['name'];
+$product_img3 = $_FILES['img6']['name'];
 
 $temp_name1 = $_FILES['product_img1']['tmp_name'];
 $temp_name2 = $_FILES['product_img2']['tmp_name'];
 $temp_name3 = $_FILES['product_img3']['tmp_name'];
+$temp_name1 = $_FILES['img4']['tmp_name'];
+$temp_name2 = $_FILES['img5']['tmp_name'];
+$temp_name3 = $_FILES['img6']['tmp_name'];
 
 if(empty($product_img1)){
 
@@ -534,13 +591,31 @@ if(empty($product_img3)){
 $product_img3 = $new_p_image3;
 
 }
+if(empty($product_img4)){
+
+  $product_img4 = $new_p_image4;
+  
+  }
+  if(empty($product_img5)){
+
+    $product_img5 = $new_p_image5;
+    
+    }
+    if(empty($product_img6)){
+
+      $product_img6 = $new_p_image6;
+      
+      }
 
 
 move_uploaded_file($temp_name1,"product_images/$product_img1");
 move_uploaded_file($temp_name2,"product_images/$product_img2");
 move_uploaded_file($temp_name3,"product_images/$product_img3");
+move_uploaded_file($temp_name4,"product_images/$product_img4");
+move_uploaded_file($temp_name5,"product_images/$product_img5");
+move_uploaded_file($temp_name6,"product_images/$product_img6");
 
-$update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',manufacturer_id='$manufacturer_id',date=NOW(),product_title='$product_title',product_url='$product_url',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',product_price='$product_price',product_psp_price='$psp_price',product_desc='$product_desc',product_features='$product_features',product_video='$product_video',product_keywords='$product_keywords',product_label='$product_label',status='$status' where product_id='$p_id'";
+$update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',manufacturer_id='$manufacturer_id',date=NOW(),product_title='$product_title',product_url='$product_url',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',img4='$product_img4',img5='$product_img5',img6='$product_img6',product_price='$product_price',product_psp_price='$psp_price',product_desc='$product_desc',product_features='$product_features',product_video='$product_video',product_keywords='$product_keywords',product_label='$product_label',status='$status' where product_id='$p_id'";
 
 $run_product = mysqli_query($con,$update_product);
 
