@@ -246,17 +246,17 @@ include("edit_enquiry.php");
 if(isset($_GET['edit_about_us'])){
 include("edit_about_us.php");
 }
-if(isset($_GET['insert_store'])){
-include("insert_store.php");
+if(isset($_GET['insert_blog'])){
+include("insert_blog.php");
 }
-if(isset($_GET['view_store'])){
-include("view_store.php");
+if(isset($_GET['view_blog'])){
+include("view_blog.php");
 }
-if(isset($_GET['delete_store'])){
-include("delete_store.php");
+if(isset($_GET['delete_blog'])){
+include("delete_blog.php");
 }
-if(isset($_GET['edit_store'])){
-include("edit_store.php");
+if(isset($_GET['edit_blog'])){
+include("edit_blog.php");
 }
 ?>
 </div><!-- container-fluid Ends -->

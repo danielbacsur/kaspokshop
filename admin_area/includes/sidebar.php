@@ -301,29 +301,29 @@ else {
 
 
 
-<li><!-- store section li Starts -->
+<li><!-- blog section li Starts -->
 
-<a href="#" data-toggle="collapse" data-target="#store">
+<a href="#" data-toggle="collapse" data-target="#blog">
 
-<i class="fa fa-fw fa-briefcase"></i> Stores
+<i class="fa fa-fw fa-briefcase"></i> Blogs
 
 <i class="fa fa-fw fa-caret-down"></i>
 
 </a>
 
-<ul id="store" class="collapse">
+<ul id="blog" class="collapse">
 
 <li>
-<a href="index.php?insert_store"> Insert store </a>
+<a href="index.php?insert_blog"> Insert blog </a>
 </li>
 
 <li>
-<a href="index.php?view_store"> View store </a>
+<a href="index.php?view_blog"> View blog </a>
 </li>
 
 </ul>
 
-</li><!-- store section li Ends -->
+</li><!-- blog section li Ends -->
 
 
 <li><!-- contact us li Starts -->

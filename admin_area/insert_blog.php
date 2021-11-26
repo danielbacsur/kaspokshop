@@ -83,7 +83,7 @@ echo "<script>alert('You Have already Inserted 3 store columns')</script>";
 }
 else{
 move_uploaded_file($tmp_image,"store_images/$store_image");
-$insert_store = "insert into store (store_title,store_image,store_desc,store_button,store_url) values ('$store_title','$store_image','$store_desc','$store_button','$store_url')";
+$insert_store = "insert into blog (store_title,store_image,store_desc,store_button,store_url) values ('$store_title','$store_image','$store_desc','$store_button','$store_url')";
 $run_store = mysqli_query($con,$insert_store);
 if($run_store){
 echo "<script>alert('New store Column Has Been Inserted')</script>";
