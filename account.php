@@ -229,10 +229,38 @@
                     </div>
                     <? } else { ?>
                     <div id="orders" class="tab-pane fade">
-                        
+                    <div class="row align-items-center">
+                            <div class="col-12 col-xl-5 col-lg-6 md-margin-50px-bottom">
+                                <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the ‘s standard dummy text. Lorem ipsum has been the industry’s standard dummy text ever since. Lorem ipsum is simply dummy text. Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <ul class="list-style-03">
+                                    <li>Made from soft yet durable 100% organic cotton twill</li>
+                                    <li>Front and back yoke seams allow a full range of motion</li>
+                                    <li>Comfortable nylon-bound elastic cuffs seal in warmth</li> 
+                                    <li>Hem adjusts by pulling cord in handwarmer pockets</li> 
+                                    <li>Interior storm flap and zipper garage at chin for comfort</li> 
+                                </ul>
+                            </div>
+                            <div class="col-12 col-lg-6 offset-xl-1">
+                                <img src="https://via.placeholder.com/800x800" alt="">
+                            </div>
+                        </div>
                     </div>
                     <div id="settings" class="tab-pane fade">
-
+                        <div class="row align-items-center">
+                            <div class="col-12 col-xl-5 col-lg-6 md-margin-50px-bottom">
+                                <p>Lorem ipsum is simply dummy text of the printing and typesetting industry. Lorem ipsum has been the ‘s standard dummy text. Lorem ipsum has been the industry’s standard dummy text ever since. Lorem ipsum is simply dummy text. Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <ul class="list-style-03">
+                                    <li>Made from soft yet durable 100% organic cotton twill</li>
+                                    <li>Front and back yoke seams allow a full range of motion</li>
+                                    <li>Comfortable nylon-bound elastic cuffs seal in warmth</li> 
+                                    <li>Hem adjusts by pulling cord in handwarmer pockets</li> 
+                                    <li>Interior storm flap and zipper garage at chin for comfort</li> 
+                                </ul>
+                            </div>
+                            <div class="col-12 col-lg-6 offset-xl-1">
+                                <img src="https://via.placeholder.com/800x800" alt="">
+                            </div>
+                        </div>
                     </div>
                     <?php } ?>
                 </div>
