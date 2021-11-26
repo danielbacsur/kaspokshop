@@ -89,6 +89,7 @@
 										</div>
 									</li>
 									<!-- end blog item -->
+								<? } ?>
 
 							</ul>
 						</div>
