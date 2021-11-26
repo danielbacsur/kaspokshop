@@ -78,7 +78,7 @@
                                             <!-- end product image -->
                                             <!-- start product footer -->
                                             <div class="product-footer text-center padding-25px-top xs-padding-10px-top">
-                                                <a href="single-product.html" class="text-extra-dark-gray font-weight-500 d-inline-block"><?php echo $pro_title; ?></a>
+                                                <a href="<?php echo $pro_url; ?>" class="text-extra-dark-gray font-weight-500 d-inline-block"><?php echo $pro_title; ?></a>
                                                 <div class="product-price text-medium">
                                                     <?php if($pro_psp_price != $pro_price) { ?>
                                                         <del><?php echo $pro_price; ?></del>

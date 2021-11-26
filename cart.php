@@ -49,9 +49,9 @@
                                                     <tr>
                                                         <th scope="col" class="alt-font"></th>
                                                         <th scope="col" class="alt-font"></th>
-                                                        <th scope="col" class="alt-font">Product</th>
-                                                        <th scope="col" class="alt-font">Price</th>
-                                                        <th scope="col" class="alt-font">Quantity</th>
+                                                        <th scope="col" class="alt-font">Tétel</th>
+                                                        <th scope="col" class="alt-font">Ár</th>
+                                                        <th scope="col" class="alt-font">Mennyiség</th>
                                                         <th scope="col" class="alt-font">Total</th>
                                                     </tr>
                                                 </thead>
@@ -140,7 +140,7 @@
                                                             </ul>
                                                         </td>
                                                     </tr>
-                                                    <tr hidden class="calculate-shipping">
+                                                    <tr class="calculate-shipping">
                                                         <th colspan="2" class="font-weight-500">
                                                             <a class="d-block calculate-shipping-title accordion-toggle" data-bs-toggle="collapse" href="#shipping-accordion" aria-expanded="false">
                                                                 <p class="w-100 mb-0 text-start">Calculate shipping</p>
@@ -171,7 +171,17 @@
                                                     </tr>
                                                 </tbody>
                                             </table>
-                                        <div><a href="checkout.html" class="btn btn-dark-gray btn-large d-block btn-fancy margin-15px-top">Tovább a fizetéshez</a></div>
+                                        <?php if(isset($_SESSION['customer_email'])) { 
+                                            $session_email = $_SESSION['customer_email'];
+                                            $select_customer = "select * from customers where customer_email='$session_email'";
+                                            $run_customer = mysqli_query($con,$select_customer);
+                                            $row_customer = mysqli_fetch_array($run_customer);
+                                            $customer_id = $row_customer['customer_id'];
+                                            ?>
+                                        <div><a href="order.php?c_id=<?php echo $customer_id; ?>" class="btn btn-dark-gray btn-large d-block btn-fancy margin-15px-top">Megrendelés</a></div>
+                                        <?php } else { ?>
+                                        <div><a href="account.php" class="btn btn-dark-gray btn-large d-block btn-fancy margin-15px-top">Jelenkezz Be!</a></div>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
