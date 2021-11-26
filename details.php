@@ -256,8 +256,8 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-5 col-md-6 text-center margin-4-rem-bottom sm-margin-2-rem-bottom">
-                        <span class="alt-font font-weight-500 text-uppercase d-inline-block margin-5px-bottom">You may also like</span>
-                        <h5 class="alt-font font-weight-500 text-extra-dark-gray letter-spacing-minus-1px">Related products</h5>
+                        <span class="alt-font font-weight-500 text-uppercase d-inline-block margin-5px-bottom">Szerintünk ezeket is szeretnéd</span>
+                        <h5 class="alt-font font-weight-500 text-extra-dark-gray letter-spacing-minus-1px">Ajánlott termékek</h5>
                     </div>
                 </div>
                 <div class="row">
@@ -293,7 +293,7 @@
                                                     <img class="default-image" src="admin_area/product_images/<?php echo $pro_img1; ?>" alt=""/>
                                                     <img class="hover-image" src="admin_area/product_images/<?php echo $pro_img2; ?>" alt=""/>
                                                     <?php if($pro_label != 'NaN') { ?>
-                                                        <span class="product-badge green">sale</span>
+                                                        <span class="product-badge green"><?php echo $pro_label; ?></span>
                                                     <?php } ?>
                                                 </a>
                                                 <div class="product-overlay bg-gradient-extra-midium-gray-transparent"></div>
