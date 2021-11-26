@@ -3,7 +3,7 @@
                 <div class="row align-items-center">
                     <div class="col-12 col-lg-3 order-3 order-lg-1 text-center text-lg-start last-paragraph-no-margin md-margin-25px-top">
                         <a href="index.php" class="footer-logo margin-20px-bottom d-block"><img src="images/logo-black.png" data-at2x="images/logo-black@2x.png" alt=""></a>
-                        &copy; Copyright 2021 <a href="admin/" class="text-decoration-line-bottom text-extra-dark-gray text-extra-dark-gray-hover font-weight-500">Kaspók</a>
+                        &copy; Copyright 2021 <a href="terms.php" class="text-decoration-line-bottom text-extra-dark-gray text-extra-dark-gray-hover font-weight-500">Kaspók</a>
                     </div>
                     <div class="col-12 col-md-6 order-1 order-lg-2 text-center text-md-start text-lg-center sm-margin-50px-bottom xs-margin-30px-bottom">
                         <span class="line-height-normal d-block margin-25px-bottom md-w-80 sm-w-100"><span class="font-weight-500 text-extra-dark-gray">Ne maradj le semmiről!</span> Iratkozz fel hírlevelünkre.</span>
