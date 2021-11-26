@@ -142,9 +142,9 @@ Click Here To Login Your Account
 
 ";
 
-$from = "sad.ahmed22224@gmail.com";
+$from = "emese.balogh20@gmail.com";
 
-$subject = "Your Password";
+$subject = "Elfelejtett Jelszó";
 
 $headers = "From: $from\r\n";
 
