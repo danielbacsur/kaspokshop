@@ -77,26 +77,29 @@
                                                             $_SESSION['pro_qty'] = $pro_qty;
                                                             $total += $sub_total;
                                                             ?>
-                                                    <tr> 
-                                                        <td class="product-remove">
-                                                            <a name="remove" type="submit" onclick="document.getElementById('my_form').submit();" value="<?php echo $pro_id; ?>" class="btn-default text-large">&times;</a>
-                                                        </td>
-                                                        <td class="product-thumbnail"><a href="<?php echo $product_url; ?>"><img class="cart-product-image" src="admin_area/product_images/<?php echo $product_img1; ?>" alt=""></a></td>
-                                                        <td class="product-name">
-                                                            <a href="#"><?php echo $product_title; ?></a>
-                                                            <span class="variation"> Méret: <b><?php echo $pro_size; ?></b></span>
-                                                            <span class="variation"> Szín: <b><?php echo $pro_color; ?></b></span>
-                                                        </td>
-                                                        <td class="product-price" data-title="Price"><?php echo $only_price; ?></td>
-                                                        <td class="product-quantity" data-title="Quantity">
-                                                            <div class="quantity">
-                                                                <label class="screen-reader-text">Mennyiség</label>
-                                                                <input type="button" value="-" class="qty-minus qty-btn" data-quantity="minus" data-field="quantity">
-                                                                <input class="input-text qty-text" type="number" name="quantity" value="<?php echo $pro_qty; ?>">
-                                                                <input type="button" value="+" class="qty-plus qty-btn" data-quantity="plus" data-field="quantity">
-                                                            </div>
-                                                        </td> 
-                                                        <td class="product-subtotal" data-title="Total"><?php echo $sub_total; ?></td> 
+                                                    <tr>
+                                                        <form id="remove_form" action="" method="post">
+                                                            <td class="product-remove">
+                                                                <input type="hidden" name="remove">
+                                                                <a name="remove" type="submit" onclick="document.getElementById('remove_form').submit();" value="<?php echo $pro_id; ?>" class="btn-default text-large">&times;</a>
+                                                            </td>
+                                                            <td class="product-thumbnail"><a href="<?php echo $product_url; ?>"><img class="cart-product-image" src="admin_area/product_images/<?php echo $product_img1; ?>" alt=""></a></td>
+                                                            <td class="product-name">
+                                                                <a href="#"><?php echo $product_title; ?></a>
+                                                                <span class="variation"> Méret: <b><?php echo $pro_size; ?></b></span>
+                                                                <span class="variation"> Szín: <b><?php echo $pro_color; ?></b></span>
+                                                            </td>
+                                                            <td class="product-price" data-title="Price"><?php echo $only_price; ?></td>
+                                                            <td class="product-quantity" data-title="Quantity">
+                                                                <div class="quantity">
+                                                                    <label class="screen-reader-text">Mennyiség</label>
+                                                                    <input type="button" value="-" class="qty-minus qty-btn" data-quantity="minus" data-field="quantity">
+                                                                    <input class="input-text qty-text" type="number" name="quantity" value="<?php echo $pro_qty; ?>">
+                                                                    <input type="button" value="+" class="qty-plus qty-btn" data-quantity="plus" data-field="quantity">
+                                                                </div>
+                                                            </td> 
+                                                            <td class="product-subtotal" data-title="Total"><?php echo $sub_total; ?></td>
+                                                        </form>
                                                     </tr>
                                                     <?php }} ?>
                                                 </tbody>
@@ -140,7 +143,7 @@
                                                             </ul>
                                                         </td>
                                                     </tr>
-                                                    <tr class="calculate-shipping">
+                                                    <tr hidden class="calculate-shipping">
                                                         <th colspan="2" class="font-weight-500">
                                                             <a class="d-block calculate-shipping-title accordion-toggle" data-bs-toggle="collapse" href="#shipping-accordion" aria-expanded="false">
                                                                 <p class="w-100 mb-0 text-start">Calculate shipping</p>
