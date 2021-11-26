@@ -67,7 +67,6 @@
                                                     <span for="terms_condition" class="text-small d-inline-block align-top w-85">Elfelejtetted a jelszavad?<a href="#" target="_blank" class="text-decoration-underline text-extra-dark-gray">Jelszó helyreállítása</a>.</span>
                                                 </div>
                                                 <div class="col text-center text-md-end">
-                                                    <input type="hidden" name="login" value="">
                                                     <button class="btn btn-medium btn-rounded btn-transparent-dark-gray mb-0 submit" type="submit" name="login" value="Login">Üzenet küldése</button>
                                                 </div>
                                             </div>
