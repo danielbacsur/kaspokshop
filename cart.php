@@ -211,3 +211,21 @@ if(isset($_POST['remove'])){
     }
 }
 ?>
+<script>
+    $(document).ready(function(data){
+        $(document).on('keyup', '.qty-text', function(){
+            var id = $(this).data("product_id");
+            var quantity = $(this).val();
+            if(quantity  != ''){
+                $.ajax({
+                    url:"change.php",
+                    method:"POST",
+                    data:{id:id, quantity:quantity},
+                        success:function(data){
+                        $("body").load('cart.php');
+                    }
+                });
+            }
+        });
+    });
+</script>
