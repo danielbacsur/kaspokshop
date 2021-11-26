@@ -87,7 +87,7 @@
                                                             <span class="variation"> Méret: <b><?php echo $pro_size; ?></b></span>
                                                             <span class="variation"> Szín: <b><?php echo $pro_color; ?></b></span>
                                                         </td>
-                                                        <td class="product-price" data-title="Price"><?php echo $only_price; ?></td>
+                                                        <td class="product-price" data-title="Price"><?php echo $only_price; ?> FT</td>
                                                         <td class="product-quantity" data-title="Quantity">
                                                             <div class="quantity">
                                                                 <label class="screen-reader-text">Mennyiség</label>
@@ -96,7 +96,7 @@
                                                                 <input type="button" value="+" class="qty-plus qty-btn" data-quantity="plus" data-field="quantity">
                                                             </div>
                                                         </td> 
-                                                        <td class="product-subtotal" data-title="Total"><?php echo $sub_total; ?></td> 
+                                                        <td class="product-subtotal" data-title="Total"><?php echo $sub_total; ?> FT</td> 
                                                     </tr>
                                                     <?php }} ?>
                                                 </tbody>

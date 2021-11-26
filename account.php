@@ -61,15 +61,14 @@
                                                     <input class="medium-input bg-white margin-25px-bottom required" type="text" name="c_email" placeholder="A Neved">
                                                 </div>
                                                 <div class="col margin-4-rem-bottom sm-margin-10px-bottom">
-                                                    <input class="medium-input bg-white margin-25px-bottom required" type="text" name="c_pass" placeholder="A Neved">
+                                                    <input class="medium-input bg-white margin-25px-bottom required" type="password" name="c_pass" placeholder="A Neved">
                                                 </div>
                                                 <div class="col text-start sm-margin-30px-bottom">
-                                                    <input type="checkbox" name="terms_condition" id="terms_condition" value="1" class="terms-condition d-inline-block align-top w-auto mb-0 margin-5px-top margin-10px-right">
-                                                    <label for="terms_condition" class="text-small d-inline-block align-top w-85">Elfogadom az Általános szerződési és Adatvédelmi <a href="#" target="_blank" class="text-decoration-underline text-extra-dark-gray">feltételeket</a>.</label>
+                                                    <span for="terms_condition" class="text-small d-inline-block align-top w-85">Elfelejtetted a jelszavad?<a href="#" target="_blank" class="text-decoration-underline text-extra-dark-gray">Jelszó helyreállítása</a>.</span>
                                                 </div>
                                                 <div class="col text-center text-md-end">
                                                     <input type="hidden" name="login" value="">
-                                                    <button class="btn btn-medium btn-rounded btn-transparent-dark-gray mb-0 submit" type="submit" name="login" value="login">Üzenet küldése</button>
+                                                    <button class="btn btn-medium btn-rounded btn-transparent-dark-gray mb-0 submit" type="submit" name="login" value="Login">Üzenet küldése</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -130,7 +129,7 @@
                             <div class="col-12 col-lg-10">
                                 <div class="row justify-content-center">
                                     <div class="col-12 col-xl-6 col-lg-7 text-center margin-4-half-rem-bottom md-margin-3-rem-bottom">
-                                        <span class="alt-font font-weight-500 text-dark-orange text-uppercase letter-spacing-1px d-block margin-5px-bottom">Még nincs fiókod??? Azt hogy?</span>
+                                        <span class="alt-font font-weight-500 text-dark-orange text-uppercase letter-spacing-1px d-block margin-5px-bottom">Még nincs fiókod??? Az hogy?</span>
                                         <h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Regisztráld fiókodat!</h4>
                                     </div>
                                     <div class="col-12">
