@@ -83,7 +83,7 @@
                                                         </td>
                                                         <td class="product-thumbnail"><a href="<?php echo $product_url; ?>"><img class="cart-product-image" src="admin/product_images/<?php echo $product_img1; ?>" alt=""></a></td>
                                                         <td class="product-name">
-                                                            <a href="#"><?php echo $product_title; ?></a>
+                                                            <a href="<?php echo $product_url; ?>"><?php echo $product_title; ?></a>
                                                             <span class="variation"> Méret: <b><?php echo $pro_size; ?></b></span>
                                                             <span class="variation"> Szín: <b><?php echo $pro_color; ?></b></span>
                                                         </td>
