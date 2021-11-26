@@ -80,8 +80,8 @@
                                                     <tr>
                                                         <form id="remove_form" action="" method="post">
                                                             <td class="product-remove">
-                                                                <input type="hidden" name="remove">
-                                                                <a name="remove" type="submit" onclick="document.getElementById('remove_form').submit();" value="<?php echo $pro_id; ?>" class="btn-default text-large">&times;</a>
+                                                                <input type="hidden" name="remove" value="<?php echo $pro_id; ?>">
+                                                                <a onclick="document.getElementById('remove_form').submit();" class="btn-default text-large">&times;</a>
                                                             </td>
                                                             <td class="product-thumbnail"><a href="<?php echo $product_url; ?>"><img class="cart-product-image" src="admin_area/product_images/<?php echo $product_img1; ?>" alt=""></a></td>
                                                             <td class="product-name">
