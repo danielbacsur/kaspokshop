@@ -44,6 +44,7 @@
             </div>
             <div class="container">
                 <div class="tab-content">
+                    <?php if(!isset($_SESSION['customer_email'])) { ?>
                     <!-- start tab item -->
                     <div id="login" class="tab-pane fade in active show">
                         <div class="row justify-content-center">
@@ -228,12 +229,14 @@
                             </div>
                         </div>
                     </div>
+                    <? } else { ?>
                     <div id="orders" class="tab-pane fade">
                         
                     </div>
                     <div id="settings" class="tab-pane fade">
 
                     </div>
+                    <?php } ?>
                 </div>
             </div>
         </section>
