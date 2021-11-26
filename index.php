@@ -1,6 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en">
     <?php
+		include("db.php");
 		include("head.php");
 	?>
     <body data-mobile-nav-style="classic">
@@ -58,63 +59,37 @@
 						<div class="col-12 blog-content px-sm-0 margin-7-rem-top md-margin-4-rem-top">
 							<ul class="blog-masonry blog-wrapper grid grid-loading grid-3col xl-grid-3col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large">
 								<li class="grid-sizer"></li>
-								<!-- start blog item -->
-								<li class="grid-item wow animate__fadeIn">
-									<div class="blog-post border-radius-5px bg-white">
-										<div class="d-flex justify-content-center align-items-center font-weight-500 padding-30px-lr padding-15px-tb">
-											<a href="#" class="text-small me-auto text-slate-blue text-extra-dark-gray-hover">2021 November 16</a>
-											<a href="#" class="blog-like text-extra-small text-extra-dark-gray-hover"><i class="far fa-heart"></i><span>0</span></a>
-											<a href="#" class="blog-comment text-extra-small text-extra-dark-gray-hover"><i class="far fa-comment"></i><span>0</span></a>
+								<?php
+                                $get_products = "select * from blog order by rand() LIMIT 0,3";
+                                $run_products = mysqli_query($con,$get_products);
+                                while($row_products = mysqli_fetch_array($run_products)) {
+                                    $blog_id = $row_products['blog_id'];
+                                    $blog_title = $row_products['blog_title'];
+                                    $blog_image = $row_products['blog_image'];
+                                    $blog_desc = $row_products['blog_desc'];
+                                    $blog_date = $row_products['date'];
+                                    $blog_category = $row_products['category'];
+                                    ?>
+									<!-- start blog item -->
+									<li class="grid-item wow animate__fadeIn">
+										<div class="blog-post border-radius-5px bg-white">
+											<div class="d-flex justify-content-center align-items-center font-weight-500 padding-30px-lr padding-15px-tb">
+												<a href="#" class="text-small me-auto text-slate-blue text-extra-dark-gray-hover"><?php echo $blog_date; ?></a>
+												<a hidden href="#" class="blog-like text-extra-small text-extra-dark-gray-hover"><i class="far fa-heart"></i><span>0</span></a>
+												<a hidden href="#" class="blog-comment text-extra-small text-extra-dark-gray-hover"><i class="far fa-comment"></i><span>0</span></a>
+											</div>
+											<div class="blog-post-image">
+												<a href="#" title=""><img src="admin_area/blog_images/<?php echo $blog_image; ?>" alt=""></a>
+												<div class="alt-font blog-category"><a href="#" class="text-uppercase text-extra-dark-gray-hover"><?php echo $blog_category; ?></a></div>
+											</div>
+											<div class="post-details padding-3-rem-lr padding-2-half-rem-tb lg-padding-2-rem-all md-padding-2-half-rem-tb md-padding-3-rem-lr">
+												<a href="#" class="alt-font font-weight-500 text-extra-medium text-extra-dark-gray text-extra-dark-gray-hover d-block margin-15px-bottom"><?php echo $blog_title; ?></a>
+												<p><?php echo $blog_desc; ?></p>
+											</div>
 										</div>
-										<div class="blog-post-image">
-											<a href="#" title=""><img src="https://via.placeholder.com/1920x1440" alt=""></a>
-											<div class="alt-font blog-category"><a href="#" class="text-uppercase text-extra-dark-gray-hover">Kaspók</a></div>
-										</div>
-										<div class="post-details padding-3-rem-lr padding-2-half-rem-tb lg-padding-2-rem-all md-padding-2-half-rem-tb md-padding-3-rem-lr">
-											<a href="#" class="alt-font font-weight-500 text-extra-medium text-extra-dark-gray text-extra-dark-gray-hover d-block margin-15px-bottom">Elkészültek az első termékeink! November 20-án vásár.</a>
-											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the hehe</p>
-										</div>
-									</div>
-								</li>
-								<!-- end blog item -->
-								<!-- start blog item -->
-								<li class="grid-item wow animate__fadeIn" data-wow-delay="0.2s">
-									<div class="blog-post border-radius-5px bg-white">
-										<div class="d-flex justify-content-center align-items-center font-weight-500 padding-30px-lr padding-15px-tb">
-											<a href="#" class="text-small me-auto text-slate-blue text-extra-dark-gray-hover">2021 November 17</a>
-											<a href="#" class="blog-like text-extra-small text-extra-dark-gray-hover"><i class="far fa-heart"></i><span>0</span></a>
-											<a href="#" class="blog-comment text-extra-small text-extra-dark-gray-hover"><i class="far fa-comment"></i><span>0</span></a>
-										</div>
-										<div class="blog-post-image">
-											<a href="#" title=""><img src="https://via.placeholder.com/1920x1440" alt=""></a>
-											<div class="alt-font blog-category"><a href="#" class="text-uppercase text-extra-dark-gray-hover">Csapatunk</a></div>
-										</div>
-										<div class="post-details padding-3-rem-lr padding-2-half-rem-tb lg-padding-2-rem-all md-padding-2-half-rem-tb md-padding-3-rem-lr">
-											<a href="#" class="alt-font font-weight-500 text-extra-medium text-extra-dark-gray text-extra-dark-gray-hover d-block margin-20px-bottom">Egy sztory a cég beinditásáról és a csapattagokról</a>
-											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the hehe</p>
-										</div>
-									</div>
-								</li>
-								<!-- end blog item -->
-								<!-- start blog item -->
-								<li class="grid-item wow animate__fadeIn" data-wow-delay="0.4s">
-									<div class="blog-post border-radius-5px bg-white">
-										<div class="d-flex justify-content-center align-items-center font-weight-500 padding-30px-lr padding-15px-tb">
-											<a href="#" class="text-small me-auto text-slate-blue text-extra-dark-gray-hover">2021 November 18</a>
-											<a href="#" class="blog-like text-extra-small text-extra-dark-gray-hover"><i class="far fa-heart"></i><span>0</span></a>
-											<a href="#" class="blog-comment text-extra-small text-extra-dark-gray-hover"><i class="far fa-comment"></i><span>0</span></a>
-										</div>
-										<div class="blog-post-image">
-											<a href="#" title=""><img src="https://via.placeholder.com/1920x1440" alt=""></a>
-											<div class="alt-font blog-category"><a href="#" class="text-uppercase text-extra-dark-gray-hover">Alapanyagok</a></div>
-										</div>
-										<div class="post-details padding-3-rem-lr padding-2-half-rem-tb lg-padding-2-rem-all md-padding-2-half-rem-tb md-padding-3-rem-lr">
-											<a href="#" class="alt-font font-weight-500 text-extra-medium text-extra-dark-gray text-extra-dark-gray-hover d-block margin-20px-bottom">Mi is az a stabilizált moha? Egyáltalán mit jelent?</a>
-											<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the hehe</p>
-										</div>
-									</div>
-								</li>
-								<!-- end blog item -->
+									</li>
+									<!-- end blog item -->
+
 							</ul>
 						</div>
 					</div>
