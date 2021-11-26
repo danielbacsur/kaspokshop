@@ -61,32 +61,17 @@
                                         <div class="swiper-wrapper">
                                             <!-- start slider item -->
                                             <div class="swiper-slide">
-                                                <a class="gallery-link" href="https://via.placeholder.com/600x765"><img class="w-100" src="https://via.placeholder.com/600x765" alt=""></a>
+                                                <a class="gallery-link" href="admin_area/product_images/<?php echo $pro_img1; ?>"><img class="w-100" src="admin_area/product_images/<?php echo $pro_img1; ?>" alt=""></a>
                                             </div>
                                             <!-- end slider item -->
                                             <!-- start slider item -->
                                             <div class="swiper-slide">
-                                                <a class="gallery-link" href="https://via.placeholder.com/600x765"><img class="w-100" src="https://via.placeholder.com/600x765" alt=""></a>
+                                                <a class="gallery-link" href="admin_area/product_images/<?php echo $pro_img2; ?>"><img class="w-100" src="admin_area/product_images/<?php echo $pro_img2; ?>" alt=""></a>
                                             </div>
                                             <!-- end slider item -->
                                             <!-- start slider item -->
                                             <div class="swiper-slide">
-                                                <a class="gallery-link" href="https://via.placeholder.com/600x765"><img class="w-100" src="https://via.placeholder.com/600x765" alt=""></a>
-                                            </div>
-                                            <!-- end slider item -->
-                                            <!-- start slider item -->
-                                            <div class="swiper-slide">
-                                                <a class="gallery-link" href="https://via.placeholder.com/600x765"><img class="w-100" src="https://via.placeholder.com/600x765" alt=""></a>
-                                            </div>
-                                            <!-- end slider item -->
-                                            <!-- start slider item -->
-                                            <div class="swiper-slide">
-                                                <a class="gallery-link" href="https://via.placeholder.com/600x765"><img class="w-100" src="https://via.placeholder.com/600x765" alt=""></a>
-                                            </div>
-                                            <!-- end slider item -->
-                                            <!-- start slider item -->
-                                            <div class="swiper-slide">
-                                                <a class="gallery-link" href="https://via.placeholder.com/600x765"><img class="w-100" src="https://via.placeholder.com/600x765" alt=""></a>
+                                                <a class="gallery-link" href="admin_area/product_images/<?php echo $pro_img3; ?>"><img class="w-100" src="admin_area/product_images/<?php echo $pro_img3; ?>" alt=""></a>
                                             </div>
                                             <!-- end slider item -->
                                         </div>
@@ -100,9 +85,6 @@
                                             <div class="swiper-slide"><img class="w-100" src="admin_area/product_images/<?php echo $pro_img1; ?>" alt=""></div>
                                             <div class="swiper-slide"><img class="w-100" src="admin_area/product_images/<?php echo $pro_img2; ?>" alt=""></div>
                                             <div class="swiper-slide"><img class="w-100" src="admin_area/product_images/<?php echo $pro_img3; ?>" alt=""></div>
-                                            <div class="swiper-slide"><img class="w-100" src="https://via.placeholder.com/600x765" alt=""></div>
-                                            <div class="swiper-slide"><img class="w-100" src="https://via.placeholder.com/600x765" alt=""></div>
-                                            <div class="swiper-slide"><img class="w-100" src="https://via.placeholder.com/600x765" alt=""></div>
                                         </div>
                                     </div>
                                     <div class="swiper-thumb-next-prev text-center">
