@@ -69,7 +69,7 @@
                                         </div>
                                         <div class="col text-start sm-margin-30px-bottom">
                                             <input type="checkbox" name="terms_condition" id="terms_condition" value="1" class="terms-condition d-inline-block align-top w-auto mb-0 margin-5px-top margin-10px-right">
-                                            <label for="terms_condition" class="text-small d-inline-block align-top w-85">Elfogadom az Általános szerződési és Adatvédelmi <a href="#" target="_blank" class="text-decoration-underline text-extra-dark-gray">feltételeket</a>.</label>
+                                            <label for="terms_condition" class="text-small d-inline-block align-top w-85">Elfogadom az Általános szerződési és Adatvédelmi <a href="terms.php" target="_blank" class="text-decoration-underline text-extra-dark-gray">feltételeket</a>.</label>
                                         </div>
                                         <div class="col text-center text-md-end">
                                             <input type="hidden" name="redirect" value="">

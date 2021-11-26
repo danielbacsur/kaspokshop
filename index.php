@@ -51,8 +51,8 @@
 						<div class="col-12 col-sm-6 text-center text-sm-start wow animate__fadeIn">
 							<h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Érdekességek & Történetek</h4>
 						</div>
-						<div class="col-12 col-sm-6 text-center text-sm-end wow animate__fadeIn">
-							<a href="#" class="btn btn-link btn-extra-large text-extra-dark-gray">Összes blogunk</a>
+						<div hidden class="col-12 col-sm-6 text-center text-sm-end wow animate__fadeIn">
+							<a href="" class="btn btn-link btn-extra-large text-extra-dark-gray">Összes blogunk</a>
 						</div>
 					</div>
 					<div class="row">
@@ -74,16 +74,16 @@
 									<li class="grid-item wow animate__fadeIn">
 										<div class="blog-post border-radius-5px bg-white">
 											<div class="d-flex justify-content-center align-items-center font-weight-500 padding-30px-lr padding-15px-tb">
-												<a href="#" class="text-small me-auto text-slate-blue text-extra-dark-gray-hover"><?php echo $blog_date; ?></a>
-												<a hidden href="#" class="blog-like text-extra-small text-extra-dark-gray-hover"><i class="far fa-heart"></i><span>0</span></a>
-												<a hidden href="#" class="blog-comment text-extra-small text-extra-dark-gray-hover"><i class="far fa-comment"></i><span>0</span></a>
+												<a href="" class="text-small me-auto text-slate-blue text-extra-dark-gray-hover"><?php echo $blog_date; ?></a>
+												<a hidden href="" class="blog-like text-extra-small text-extra-dark-gray-hover"><i class="far fa-heart"></i><span>0</span></a>
+												<a hidden href="" class="blog-comment text-extra-small text-extra-dark-gray-hover"><i class="far fa-comment"></i><span>0</span></a>
 											</div>
 											<div class="blog-post-image">
-												<a href="#" title=""><img src="admin_area/blog_images/<?php echo $blog_image; ?>" alt=""></a>
-												<div class="alt-font blog-category"><a href="#" class="text-uppercase text-extra-dark-gray-hover"><?php echo $blog_category; ?></a></div>
+												<a href="" title=""><img src="admin_area/blog_images/<?php echo $blog_image; ?>" alt=""></a>
+												<div class="alt-font blog-category"><a href="" class="text-uppercase text-extra-dark-gray-hover"><?php echo $blog_category; ?></a></div>
 											</div>
 											<div class="post-details padding-3-rem-lr padding-2-half-rem-tb lg-padding-2-rem-all md-padding-2-half-rem-tb md-padding-3-rem-lr">
-												<a href="#" class="alt-font font-weight-500 text-extra-medium text-extra-dark-gray text-extra-dark-gray-hover d-block margin-15px-bottom"><?php echo $blog_title; ?></a>
+												<a href="" class="alt-font font-weight-500 text-extra-medium text-extra-dark-gray text-extra-dark-gray-hover d-block margin-15px-bottom"><?php echo $blog_title; ?></a>
 												<p><?php echo $blog_desc; ?></p>
 											</div>
 										</div>
