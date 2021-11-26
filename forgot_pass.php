@@ -142,7 +142,7 @@ Click Here To Login Your Account
 
 ";
 
-$from = "emese.balogh20@gmail.com";
+$from = "kaspokshop@gmail.com";
 
 $subject = "Elfelejtett Jelszó";
 
