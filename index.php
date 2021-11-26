@@ -79,7 +79,7 @@
 												<a hidden href="" class="blog-comment text-extra-small text-extra-dark-gray-hover"><i class="far fa-comment"></i><span>0</span></a>
 											</div>
 											<div class="blog-post-image">
-												<a href="" title=""><img src="admin_area/blog_images/<?php echo $blog_image; ?>" alt=""></a>
+												<a href="" title=""><img src="admin/blog_images/<?php echo $blog_image; ?>" alt=""></a>
 												<div class="alt-font blog-category"><a href="" class="text-uppercase text-extra-dark-gray-hover"><?php echo $blog_category; ?></a></div>
 											</div>
 											<div class="post-details padding-3-rem-lr padding-2-half-rem-tb lg-padding-2-rem-all md-padding-2-half-rem-tb md-padding-3-rem-lr">

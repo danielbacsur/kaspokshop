@@ -62,8 +62,8 @@
                                             <!-- start product image -->
                                             <div class="product-image border-radius-6px">
                                                 <a href="<?php echo $pro_url; ?>">
-                                                    <img class="default-image" src="admin_area/product_images/<?php echo $pro_img1; ?>" alt=""/>
-                                                    <img class="hover-image" src="admin_area/product_images/<?php echo $pro_img2; ?>" alt=""/>
+                                                    <img class="default-image" src="admin/product_images/<?php echo $pro_img1; ?>" alt=""/>
+                                                    <img class="hover-image" src="admin/product_images/<?php echo $pro_img2; ?>" alt=""/>
                                                     <?php if($pro_label != "NaN") { ?>
                                                         <span class="product-badge orange"><?php echo $pro_label; ?></span>
                                                     <?php } ?>

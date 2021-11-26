@@ -61,17 +61,17 @@
                                         <div class="swiper-wrapper">
                                             <!-- start slider item -->
                                             <div class="swiper-slide">
-                                                <a class="gallery-link" href="admin_area/product_images/<?php echo $pro_img1; ?>"><img class="w-100" src="admin_area/product_images/<?php echo $pro_img1; ?>" alt=""></a>
+                                                <a class="gallery-link" href="admin/product_images/<?php echo $pro_img1; ?>"><img class="w-100" src="admin/product_images/<?php echo $pro_img1; ?>" alt=""></a>
                                             </div>
                                             <!-- end slider item -->
                                             <!-- start slider item -->
                                             <div class="swiper-slide">
-                                                <a class="gallery-link" href="admin_area/product_images/<?php echo $pro_img2; ?>"><img class="w-100" src="admin_area/product_images/<?php echo $pro_img2; ?>" alt=""></a>
+                                                <a class="gallery-link" href="admin/product_images/<?php echo $pro_img2; ?>"><img class="w-100" src="admin/product_images/<?php echo $pro_img2; ?>" alt=""></a>
                                             </div>
                                             <!-- end slider item -->
                                             <!-- start slider item -->
                                             <div class="swiper-slide">
-                                                <a class="gallery-link" href="admin_area/product_images/<?php echo $pro_img3; ?>"><img class="w-100" src="admin_area/product_images/<?php echo $pro_img3; ?>" alt=""></a>
+                                                <a class="gallery-link" href="admin/product_images/<?php echo $pro_img3; ?>"><img class="w-100" src="admin/product_images/<?php echo $pro_img3; ?>" alt=""></a>
                                             </div>
                                             <!-- end slider item -->
                                         </div>
@@ -82,9 +82,9 @@
                                 <div class="col-12 col-lg-3 order-lg-1 position-relative single-product-thumb md-margin-50px-bottom sm-margin-40px-bottom">
                                     <div class="swiper-container product-image-thumb slider-vertical padding-15px-lr padding-45px-bottom md-no-padding left-0px">
                                         <div class="swiper-wrapper">
-                                            <div class="swiper-slide"><img class="w-100" src="admin_area/product_images/<?php echo $pro_img1; ?>" alt=""></div>
-                                            <div class="swiper-slide"><img class="w-100" src="admin_area/product_images/<?php echo $pro_img2; ?>" alt=""></div>
-                                            <div class="swiper-slide"><img class="w-100" src="admin_area/product_images/<?php echo $pro_img3; ?>" alt=""></div>
+                                            <div class="swiper-slide"><img class="w-100" src="admin/product_images/<?php echo $pro_img1; ?>" alt=""></div>
+                                            <div class="swiper-slide"><img class="w-100" src="admin/product_images/<?php echo $pro_img2; ?>" alt=""></div>
+                                            <div class="swiper-slide"><img class="w-100" src="admin/product_images/<?php echo $pro_img3; ?>" alt=""></div>
                                         </div>
                                     </div>
                                     <div class="swiper-thumb-next-prev text-center">
@@ -272,8 +272,8 @@
                                             <!-- start product image -->
                                             <div class="product-image border-radius-6px">
                                                 <a href="single-product.html">
-                                                    <img class="default-image" src="admin_area/product_images/<?php echo $pro_img1; ?>" alt=""/>
-                                                    <img class="hover-image" src="admin_area/product_images/<?php echo $pro_img2; ?>" alt=""/>
+                                                    <img class="default-image" src="admin/product_images/<?php echo $pro_img1; ?>" alt=""/>
+                                                    <img class="hover-image" src="admin/product_images/<?php echo $pro_img2; ?>" alt=""/>
                                                     <?php if($pro_label != 'NaN') { ?>
                                                         <span class="product-badge green"><?php echo $pro_label; ?></span>
                                                     <?php } ?>

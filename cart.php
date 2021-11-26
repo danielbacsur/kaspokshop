@@ -81,7 +81,7 @@
                                                         <td class="product-remove">
                                                             <a name="remove" type="submit" onclick="document.getElementById('my_form').submit();" value="<?php echo $pro_id; ?>" class="btn-default text-large">&times;</a>
                                                         </td>
-                                                        <td class="product-thumbnail"><a href="<?php echo $product_url; ?>"><img class="cart-product-image" src="admin_area/product_images/<?php echo $product_img1; ?>" alt=""></a></td>
+                                                        <td class="product-thumbnail"><a href="<?php echo $product_url; ?>"><img class="cart-product-image" src="admin/product_images/<?php echo $product_img1; ?>" alt=""></a></td>
                                                         <td class="product-name">
                                                             <a href="#"><?php echo $product_title; ?></a>
                                                             <span class="variation"> Méret: <b><?php echo $pro_size; ?></b></span>

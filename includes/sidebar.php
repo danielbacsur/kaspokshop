@@ -128,7 +128,7 @@ else{
 
 $manufacturer_image = "
 
-<img src='admin_area/other_images/$manufacturer_image' width='20px' >&nbsp;
+<img src='admin/other_images/$manufacturer_image' width='20px' >&nbsp;
 
 ";
 
@@ -185,7 +185,7 @@ else{
 
 $manufacturer_image = "
 
-<img src='admin_area/other_images/$manufacturer_image' width='20px'> &nbsp;
+<img src='admin/other_images/$manufacturer_image' width='20px'> &nbsp;
 
 ";
 
@@ -296,7 +296,7 @@ if($p_cat_image == ""){
 }
 else{
 
-$p_cat_image = "<img src='admin_area/other_images/$p_cat_image' width='20'> &nbsp;";
+$p_cat_image = "<img src='admin/other_images/$p_cat_image' width='20'> &nbsp;";
 
 }
 
@@ -350,7 +350,7 @@ if($p_cat_image == ""){
 }
 else{
 
-$p_cat_image = "<img src='admin_area/other_images/$p_cat_image' width='20'> &nbsp;";
+$p_cat_image = "<img src='admin/other_images/$p_cat_image' width='20'> &nbsp;";
 
 }
 
@@ -462,7 +462,7 @@ if($cat_image == ""){
 }
 else{
 
-$cat_image = "<img src='admin_area/other_images/$cat_image' width='20'>&nbsp;";
+$cat_image = "<img src='admin/other_images/$cat_image' width='20'>&nbsp;";
 
 }
 
@@ -513,7 +513,7 @@ if($cat_image == ""){
 }
 else{
 
-$cat_image = "<img src='admin_area/other_images/$cat_image' width='20'>&nbsp;";
+$cat_image = "<img src='admin/other_images/$cat_image' width='20'>&nbsp;";
 
 }
 

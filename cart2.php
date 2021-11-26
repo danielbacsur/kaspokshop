@@ -114,7 +114,7 @@ $total += $sub_total;
 
 <td>
 
-<img src="admin_area/product_images/<?php echo $product_img1; ?>" >
+<img src="admin/product_images/<?php echo $product_img1; ?>" >
 
 </td>
 
@@ -435,7 +435,7 @@ echo "
 
 <a href='$pro_url' >
 
-<img src='admin_area/product_images/$pro_img1' class='img-responsive' >
+<img src='admin/product_images/$pro_img1' class='img-responsive' >
 
 </a>
 
