@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="en">
     <?php
-		include("db.php");
+		include("includes/db.php");
 		include("head.php");
 	?>
     <body data-mobile-nav-style="classic">
