@@ -61,7 +61,7 @@
                                         <div class="product-box paddingtop margin-45px-bottom lg-margin-25px-bottom xs-no-margin-bottom">
                                             <!-- start product image -->
                                             <div class="product-image border-radius-6px">
-                                                <a href="<?php echo $pro_url; ?>">
+                                                <a href="<?php if($pro_label != "Hamarosan") echo $pro_url; ?>">
                                                     <img class="default-image" src="admin/product_images/<?php echo $pro_img1; ?>" alt=""/>
                                                     <img class="hover-image" src="admin/product_images/<?php echo $pro_img2; ?>" alt=""/>
                                                     <?php if($pro_label != "NaN") { ?>
@@ -70,9 +70,9 @@
                                                 </a>
                                                 <div class="product-overlay bg-gradient-extra-midium-gray-transparent"></div>
                                                 <div class="product-hover-bottom text-center padding-30px-tb">
-                                                    <a href="<?php if($pro_label != "HAMAROSAN") echo $pro_url; ?>" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kosárhoz adás"><i class="feather icon-feather-shopping-cart"></i></a>
-                                                    <a href="<?php if($pro_label != "HAMAROSAN") echo $pro_url; ?>" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Megtekintés"><i class="feather icon-feather-zoom-in"></i></a>
-                                                    <a href="<?php if($pro_label != "HAMAROSAN") echo $pro_url; ?>" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kívánságlista"><i class="feather icon-feather-heart"></i></a>
+                                                    <a href="<?php if($pro_label != "Hamarosan") echo $pro_url; ?>" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kosárhoz adás"><i class="feather icon-feather-shopping-cart"></i></a>
+                                                    <a href="<?php if($pro_label != "Hamarosan") echo $pro_url; ?>" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Megtekintés"><i class="feather icon-feather-zoom-in"></i></a>
+                                                    <a href="<?php if($pro_label != "Hamarosan") echo $pro_url; ?>" class="product-link-icon move-top-bottom" data-bs-toggle="tooltip" data-placement="top" title="" data-original-title="Kívánságlista"><i class="feather icon-feather-heart"></i></a>
                                                 </div>
                                             </div>
                                             <!-- end product image -->
