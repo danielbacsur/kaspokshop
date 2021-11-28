@@ -2,7 +2,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent header-light fixed-top navbar-boxed header-reverse-scroll">
                 <div class="container-fluid nav-header-container">
                     <div class="col-5 col-lg-2 ps-lg-0 me-auto me-lg-0">
-                        <a class="navbar-brand" href="index.html">
+                        <a class="navbar-brand" href="index.php">
                             <img src="images/logo-black.png" data-at2x="images/logo-black@2x.png" alt="" class="default-logo">
                             <img src="images/logo-black.png" data-at2x="images/logo-black@2x.png" alt="" class="alt-logo">
                             <img src="images/logo-black.png" data-at2x="images/logo-black@2x.png" class="mobile-logo" alt="">
