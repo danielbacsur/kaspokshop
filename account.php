@@ -58,13 +58,13 @@
                                         <form action="" method="post">
                                             <div class="row row-cols-1 row-cols-md-2">
                                                 <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
-                                                    <input class="medium-input bg-white margin-25px-bottom required" type="text" name="c_email">
+                                                    <input class="medium-input bg-white margin-25px-bottom required" type="text" name="c_email" placeholder="A Neved">
                                                 </div>
                                                 <div class="col margin-4-rem-bottom sm-margin-10px-bottom">
-                                                    <input class="medium-input bg-white margin-25px-bottom required" type="password" name="c_pass">
+                                                    <input class="medium-input bg-white margin-25px-bottom required" type="password" name="c_pass" placeholder="A Neved">
                                                 </div>
                                                 <div class="col text-start sm-margin-30px-bottom">
-                                                    <span for="terms_condition" class="text-small d-inline-block align-top w-85">Elfelejtetted a jelszavad?<a href="" target="_blank" class="text-decoration-underline text-extra-dark-gray">Jelszó helyreállítása</a>.</span>
+                                                    <span for="terms_condition" class="text-small d-inline-block align-top w-85">Elfelejtetted a jelszavad?<a href="#" target="_blank" class="text-decoration-underline text-extra-dark-gray">Jelszó helyreállítása</a>.</span>
                                                 </div>
                                                 <div class="col text-center text-md-end">
                                                     <button class="btn btn-medium btn-rounded btn-transparent-dark-gray mb-0 submit" type="submit" name="login" value="Login">Üzenet küldése</button>
@@ -72,22 +72,50 @@
                                             </div>
                                         </form>
                                         <form action="" method="post" ><!--form Starts -->
-                                            <div class="row row-cols-1 row-cols-md-2">
-                                                <div class="col margin-4-rem-bottom sm-margin-25px-bottom" ><!-- form-group Starts -->
-                                                    <input type="text" class="medium-input bg-white margin-25px-bottom required" name="c_email" placeholder="Email">
-                                                </div><!-- form-group Ends -->
-                                                <div class="col margin-4-rem-bottom sm-margin-10px-bottom" ><!-- form-group Starts -->
-                                                    <input type="password" class="medium-input bg-white margin-25px-bottom required" name="c_pass" placeholder="Jelszó">
-                                                </div><!-- form-group Ends -->
-                                                <div class="col">
-                                                <span class="text-small d-inline-block align-top w-85">Elfelejtetted a jelszavad?<a href="" target="_blank" class="text-decoration-underline text-extra-dark-gray">Jelszó helyreállítása</a>.</span>
-                                                </div>
-                                                <div class="col text-center text-md-end" ><!-- text-center Starts -->
-                                                    <button name="login" value="Login" class="btn btn-medium btn-rounded btn-transparent-dark-gray mb-0 submit" > Bejelentkezés</button>
-                                                </div><!-- text-center Ends -->
-                                            </div>
+
+                                        <div class="form-group" ><!-- form-group Starts -->
+                                        <label>Email</label>
+                                        <input type="text" class="form-control" name="c_email" required >
+                                        </div><!-- form-group Ends -->
+                                        <div class="form-group" ><!-- form-group Starts -->
+                                        <label>Jel</label>
+                                        <input type="password" class="form-control" name="c_pass" required >
+                                        <h4 align="center">
+                                        <a href="forgot_pass.php"> FP </a>
+                                        </h4>
+                                        </div><!-- form-group Ends -->
+                                        <div class="text-center" ><!-- text-center Starts -->
+                                        <button name="login" value="Login" class="btn btn-primary" > LOG</button>
+                                        </div><!-- text-center Ends -->
                                         </form><!--form Ends -->
                                         <!-- end contact form -->
+                                        <?php
+                                            if(isset($_POST['login'])){
+                                                $customer_email = $_POST['c_email'];
+                                                $customer_pass = $_POST['c_pass'];
+                                                $select_customer = "select * from customers where customer_email='$customer_email' AND customer_pass='$customer_pass'";
+                                                $run_customer = mysqli_query($con,$select_customer);
+                                                $get_ip = getRealUserIp();
+                                                $check_customer = mysqli_num_rows($run_customer);
+                                                $select_cart = "select * from cart where ip_add='$get_ip'";
+                                                $run_cart = mysqli_query($con,$select_cart);
+                                                $check_cart = mysqli_num_rows($run_cart);
+                                                if($check_customer==0){
+                                                    echo "<script>alert('password or email is wrong')</script>";
+                                                    exit();
+                                                }
+                                                if($check_customer==1 AND $check_cart==0){
+                                                    $_SESSION['customer_email']=$customer_email;
+                                                    echo "<script>alert('You are Logged In')</script>";
+                                                    echo "<script>window.open('account.php','_self')</script>";
+                                                }
+                                                else {
+                                                    $_SESSION['customer_email']=$customer_email;
+                                                    echo "<script>alert('You are Logged In')</script>";
+                                                    echo "<script>window.open('cart.php','_self')</script>";
+                                                } 
+                                            }
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -196,6 +224,12 @@
 
                                         <?php
                                         if(isset($_POST['register'])){
+                                            // $secret = "6LcHnoQaAAAAAF3_pqQ55sZMDgaWCGcXq4ucLgkH";
+                                            // $response = $_POST['g-recaptcha-response'];
+                                            $remoteip = getRealUserIP();
+                                            // $url = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=$secret&response=$response&remoteip=$remoteip");
+                                            // $result = json_decode($url, TRUE);
+                                            if($result['success'] == 0){
                                                 $c_name = $_POST['c_name'];
                                                 $c_email = $_POST['c_email'];
                                                 $c_pass = $_POST['c_pass'];
@@ -211,23 +245,41 @@
                                                 $run_email = mysqli_query($con,$get_email);
                                                 $check_email = mysqli_num_rows($run_email);
                                                 if($check_email == 1){
-                                                    echo "<script>alert('Ez az email cím már regisztrálva lett. Próbálj meg eg másikat')</script>";
+                                                    echo "<script>alert('This email is already registered, try another one')</script>";
                                                     exit();
                                                 }
-                                                $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
+                                                $customer_confirm_code = mt_rand();
+                                                $subject = "Email Confirmation Message";
+                                                $from = "kaspokshop@gmail.com";
+                                                $message = "
+                                                <h2>
+                                                Email Confirmation By Computerfever.com $c_name
+                                                </h2>
+                                                <a href='customer/my_account.php?$customer_confirm_code'>
+                                                Click Here To Confirm Email
+                                                </a>
+                                                ";
+                                                $headers = "From: $from \r\n";
+                                                $headers .= "Content-type: text/html\r\n";
+                                                mail($c_email,$subject,$message,$headers);
+                                                $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip,customer_confirm_code) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip','$customer_confirm_code')";
                                                 $run_customer = mysqli_query($con,$insert_customer);
                                                 $sel_cart = "select * from cart where ip_add='$c_ip'";
                                                 $run_cart = mysqli_query($con,$sel_cart);
                                                 $check_cart = mysqli_num_rows($run_cart);
                                                 if($check_cart>0){
                                                     $_SESSION['customer_email']=$c_email;
-                                                    echo "<script>alert('Fiókodat sikeresen regisztráltuk!')</script>";
+                                                    echo "<script>alert('You have been Registered Successfully')</script>";
                                                     echo "<script>window.open('checkout.php','_self')</script>";
                                                 } else {
                                                     $_SESSION['customer_email']=$c_email;
-                                                    echo "<script>alert('Fiókodat sikeresen regisztráltuk!')</script>";
+                                                    echo "<script>alert('You have been Registered Successfully')</script>";
                                                     echo "<script>window.open('index.php','_self')</script>";
                                                 }
+                                            }
+                                            else {
+                                                    echo "<script>alert('Please Select Captcha, Try Again')</script>";
+                                            }
                                         }
                                         ?>
 
@@ -262,34 +314,6 @@
 		?>
     </body>
 </html>
-
-<?php
-                                            if(isset($_POST['login'])){
-                                                $customer_email = $_POST['c_email'];
-                                                $customer_pass = $_POST['c_pass'];
-                                                $select_customer = "select * from customers where customer_email='$customer_email' AND customer_pass='$customer_pass'";
-                                                $run_customer = mysqli_query($con,$select_customer);
-                                                $get_ip = getRealUserIp();
-                                                $check_customer = mysqli_num_rows($run_customer);
-                                                $select_cart = "select * from cart where ip_add='$get_ip'";
-                                                $run_cart = mysqli_query($con,$select_cart);
-                                                $check_cart = mysqli_num_rows($run_cart);
-                                                if($check_customer==0){
-                                                    echo "<script>alert('Helytelen email cím vagy jelszó!')</script>";
-                                                    exit();
-                                                }
-                                                if($check_customer==1 AND $check_cart==0){
-                                                    $_SESSION['customer_email']=$customer_email;
-                                                    echo "<script>alert('Sikeresen bejelentkeztél!')</script>";
-                                                    echo "<script>window.open('account.php','_self')</script>";
-                                                }
-                                                else {
-                                                    $_SESSION['customer_email']=$customer_email;
-                                                    echo "<script>alert('Sikeresen bejelentkeztél!')</script>";
-                                                    echo "<script>window.open('cart.php','_self')</script>";
-                                                } 
-                                            }
-                                        ?>
 
 <script>
 $(document).ready(function(){
