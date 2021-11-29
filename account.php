@@ -80,7 +80,7 @@
                                                     <input type="password" class="medium-input bg-white margin-25px-bottom required" name="c_pass" placeholder="Jelszó">
                                                 </div><!-- form-group Ends -->
                                                 <div class="col">
-
+                                                <span class="text-small d-inline-block align-top w-85">Elfelejtetted a jelszavad?<a href="" target="_blank" class="text-decoration-underline text-extra-dark-gray">Jelszó helyreállítása</a>.</span>
                                                 </div>
                                                 <div class="col text-center text-md-end" ><!-- text-center Starts -->
                                                     <button name="login" value="Login" class="btn btn-medium btn-rounded btn-transparent-dark-gray mb-0 submit" > LOG</button>
