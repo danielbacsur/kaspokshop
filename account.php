@@ -74,10 +74,10 @@
                                         <form action="" method="post" ><!--form Starts -->
                                             <div class="row row-cols-1 row-cols-md-2">
                                                 <div class="col margin-4-rem-bottom sm-margin-25px-bottom" ><!-- form-group Starts -->
-                                                    <input type="text" class="medium-input bg-white margin-25px-bottom required" name="c_email" required >
+                                                    <input type="text" class="medium-input bg-white margin-25px-bottom required" name="c_email" >
                                                 </div><!-- form-group Ends -->
                                                 <div class="col margin-4-rem-bottom sm-margin-10px-bottom" ><!-- form-group Starts -->
-                                                    <input type="password" class="medium-input bg-white margin-25px-bottom required" name="c_pass" required >
+                                                    <input type="password" class="medium-input bg-white margin-25px-bottom required" name="c_pass" >
                                                 </div><!-- form-group Ends -->
                                                 <div class="col">
 
