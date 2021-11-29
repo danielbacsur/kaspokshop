@@ -58,10 +58,10 @@
                                         <form action="" method="post">
                                             <div class="row row-cols-1 row-cols-md-2">
                                                 <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
-                                                    <input class="medium-input bg-white margin-25px-bottom required" type="text" name="c_email" placeholder="A Neved">
+                                                    <input class="medium-input bg-white margin-25px-bottom required" type="text" name="c_email">
                                                 </div>
                                                 <div class="col margin-4-rem-bottom sm-margin-10px-bottom">
-                                                    <input class="medium-input bg-white margin-25px-bottom required" type="password" name="c_pass" placeholder="A Neved">
+                                                    <input class="medium-input bg-white margin-25px-bottom required" type="password" name="c_pass">
                                                 </div>
                                                 <div class="col text-start sm-margin-30px-bottom">
                                                     <span for="terms_condition" class="text-small d-inline-block align-top w-85">Elfelejtetted a jelszavad?<a href="" target="_blank" class="text-decoration-underline text-extra-dark-gray">Jelszó helyreállítása</a>.</span>
