@@ -55,22 +55,6 @@
                                         <h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Jelentkezz be!</h4>
                                     </div>
                                     <div class="col-12">
-                                        <form action="" method="post">
-                                            <div class="row row-cols-1 row-cols-md-2">
-                                                <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
-                                                    <input class="medium-input bg-white margin-25px-bottom required" type="text" name="c_email">
-                                                </div>
-                                                <div class="col margin-4-rem-bottom sm-margin-10px-bottom">
-                                                    <input class="medium-input bg-white margin-25px-bottom required" type="password" name="c_pass">
-                                                </div>
-                                                <div class="col text-start sm-margin-30px-bottom">
-                                                    <span for="terms_condition" class="text-small d-inline-block align-top w-85">Elfelejtetted a jelszavad?<a href="" target="_blank" class="text-decoration-underline text-extra-dark-gray">Jelszó helyreállítása</a>.</span>
-                                                </div>
-                                                <div class="col text-center text-md-end">
-                                                    <button class="btn btn-medium btn-rounded btn-transparent-dark-gray mb-0 submit" type="submit" name="login" value="Login">Üzenet küldése</button>
-                                                </div>
-                                            </div>
-                                        </form>
                                         <form action="" method="post" ><!--form Starts -->
                                             <div class="row row-cols-1 row-cols-md-2">
                                                 <div class="col margin-4-rem-bottom sm-margin-25px-bottom" ><!-- form-group Starts -->
@@ -83,7 +67,7 @@
                                                 <span class="text-small d-inline-block align-top w-85">Elfelejtetted a jelszavad?<a href="" target="_blank" class="text-decoration-underline text-extra-dark-gray">Jelszó helyreállítása</a>.</span>
                                                 </div>
                                                 <div class="col text-center text-md-end" ><!-- text-center Starts -->
-                                                    <button name="login" value="Login" class="btn btn-medium btn-rounded btn-transparent-dark-gray mb-0 submit" > LOG</button>
+                                                    <button name="login" value="Login" class="btn btn-medium btn-rounded btn-transparent-dark-gray mb-0 submit" > Bejelentkezés</button>
                                                 </div><!-- text-center Ends -->
                                             </div>
                                         </form><!--form Ends -->
