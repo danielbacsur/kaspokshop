@@ -73,16 +73,11 @@
                                         </form>
                                         <form action="" method="post" ><!--form Starts -->
                                             <div class="row row-cols-1 row-cols-md-2">
-                                                <div class="form-group" ><!-- form-group Starts -->
-                                                    <label>Email</label>
+                                                <div class="col margin-4-rem-bottom sm-margin-25px-bottom" ><!-- form-group Starts -->
                                                     <input type="text" class="form-control" name="c_email" required >
                                                 </div><!-- form-group Ends -->
-                                                <div class="form-group" ><!-- form-group Starts -->
-                                                    <label>Jel</label>
+                                                <div class="col margin-4-rem-bottom sm-margin-10px-bottom" ><!-- form-group Starts -->
                                                     <input type="password" class="form-control" name="c_pass" required >
-                                                    <h4 align="center">
-                                                        <a href="forgot_pass.php"> FP </a>
-                                                    </h4>
                                                 </div><!-- form-group Ends -->
                                                 <div class="text-center" ><!-- text-center Starts -->
                                                     <button name="login" value="Login" class="btn btn-primary" > LOG</button>
