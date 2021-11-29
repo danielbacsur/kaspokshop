@@ -79,6 +79,9 @@
                                                 <div class="col margin-4-rem-bottom sm-margin-10px-bottom" ><!-- form-group Starts -->
                                                     <input type="password" class="medium-input bg-white margin-25px-bottom required" name="c_pass" required >
                                                 </div><!-- form-group Ends -->
+                                                <div class="col">
+
+                                                </div>
                                                 <div class="col text-center text-md-end" ><!-- text-center Starts -->
                                                     <button name="login" value="Login" class="btn btn-medium btn-rounded btn-transparent-dark-gray mb-0 submit" > LOG</button>
                                                 </div><!-- text-center Ends -->
