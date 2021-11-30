@@ -156,7 +156,7 @@
                                 </div>
                                 <a href="#" onclick="document.getElementById('order_form').submit();" class="btn btn-dark-gray btn-medium">Kosárhoz adás</a>
                                 <input type="hidden" name="add_to_cart">
-                                <div class="margin-25px-top">
+                                <div hidden class="margin-25px-top">
                                     <a href="#" class="text-uppercase text-extra-small alt-font margin-20px-right font-weight-500 "><i class="feather icon-feather-heart align-middle margin-5px-right"></i>Kívánságlista</a>
                                     <a href="#" class="text-uppercase text-extra-small alt-font margin-20px-right font-weight-500 "><i class="feather icon-feather-shuffle align-middle margin-5px-right"></i>Megosztás</a>
                                 </div>
