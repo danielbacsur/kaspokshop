@@ -115,7 +115,7 @@
                             </div>
                             <form id="order_form" class="margin-4-rem-top" action="" method="post">
                                 <div class="margin-20px-bottom">
-                                    <label class="text-extra-dark-gray text-extra-small font-weight-500 alt-font text-uppercase w-60px">Szín</label>
+                                    <label class="text-extra-dark-gray text-extra-small font-weight-500 alt-font text-uppercase w-60px">Szín A</label>
                                     <ul class="alt-font shop-color">
                                         <li>
                                             <input class="d-none" type="radio" id="color-11" name="color1" value="Fehér" checked />
@@ -132,7 +132,7 @@
                                     </ul>
                                 </div>
                                 <div class="margin-20px-bottom">
-                                    <label class="text-extra-dark-gray text-extra-small font-weight-500 alt-font text-uppercase w-60px">Szín</label>
+                                    <label class="text-extra-dark-gray text-extra-small font-weight-500 alt-font text-uppercase w-60px">Szín B</label>
                                     <ul class="alt-font shop-color">
                                         <li>
                                             <input class="d-none" type="radio" id="color-21" name="color2" value="Fehér" checked />
