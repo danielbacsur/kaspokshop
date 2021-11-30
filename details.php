@@ -118,33 +118,33 @@
                                     <label class="text-extra-dark-gray text-extra-small font-weight-500 alt-font text-uppercase w-60px">Szín</label>
                                     <ul class="alt-font shop-color">
                                         <li>
-                                            <input class="d-none" type="radio" id="color-1" name="color" value="Red" checked />
-                                            <label for="color-1" class="width-80"><span style="background-color: red"></span></label>
+                                            <input class="d-none" type="radio" id="color-11" name="color1" value="Fehér" checked />
+                                            <label for="color-11" class="width-80"><span style="background-color: red"></span></label>
                                         </li>
                                         <li>
-                                            <input class="d-none" type="radio" id="color-2" name="color" value="Green"/>
-                                            <label for="color-2" class="width-80"><span style="background-color: green"></span></label>
+                                            <input class="d-none" type="radio" id="color-12" name="color1" value="Fekete"/>
+                                            <label for="color-12" class="width-80"><span style="background-color: green"></span></label>
                                         </li>
                                         <li>
-                                            <input class="d-none" type="radio" id="color-3" name="color" value="Blue"/>
-                                            <label for="color-3" class="width-80"><span style="background-color: blue"></span></label>
+                                            <input class="d-none" type="radio" id="color-13" name="color1" value="Kék"/>
+                                            <label for="color-13" class="width-80"><span style="background-color: blue"></span></label>
                                         </li>
                                     </ul>
                                 </div>
-                                <div class="margin-4-rem-bottom">
-                                    <label class="text-extra-dark-gray text-extra-small font-weight-500 alt-font text-uppercase w-60px">Méret</label>
-                                    <ul class="text-extra-small shop-size">
+                                <div class="margin-20px-bottom">
+                                    <label class="text-extra-dark-gray text-extra-small font-weight-500 alt-font text-uppercase w-60px">Szín</label>
+                                    <ul class="alt-font shop-color">
                                         <li>
-                                            <input class="d-none" type="radio" id="size-1" value="S" name="size" checked />
-                                            <label for="size-1" class="width-80"><span>S</span></label>
+                                            <input class="d-none" type="radio" id="color-21" name="color2" value="Fehér" checked />
+                                            <label for="color-21" class="width-80"><span style="background-color: red"></span></label>
                                         </li>
                                         <li>
-                                            <input class="d-none" type="radio" id="size-2" value="M" name="size" />
-                                            <label for="size-2" class="width-80"><span>M</span></label>
+                                            <input class="d-none" type="radio" id="color-22" name="color2" value="Fekete"/>
+                                            <label for="color-22" class="width-80"><span style="background-color: green"></span></label>
                                         </li>
                                         <li>
-                                            <input class="d-none" type="radio" id="size-3" value="L" name="size" />
-                                            <label for="size-3" class="width-80"><span>L</span></label>
+                                            <input class="d-none" type="radio" id="color-23" name="color2" value="Kék"/>
+                                            <label for="color-23" class="width-80"><span style="background-color: blue"></span></label>
                                         </li>
                                     </ul>
                                 </div>
@@ -166,8 +166,8 @@
                                     $ip_add = getRealUserIp();
                                     $p_id = $pro_id;
                                     $product_qty = $_POST['quantity'];
-                                    $product_size = $_POST['size'];
-                                    $product_color = $_POST['color'];
+                                    $product_size = $_POST['color1'];
+                                    $product_color = $_POST['color2'];
                                     $check_product = "select * from cart where ip_add='$ip_add' AND p_id='$p_id' AND color='$product_color' AND size='$product_size'";
                                     $run_check = mysqli_query($con,$check_product);
                                     if(mysqli_num_rows($run_check)>0) {
