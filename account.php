@@ -55,8 +55,7 @@
                                         <h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Jelentkezz be!</h4>
                                     </div>
                                     <div class="col-12">
-                                        <!--
-                                        <form action="" method="post">
+                                        <form hidden action="" method="post">
                                             <div class="row row-cols-1 row-cols-md-2">
                                                 <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
                                                     <input class="medium-input bg-white margin-25px-bottom required" type="text" name="c_email" placeholder="A Neved">
@@ -90,7 +89,41 @@
                                         </div><!-- text-center Ends -->
                                         </form><!--form Ends -->
                                         <!-- end contact form -->
-                                        
+                                        <?php
+                                            if(isset($_POST['login'])){
+                                                echo "<script>console.log('aa');</script>";
+                                                $customer_email = $_POST['c_email'];
+                                                $customer_pass = $_POST['c_pass'];
+                                                $select_customer = "select * from customers where customer_email='$customer_email' AND customer_pass='$customer_pass'";
+                                                $run_customer = mysqli_query($con,$select_customer);
+                                                $get_ip = getRealUserIp();
+                                                echo "<script>console.log('ab');</script>";
+                                                $check_customer = mysqli_num_rows($run_customer);
+                                                $select_cart = "select * from cart where ip_add='$get_ip'";
+                                                $run_cart = mysqli_query($con,$select_cart);
+                                                $check_cart = mysqli_num_rows($run_cart);
+                                                echo "<script>console.log('ac');</script>";
+                                                if($check_customer==0){
+                                                    echo "<script>alert('password or email is wrong')</script>";
+                                                    exit();
+                                                    echo "<script>console.log('ad');</script>";
+                                                }
+                                                if($check_customer==1 AND $check_cart==0){
+                                                    $_SESSION['customer_email']=$customer_email;
+                                                    echo "<script>alert('You are Logged In')</script>";
+                                                    echo "<script>window.open('account.php','_self')</script>";
+                                                    echo "<script>console.log('ae');</script>";
+                                                }
+                                                else {
+                                                    $_SESSION['customer_email']=$customer_email;
+                                                    echo "<script>alert('You are Logged In')</script>";
+                                                    echo "<script>window.open('cart.php','_self')</script>";
+                                                    echo "<script>console.log('af');</script>";
+                                                } 
+                                                echo "<script>console.log('az');</script>";
+                                            }
+                                            echo "<script>console.log('ax');</script>";
+                                        ?>
                                     </div>
                                 </div>
                             </div>
@@ -107,8 +140,7 @@
                                         <h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Regisztráld fiókodat!</h4>
                                     </div>
                                     <div class="col-12">
-                                        <!--
-                                        <form action="email-templates/contact-form.php" method="post">
+                                        <form hidden action="email-templates/contact-form.php" method="post">
                                             <div class="row row-cols-1 row-cols-md-2">
                                                 <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
                                                     <input class="medium-input bg-white margin-25px-bottom required" type="text" name="name" placeholder="A Neved">
@@ -132,15 +164,15 @@
                                         
                                         <form action="" method="post" enctype="multipart/form-data" ><!-- form Starts -->
                                         <div class="form-group" ><!-- form-group Starts -->
-                                        <label>Neved</label>
+                                        <label>Customer Name</label>
                                         <input type="text" class="form-control" name="c_name" required>
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
-                                        <label> Email Címed</label>
+                                        <label> Customer Email</label>
                                         <input type="text" class="form-control" name="c_email" required>
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
-                                        <label> Jelszavad </label>
+                                        <label> Customer Password </label>
                                         <div class="input-group"><!-- input-group Starts -->
                                         <span class="input-group-addon"><!-- input-group-addon Starts -->
                                         <i class="fa fa-check tick1"> </i>
@@ -156,7 +188,7 @@
                                         </div><!-- input-group Ends -->
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
-                                        <label> Jelszó Megerősítése</label>
+                                        <label> Confirm Password </label>
                                         <div class="input-group"><!-- input-group Starts -->
                                         <span class="input-group-addon"><!-- input-group-addon Starts -->
                                         <i class="fa fa-check tick2"> </i>
@@ -166,22 +198,30 @@
                                         </div><!-- input-group Ends -->
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
-                                        <label> Régió </label>
+                                        <label> Customer Country </label>
                                         <input type="text" class="form-control" name="c_country" required>
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
-                                        <label> Város </label>
+                                        <label> Customer City </label>
                                         <input type="text" class="form-control" name="c_city" required>
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
-                                        <label> Telefonszám</label>
+                                        <label> Customer Contact </label>
                                         <input type="text" class="form-control" name="c_contact" required>
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
-                                        <label> Cím </label>
+                                        <label> Customer Address </label>
                                         <input type="text" class="form-control" name="c_address" required>
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
+                                        <label> Customer Image </label>
+                                        <input type="file" class="form-control" name="c_image" required>
+                                        </div><!-- form-group Ends -->
+                                        <div class="form-group"><!-- form-group Starts -->
+                                        <center>
+                                        <!-- <label> Captcha Verification </label> -->
+                                        <!-- <div class="g-recaptcha" data-sitekey="6LcHnoQaAAAAAF_WTAEPkd_XO_9XC80G6N1MjrH2"></div> -->
+                                        </center>
                                         </div><!-- form-group Ends -->
                                         <div class="text-center"><!-- text-center Starts -->
                                         <button type="submit" name="register" class="btn btn-primary">
@@ -199,7 +239,10 @@
                                                 $c_city = $_POST['c_city'];
                                                 $c_contact = $_POST['c_contact'];
                                                 $c_address = $_POST['c_address'];
+                                                $c_image = $_FILES['c_image']['name'];
+                                                $c_image_tmp = $_FILES['c_image']['tmp_name'];
                                                 $c_ip = getRealUserIp();
+                                                move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
                                                 $get_email = "select * from customers where customer_email='$c_email'";
                                                 $run_email = mysqli_query($con,$get_email);
                                                 $check_email = mysqli_num_rows($run_email);
@@ -207,7 +250,7 @@
                                                     echo "<script>alert('Ez az email cím már regisztrálva lett. Próbálj másikat.')</script>";
                                                     exit();
                                                 }
-                                                $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_ip')";
+                                                $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
                                                 $run_customer = mysqli_query($con,$insert_customer);
                                                 $sel_cart = "select * from cart where ip_add='$c_ip'";
                                                 $run_cart = mysqli_query($con,$sel_cart);
@@ -343,5 +386,3 @@ if(val.length<=6)no=1;
 }
 
 </script>
-
-
