@@ -130,7 +130,7 @@
                                             <label for="color-13" class="width-80"><span style="background-color: dodgerblue"></span></label>
                                         </li>
                                         <li>
-                                            <input class="d-none" type="radio" id="color-14" name="color1" value="Kék"/>
+                                            <input class="d-none" type="radio" id="color-14" name="color1" value="Piros"/>
                                             <label for="color-14" class="width-80"><span style="background-color: indianred"></span></label>
                                         </li>
                                     </ul>
@@ -151,7 +151,7 @@
                                             <label for="color-23" class="width-80"><span style="background-color: dodgerblue"></span></label>
                                         </li>
                                         <li>
-                                            <input class="d-none" type="radio" id="color-24" name="color1" value="Kék"/>
+                                            <input class="d-none" type="radio" id="color-24" name="color1" value="Piros"/>
                                             <label for="color-24" class="width-80"><span style="background-color: indianred"></span></label>
                                         </li>
                                     </ul>
