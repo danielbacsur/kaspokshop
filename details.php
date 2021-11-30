@@ -119,11 +119,11 @@
                                     <ul class="alt-font shop-color">
                                         <li>
                                             <input class="d-none" type="radio" id="color-11" name="color1" value="Fekete" checked />
-                                            <label for="color-11" class="width-80"><span style="background-color: lemonchiffon "></span></label>
+                                            <label for="color-11" class="width-80"><span style="background-color: black "></span></label>
                                         </li>
                                         <li>
                                             <input class="d-none" type="radio" id="color-12" name="color1" value="Fehér"/>
-                                            <label for="color-12" class="width-80"><span style="background-color: black"></span></label>
+                                            <label for="color-12" class="width-80"><span style="background-color: lemonchiffon"></span></label>
                                         </li>
                                         <li>
                                             <input class="d-none" type="radio" id="color-13" name="color1" value="Kék"/>
