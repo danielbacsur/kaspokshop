@@ -119,15 +119,15 @@
                                     <ul class="alt-font shop-color">
                                         <li>
                                             <input class="d-none" type="radio" id="color-11" name="color1" value="Fehér" checked />
-                                            <label for="color-11" class="width-80"><span style="background-color: red"></span></label>
+                                            <label for="color-11" class="width-80"><span style="background-color: white"></span></label>
                                         </li>
                                         <li>
                                             <input class="d-none" type="radio" id="color-12" name="color1" value="Fekete"/>
-                                            <label for="color-12" class="width-80"><span style="background-color: green"></span></label>
+                                            <label for="color-12" class="width-80"><span style="background-color: black"></span></label>
                                         </li>
                                         <li>
                                             <input class="d-none" type="radio" id="color-13" name="color1" value="Kék"/>
-                                            <label for="color-13" class="width-80"><span style="background-color: blue"></span></label>
+                                            <label for="color-13" class="width-80"><span style="background-color: dodgerblue"></span></label>
                                         </li>
                                     </ul>
                                 </div>
@@ -136,11 +136,11 @@
                                     <ul class="alt-font shop-color">
                                         <li>
                                             <input class="d-none" type="radio" id="color-21" name="color2" value="Fehér" checked />
-                                            <label for="color-21" class="width-80"><span style="background-color: red"></span></label>
+                                            <label for="color-21" class="width-80"><span style="background-color: white"></span></label>
                                         </li>
                                         <li>
                                             <input class="d-none" type="radio" id="color-22" name="color2" value="Fekete"/>
-                                            <label for="color-22" class="width-80"><span style="background-color: green"></span></label>
+                                            <label for="color-22" class="width-80"><span style="background-color: black"></span></label>
                                         </li>
                                         <li>
                                             <input class="d-none" type="radio" id="color-23" name="color2" value="Kék"/>
