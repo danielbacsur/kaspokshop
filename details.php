@@ -144,7 +144,7 @@
                                         </li>
                                         <li>
                                             <input class="d-none" type="radio" id="color-23" name="color2" value="Kék"/>
-                                            <label for="color-23" class="width-80"><span style="background-color: blue"></span></label>
+                                            <label for="color-23" class="width-80"><span style="background-color: dodgerblue"></span></label>
                                         </li>
                                     </ul>
                                 </div>
