@@ -55,7 +55,7 @@
                                         <h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Jelentkezz be!</h4>
                                     </div>
                                     <div class="col-12">
-                                        <form hidden action="" method="post">
+                                        <form action="" method="post">
                                             <div class="row row-cols-1 row-cols-md-2">
                                                 <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
                                                     <input class="medium-input bg-white margin-25px-bottom required" type="text" name="c_email" placeholder="A Neved">
@@ -71,7 +71,7 @@
                                                 </div>
                                             </div>
                                         </form>
-                                        <form action="" method="post" ><!--form Starts -->
+                                        <form hidden action="" method="post" ><!--form Starts -->
 
                                         <div class="form-group" ><!-- form-group Starts -->
                                         <label>Email</label>
@@ -140,7 +140,7 @@
                                         <h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Regisztráld fiókodat!</h4>
                                     </div>
                                     <div class="col-12">
-                                        <form hidden action="email-templates/contact-form.php" method="post">
+                                        <form  action="email-templates/contact-form.php" method="post">
                                             <div class="row row-cols-1 row-cols-md-2">
                                                 <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
                                                     <input class="medium-input bg-white margin-25px-bottom required" type="text" name="name" placeholder="A Neved">
@@ -162,7 +162,7 @@
                                             <div class="form-results d-none"></div>
                                         </form>
                                         
-                                        <form action="" method="post" enctype="multipart/form-data" ><!-- form Starts -->
+                                        <form hidden action="" method="post" enctype="multipart/form-data" ><!-- form Starts -->
                                         <div class="form-group" ><!-- form-group Starts -->
                                         <label>Customer Name</label>
                                         <input type="text" class="form-control" name="c_name" required>
