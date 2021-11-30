@@ -116,7 +116,7 @@
                             <form id="order_form" class="margin-4-rem-top" action="" method="post">
                                 <div class="margin-20px-bottom">
                                     <label class="text-extra-dark-gray text-extra-small font-weight-500 alt-font text-uppercase w-60px">Szín</label>
-                                    <ul class="alt-font shop-size">
+                                    <ul class="alt-font shop-color">
                                         <li>
                                             <input class="d-none" type="radio" id="color-11" name="color1" value="Fehér" checked />
                                             <label for="color-11" class="width-80"><span style="background-color: lemonchiffon "></span></label>
