@@ -164,15 +164,15 @@
                                         
                                         <form action="" method="post" enctype="multipart/form-data" ><!-- form Starts -->
                                         <div class="form-group" ><!-- form-group Starts -->
-                                        <label>Customer Name</label>
+                                        <label>Neved</label>
                                         <input type="text" class="form-control" name="c_name" required>
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
-                                        <label> Customer Email</label>
+                                        <label> Email címed</label>
                                         <input type="text" class="form-control" name="c_email" required>
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
-                                        <label> Customer Password </label>
+                                        <label> Jelszavad </label>
                                         <div class="input-group"><!-- input-group Starts -->
                                         <span class="input-group-addon"><!-- input-group-addon Starts -->
                                         <i class="fa fa-check tick1"> </i>
@@ -188,7 +188,7 @@
                                         </div><!-- input-group Ends -->
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
-                                        <label> Confirm Password </label>
+                                        <label> Jelszó megerősítése</label>
                                         <div class="input-group"><!-- input-group Starts -->
                                         <span class="input-group-addon"><!-- input-group-addon Starts -->
                                         <i class="fa fa-check tick2"> </i>
@@ -198,30 +198,22 @@
                                         </div><!-- input-group Ends -->
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
-                                        <label> Customer Country </label>
+                                        <label> Ország</label>
                                         <input type="text" class="form-control" name="c_country" required>
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
-                                        <label> Customer City </label>
+                                        <label> Város </label>
                                         <input type="text" class="form-control" name="c_city" required>
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
-                                        <label> Customer Contact </label>
+                                        <label> Telefonszám</label>
                                         <input type="text" class="form-control" name="c_contact" required>
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
-                                        <label> Customer Address </label>
+                                        <label> Lakcím </label>
                                         <input type="text" class="form-control" name="c_address" required>
                                         </div><!-- form-group Ends -->
                                         <div class="form-group"><!-- form-group Starts -->
-                                        <label> Customer Image </label>
-                                        <input type="file" class="form-control" name="c_image" required>
-                                        </div><!-- form-group Ends -->
-                                        <div class="form-group"><!-- form-group Starts -->
-                                        <center>
-                                        <!-- <label> Captcha Verification </label> -->
-                                        <!-- <div class="g-recaptcha" data-sitekey="6LcHnoQaAAAAAF_WTAEPkd_XO_9XC80G6N1MjrH2"></div> -->
-                                        </center>
                                         </div><!-- form-group Ends -->
                                         <div class="text-center"><!-- text-center Starts -->
                                         <button type="submit" name="register" class="btn btn-primary">
@@ -239,10 +231,7 @@
                                                 $c_city = $_POST['c_city'];
                                                 $c_contact = $_POST['c_contact'];
                                                 $c_address = $_POST['c_address'];
-                                                $c_image = $_FILES['c_image']['name'];
-                                                $c_image_tmp = $_FILES['c_image']['tmp_name'];
                                                 $c_ip = getRealUserIp();
-                                                move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
                                                 $get_email = "select * from customers where customer_email='$c_email'";
                                                 $run_email = mysqli_query($con,$get_email);
                                                 $check_email = mysqli_num_rows($run_email);
@@ -250,7 +239,7 @@
                                                     echo "<script>alert('Ez az email cím már regisztrálva lett. Próbálj másikat.')</script>";
                                                     exit();
                                                 }
-                                                $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip')";
+                                                $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_ip')";
                                                 $run_customer = mysqli_query($con,$insert_customer);
                                                 $sel_cart = "select * from cart where ip_add='$c_ip'";
                                                 $run_cart = mysqli_query($con,$sel_cart);
