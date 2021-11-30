@@ -80,12 +80,12 @@
                                         <div class="form-group" ><!-- form-group Starts -->
                                         <label>Jel</label>
                                         <input type="password" class="form-control" name="c_pass" required >
-                                        <h4 align="center">
+                                        <h4 hidden align="center">
                                         <a href="forgot_pass.php"> FP </a>
                                         </h4>
                                         </div><!-- form-group Ends -->
                                         <div class="text-center" ><!-- text-center Starts -->
-                                        <button name="login" value="Login" class="btn btn-primary" > LOG</button>
+                                        <button name="login" value="Login" class="btn btn-primary" > Bejelenkezés</button>
                                         </div><!-- text-center Ends -->
                                         </form><!--form Ends -->
                                         <!-- end contact form -->
@@ -217,7 +217,7 @@
                                         </div><!-- form-group Ends -->
                                         <div class="text-center"><!-- text-center Starts -->
                                         <button type="submit" name="register" class="btn btn-primary">
-                                        <i class="fa fa-user-md"></i> Register
+                                        <i class="fa fa-user-md"></i> Regisztrálás
                                         </button>
                                         </div><!-- text-center Ends -->
                                         </form><!-- form Ends -->
@@ -342,28 +342,28 @@ if(val.length<=6)no=1;
   {
    $("#meter").animate({width:'50px'},300);
    meter.style.backgroundColor="red";
-   document.getElementById("pass_type").innerHTML="Very Weak";
+   document.getElementById("pass_type").innerHTML="Nagyon Gyenge";
   }
 
   if(no==2)
   {
    $("#meter").animate({width:'100px'},300);
    meter.style.backgroundColor="#F5BCA9";
-   document.getElementById("pass_type").innerHTML="Weak";
+   document.getElementById("pass_type").innerHTML="Gyenge";
   }
 
   if(no==3)
   {
    $("#meter").animate({width:'150px'},300);
    meter.style.backgroundColor="#FF8000";
-   document.getElementById("pass_type").innerHTML="Good";
+   document.getElementById("pass_type").innerHTML="Jó";
   }
 
   if(no==4)
   {
    $("#meter").animate({width:'200px'},300);
    meter.style.backgroundColor="#00FF40";
-   document.getElementById("pass_type").innerHTML="Strong";
+   document.getElementById("pass_type").innerHTML="Erős";
   }
  }
 
