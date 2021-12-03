@@ -67,7 +67,7 @@ $receiver_name 	= 'Sikeres Vásárlónk!';
 $subject 	= 'Rendeltél';
 
 $email 	= $_SESSION['customer_email'];
-$get_customer = "select * from customers where customer_email='$c_email'";
+$get_customer = "select * from customers where customer_email='$email'";
 $run_customer = mysqli_query($con,$get_customer);
 $row_customer = mysqli_fetch_array($run_customer);
 $name = $row_customer['customer_name'];
