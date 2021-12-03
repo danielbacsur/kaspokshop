@@ -11,7 +11,7 @@
         <div class="main-content">
 			<!-- start section -->
 			<section class="parallax p-0 bottom-0px" data-parallax-background-ratio="0.3" style="background-image:url('images/home-bg-wide.png');">
-				<div class="position-absolute cover-background top-0px left-0px w-100 h-100" style="background-image:url('images/home-leaves.png');"></div>
+				<div hidden class="position-absolute cover-background top-0px left-0px w-100 h-100" style="background-image:url('images/home-leaves.png');"></div>
 				<div class="container">
 					<div class="row">
 						<div class="col-12 col-lg-5 col-md-6 col-sm-7 full-screen md-h-650px sm-h-500px d-flex flex-column justify-content-center padding-8-rem-tb">

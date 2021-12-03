@@ -179,7 +179,7 @@
                                     $check_product = "select * from cart where ip_add='$ip_add' AND p_id='$p_id' AND color='$product_color' AND size='$product_size'";
                                     $run_check = mysqli_query($con,$check_product);
                                     if(mysqli_num_rows($run_check)>0) {
-                                        echo "<script>alert('This Product is already added in cart')</script>";
+                                        echo "<script>alert('Ez a termék már hozzá lett adva a kosárhoz!')</script>";
                                         echo "<script>window.open('$pro_url','_self')</script>";
                                     }
                                     else {

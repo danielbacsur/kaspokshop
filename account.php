@@ -104,19 +104,19 @@
                                                 $check_cart = mysqli_num_rows($run_cart);
                                                 echo "<script>console.log('ac');</script>";
                                                 if($check_customer==0){
-                                                    echo "<script>alert('password or email is wrong')</script>";
+                                                    echo "<script>alert('Hibás email cím vagy jelszó!')</script>";
                                                     exit();
                                                     echo "<script>console.log('ad');</script>";
                                                 }
                                                 if($check_customer==1 AND $check_cart==0){
                                                     $_SESSION['customer_email']=$customer_email;
-                                                    echo "<script>alert('You are Logged In')</script>";
+                                                    echo "<script>alert('Sikeresen bejelentkeztél!')</script>";
                                                     echo "<script>window.open('account.php','_self')</script>";
                                                     echo "<script>console.log('ae');</script>";
                                                 }
                                                 else {
                                                     $_SESSION['customer_email']=$customer_email;
-                                                    echo "<script>alert('You are Logged In')</script>";
+                                                    echo "<script>alert('Sikeresen bejelentkeztél!')</script>";
                                                     echo "<script>window.open('cart.php','_self')</script>";
                                                     echo "<script>console.log('af');</script>";
                                                 } 
