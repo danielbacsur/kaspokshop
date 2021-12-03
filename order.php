@@ -58,9 +58,6 @@ $run_delete = mysqli_query($con,$delete_cart);
 
 
 
-
-// Email Receiver Address
-$receiver_email = 'kaspokshop@danielbacsur.com';
 // Email Receiver Name for SMTP Email
 $receiver_name 	= 'Sikeres Vásárlónk!';
 // Email Subject
@@ -106,7 +103,7 @@ $name = $row_customer['customer_name'];
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     // More headers
     $headers .= 'From: <' . $email . '>' . "\r\n";
-    mail( $receiver_email, $subject, $message, $headers );
+    mail( $email, $subject, $message, $headers );
 
 
 
