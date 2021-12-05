@@ -76,8 +76,8 @@ $color_name2 = $row_color2['name'];
 $get_customer = "select * from customers where customer_id='$c_id'";
 $run_customer = mysqli_query($con,$get_customer);
 $row_customer = mysqli_fetch_array($run_customer);
-$customer_email = $row_customer['customer_email'];
-echo $customer_email;
+$customer_name = $row_customer['customer_name'];
+echo $customer_name;
  ?>
  </td>
 <td bgcolor="orange" ><?php echo $invoice_no; ?></td>
