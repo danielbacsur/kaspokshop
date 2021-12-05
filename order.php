@@ -112,10 +112,10 @@ $name = $row_customer['customer_name'];
 
 
 
+    */
 echo "<script>alert('Rendelésed sikeresen rögzítettük! Köszönjük!')</script>";
 
 echo "<script>window.open('account.php','_self')</script>";
-*/
 }
 	
 ?>
