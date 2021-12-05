@@ -8,17 +8,16 @@ else { ?>
             <div class="panel panel-default"><!-- panel panel-default Starts -->
                 <div class="panel-heading"><!-- panel-heading Starts -->
                     <h3 class="panel-title"><!-- panel-title Starts -->
-                        <i class="fa fa-money fa-fw"></i> View Orders
+                        <i class="fa fa-money fa-fw"></i> Rendelések Megtekintése
                     </h3><!-- panel-title Ends -->
                 </div><!-- panel-heading Ends -->
-                    <div class="panel-body"><!-- panel-body Starts -->
-                        <div class="table-responsive"><!-- table-responsive Starts -->
+                <div class="panel-body"><!-- panel-body Starts -->
+                    <div class="table-responsive"><!-- table-responsive Starts -->
                         <table class="table table-bordered table-hover table-striped"><!-- table table-bordered table-hover table-striped Starts -->
                             <thead><!-- thead Starts -->
                                 <tr>
                                     <th>#</th>
                                     <th>Customer</th>
-                                    <th>Invoice</th>
                                     <th>Product</th>
                                     <th>Qty</th>
                                     <th>Elsődleges Szin</th>
