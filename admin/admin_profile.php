@@ -37,25 +37,25 @@ $admin_contact = $row_admin['admin_contact'];
 <div class="panel-body"><!-- panel-body Starts -->
 <form class="form-horizontal" method="post" enctype="multipart/form-data"><!-- form-horizontal Starts -->
 <div class="form-group"><!-- form-group Starts -->
-<label class="col-md-3 control-label">User Name: </label>
+<label class="col-md-3 control-label">Név: </label>
 <div class="col-md-6"><!-- col-md-6 Starts -->
 <input type="text" name="admin_name" class="form-control" required value="<?php echo $admin_name; ?>">
 </div><!-- col-md-6 Ends -->
 </div><!-- form-group Ends -->
 <div class="form-group"><!-- form-group Starts -->
-<label class="col-md-3 control-label">User Email: </label>
+<label class="col-md-3 control-label">Email: </label>
 <div class="col-md-6"><!-- col-md-6 Starts -->
 <input type="text" name="admin_email" class="form-control" required value="<?php echo $admin_email; ?>">
 </div><!-- col-md-6 Ends -->
 </div><!-- form-group Ends -->
 <div class="form-group"><!-- form-group Starts -->
-<label class="col-md-3 control-label">User Password: </label>
+<label class="col-md-3 control-label">Jelszó: </label>
 <div class="col-md-6"><!-- col-md-6 Starts -->
 <input type="text" name="admin_pass" class="form-control" required value="<?php echo $admin_pass; ?>">
 </div><!-- col-md-6 Ends -->
 </div><!-- form-group Ends -->
 <div class="form-group"><!-- form-group Starts -->
-<label class="col-md-3 control-label">User Contact: </label>
+<label class="col-md-3 control-label">Kontakt: </label>
 <div class="col-md-6"><!-- col-md-6 Starts -->
 <input type="text" name="admin_contact" class="form-control" required value="<?php echo $admin_contact; ?>">
 </div><!-- col-md-6 Ends -->
