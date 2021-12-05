@@ -410,7 +410,7 @@ else {
 
 <a href="#" data-toggle="collapse" data-target="#admins">
 
-<i class="fa fa-fw fa-gear"></i> Admins
+<i class="fa fa-fw fa-gear"></i> Adminok
 
 <i class="fa fa-fw fa-caret-down"></i>
 
@@ -428,7 +428,7 @@ else {
 </li>
 
 <li>
-<a href="index.php?user_profile=<?php echo $admin_id; ?>"> Edit Profile </a>
+<a href="index.php?admin_profile=<?php echo $admin_id; ?>"> Fiók szerkesztése </a>
 </li>
 
 </ul>
