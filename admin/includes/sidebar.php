@@ -408,23 +408,23 @@ else {
 
 <li><!-- li Starts -->
 
-<a href="#" data-toggle="collapse" data-target="#users">
+<a href="#" data-toggle="collapse" data-target="#admins">
 
-<i class="fa fa-fw fa-gear"></i> Users
+<i class="fa fa-fw fa-gear"></i> Admins
 
 <i class="fa fa-fw fa-caret-down"></i>
 
 
 </a>
 
-<ul id="users" class="collapse">
+<ul id="admins" class="collapse">
 
 <li>
-<a href="index.php?insert_user"> Insert User </a>
+<a href="index.php?insert_admin"> Admin hozzáadása </a>
 </li>
 
 <li>
-<a href="index.php?view_users"> View Users </a>
+<a href="index.php?view_admins"> Adminok megtekintése </a>
 </li>
 
 <li>
