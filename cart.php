@@ -70,8 +70,8 @@
                                                         $only_price = $row_cart['p_price'];
                                                         $get_products = "select * from products where product_id='$pro_id'";
                                                         $run_products = mysqli_query($con,$get_products);
-                                                        while($row_products = mysqli_fetch_array($run_products)){
-                                                            $select_color1 = "select * from colors where id=$pro_color";
+
+                                                        $select_color1 = "select * from colors where id=$pro_color";
                                                             $run_color1 = mysqli_query($con,$select_colors1);
                                                             $row_color1 = mysqli_fetch_array($run_color1);
                                                             $color_name1 = $row_color1['name'];
@@ -80,6 +80,9 @@
                                                             $run_color2 = mysqli_query($con,$select_colors2);
                                                             $row_color2 = mysqli_fetch_array($run_color2);
                                                             $color_name2 = $row_color2['name'];
+                                                            
+                                                        while($row_products = mysqli_fetch_array($run_products)){
+                                                            
 
 
                                                             $product_title = $row_products['product_title'];
