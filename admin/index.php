@@ -138,8 +138,8 @@ include("view_admins.php");
 if(isset($_GET['delete_admin'])){
 include("delete_admin.php");
 }
-if(isset($_GET['admin_profile'])){
-include("admin_profile.php");
+if(isset($_GET['edit_admin'])){
+include("edit_admin.php");
 }
 if(isset($_GET['insert_box'])){
 include("insert_box.php");
