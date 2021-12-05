@@ -77,8 +77,8 @@ $get_customer = "select * from customers where customer_id='$c_id'";
 $run_customer = mysqli_query($con,$get_customer);
 $row_customer = mysqli_fetch_array($run_customer);
 $customer_name = $row_customer['customer_name'];
-echo $customer_name;
- ?>
+?>
+<a href="index.php?view_customers&c_id=<?php echo $c_id; ?>"><?php echo $customer_name; ?></a>
  </td>
 <td bgcolor="orange" ><?php echo $invoice_no; ?></td>
 <td><?php echo $product_title; ?></td>
