@@ -30,7 +30,7 @@ else { ?>
                             </thead><!-- thead Ends -->
                             <tbody><!-- tbody Starts -->
                                 <?php
-                                $i = 0;
+                                $i = 1;
                                 $get_orders = "select * from orders";
                                 $run_orders = mysqli_query($con,$get_orders);
                                 while ($row_orders = mysqli_fetch_array($run_orders)) {
