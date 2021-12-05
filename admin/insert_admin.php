@@ -87,17 +87,12 @@ if(isset($_POST['submit'])){
 $admin_name = $_POST['admin_name'];
 $admin_email = $_POST['admin_email'];
 $admin_pass = $_POST['admin_pass'];
-$admin_country = $_POST['admin_country'];
-$admin_job = $_POST['admin_job'];
+$admin_pass_hash = hash("sha256", $admin_pass);
 $admin_contact = $_POST['admin_contact'];
-$admin_about = $_POST['admin_about'];
-$admin_image = $_FILES['admin_image']['name'];
-$temp_admin_image = $_FILES['admin_image']['tmp_name'];
-move_uploaded_file($temp_admin_image,"admin_images/$admin_image");
-$insert_admin = "insert into admins (admin_name,admin_email,admin_pass,admin_image,admin_contact,admin_country,admin_job,admin_about) values ('$admin_name','$admin_email','$admin_pass','$admin_image','$admin_contact','$admin_country','$admin_job','$admin_about')";
+$insert_admin = "insert into admins (admin_name,admin_email,admin_pass,admin_image,admin_contact,admin_country,admin_job,admin_about) values ('$admin_name','$admin_email','$admin_pass_hash','$admin_image','$admin_contact','$admin_country','$admin_job','$admin_about')";
 $run_admin = mysqli_query($con,$insert_admin);
 if($run_admin){
-echo "<script>alert('One User Has Been Inserted successfully')</script>";
+echo "<script>alert('Admin hozzáadása sikeres!')</script>";
 echo "<script>window.open('index.php?view_users','_self')</script>";
 }
 }
