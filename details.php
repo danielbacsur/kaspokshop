@@ -127,10 +127,10 @@
                                             $color_code = $row_colors['code'];
                                             ?>
                                             <li>
-                                                <input class="d-none" type="radio" id="color-1<? echo $color_id; ?>" name="color1" value="<? echo $color_id ?>" <?php if(counter==0) echo "checked"; ?> />
+                                                <input class="d-none" type="radio" id="color-1<? echo $color_id; ?>" name="color1" value="<? echo $color_id ?>" <?php if($counter==0) echo "checked"; ?> />
                                                 <label for="color-1<?php echo $color_id; ?>" class="width-80"><span style="background-color: <?php echo $color_code; ?>"></span></label>
                                             </li>
-                                            counter++;
+                                            <?php $counter++; ?>
                                         <?php } ?>
                                     </ul>
                                 </div>
@@ -147,10 +147,10 @@
                                             $color_code = $row_colors['code'];
                                             ?>
                                             <li>
-                                                <input class="d-none" type="radio" id="color-2<? echo $color_id; ?>" name="color2" value="<? echo $color_id; ?>" <?php if(counter==0) echo "checked"; ?> />
+                                                <input class="d-none" type="radio" id="color-2<? echo $color_id; ?>" name="color2" value="<? echo $color_id; ?>" <?php if($counter==0) echo "checked"; ?> />
                                                 <label for="color-2<?php echo $color_id; ?>" class="width-80"><span style="background-color: <?php echo $color_code; ?>"></span></label>
                                             </li>
-                                            counter++;
+                                            <?php $counter++; ?>
                                         <?php } ?>
                                     </ul>
                                 </div>
