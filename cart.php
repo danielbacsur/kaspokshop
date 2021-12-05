@@ -79,7 +79,7 @@
                                                             ?>
                                                     <tr> 
                                                         <td class="product-remove">
-                                                            <a name="remove" type="submit" onclick="document.getElementById('my_form').submit();" value="<?php echo $pro_id; ?>" class="btn-default text-large">&times;</a>
+                                                            <button name="remove" type="submit" value="<?php echo $pro_id; ?>" class="btn-default text-large">&times;</button>
                                                         </td>
                                                         <td class="product-thumbnail"><a href="<?php echo $product_url; ?>"><img class="cart-product-image" src="admin/product_images/<?php echo $product_img1; ?>" alt=""></a></td>
                                                         <td class="product-name">
@@ -179,7 +179,7 @@
                                             ?>
                                         <div><a href="order.php?c_id=<?php echo $customer_id; ?>" class="btn btn-dark-gray btn-large d-block btn-fancy margin-15px-top">Megrendelés</a></div>
                                         <?php } else { ?>
-                                        <div><a href="account.php" class="btn btn-dark-gray btn-large d-block btn-fancy margin-15px-top">Jelenkezz Be!</a></div>
+                                            <div><a href="account.php" class="btn btn-dark-gray btn-large d-block btn-fancy margin-15px-top">Jelenkezz Be!</a></div>
                                         <?php } ?>
                                     </div>
                                 </div>
