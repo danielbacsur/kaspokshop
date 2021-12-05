@@ -180,7 +180,7 @@
                                         echo "<script>window.open('$pro_url','_self')</script>";
                                     }
                                     else {
-                                        $query = "insert into cart (p_id,ip_add,qty,p_price,size,color) values ('$pro_id','$ip_add','$product_qty','$pro_psp_price','$product_size', '$product_color')";
+                                        $query = "insert into cart (p_id,ip_add,qty,p_price,color_primary,color_secondary) values ('$pro_id','$ip_add','$product_qty','$pro_psp_price','$product_size', '$product_color')";
                                         $run_query = mysqli_query($db,$query);
                                         echo "<script>window.open('shop.php','_self')</script>";
                                     }
