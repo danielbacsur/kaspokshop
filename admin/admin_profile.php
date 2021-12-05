@@ -63,7 +63,7 @@ $admin_contact = $row_admin['admin_contact'];
 <div class="form-group"><!-- form-group Starts -->
 <label class="col-md-3 control-label"></label>
 <div class="col-md-6"><!-- col-md-6 Starts -->
-<input type="submit" name="update" value="Update User" class="btn btn-primary form-control">
+<input type="submit" name="update" value="Jóváhagyás" class="btn btn-primary form-control">
 </div><!-- col-md-6 Ends -->
 </div><!-- form-group Ends -->
 </form><!-- form-horizontal Ends -->

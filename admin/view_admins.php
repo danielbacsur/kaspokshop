@@ -18,7 +18,7 @@ else {
 <div class="panel panel-default" ><!-- panel panel-default Starts -->
 <div class="panel-heading" ><!-- panel-heading Starts -->
 <h3 class="panel-title" ><!-- panel-title Starts -->
-<i class="fa fa-money fa-fw" ></i> ADminok megtekintése
+<i class="fa fa-money fa-fw" ></i> Adminok megtekintése
 </h3><!-- panel-title Ends -->
 </div><!-- panel-heading Ends -->
 <div class="panel-body" ><!-- panel-body Starts -->
