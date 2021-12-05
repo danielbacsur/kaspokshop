@@ -24,8 +24,8 @@ Log in
 </html>
 <?php
 if(isset($_POST['admin_login'])){
-$admin_email = mysqli_real_escape_string($con,$_POST['admin_email']);
-$admin_pass = mysqli_real_escape_string($con,$_POST['admin_pass']);
+$admin_email = $_POST['admin_email'];
+$admin_pass = $_POST['admin_pass'];
 $admin_pass_hash = hash("sha256", $admin_pass);
 $get_admin = "select * from admins where admin_email='$admin_email' AND admin_pass='$admin_pass_hash'";
 $run_admin = mysqli_query($con,$get_admin);
