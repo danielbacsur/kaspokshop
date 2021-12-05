@@ -62,7 +62,7 @@ else { ?>
                         </li>
                     </ul><!-- collapse Ends -->
                 </li><!-- relations li Ends -->
-                <li><!-- li Starts -->
+                <li hidden><!-- li Starts -->
                     <a href="#" data-toggle="collapse" data-target="#cat">
                         <i class="fa fa-fw fa-arrows-v"></i> Kategóriák
                         <i class="fa fa-fw fa-caret-down"></i>
@@ -90,7 +90,7 @@ else { ?>
                         </li>
                     </ul>
                 </li><!-- blog section li Ends -->
-                <li><!-- Coupons Section li Starts -->
+                <li hidden><!-- Coupons Section li Starts -->
                     <a href="#" data-toggle="collapse" data-target="#coupons"><!-- anchor Starts -->
                         <i class="fa fa-fw fa-arrows-v"></i> Kuponok
                         <i class="fa fa-fw fa-caret-down"></i>
