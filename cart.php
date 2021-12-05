@@ -62,6 +62,7 @@
                                                     $run_cart = mysqli_query($con,$select_cart);
                                                     $total = 0;
                                                     while($row_cart = mysqli_fetch_array($run_cart)){
+                                                        $cart_id = $row_cart['id'];
                                                         $pro_id = $row_cart['p_id'];
                                                         $pro_color = $row_cart['color'];
                                                         $pro_size = $row_cart['size'];
@@ -79,7 +80,8 @@
                                                             ?>
                                                     <tr> 
                                                         <td class="product-remove">
-                                                            <button name="remove" type="submit" value="<?php echo $pro_id; ?>" class="btn-default text-large">&times;</button>
+                                                            <button name="remove" type="submit" value="<?php echo $cart_id; ?>" class="btn-default text-large">&times;</button>
+                                                            <input
                                                         </td>
                                                         <td class="product-thumbnail"><a href="<?php echo $product_url; ?>"><img class="cart-product-image" src="admin/product_images/<?php echo $product_img1; ?>" alt=""></a></td>
                                                         <td class="product-name">
@@ -201,7 +203,7 @@
 if(isset($_POST['remove'])){
     $remove_id = $_POST['remove'];
 
-    $delete_product = "delete from cart where p_id='$remove_id'";
+    $delete_product = "delete from cart where  where id='$remove_id'";
     
     $run_delete = mysqli_query($con,$delete_product);
     
