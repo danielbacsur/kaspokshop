@@ -50,7 +50,7 @@ $c_city = $row_c['customer_city'];
 $c_contact = $row_c['customer_contact'];
 $i++;
 ?>
-<tr style="background-color: #f0f0f0;">
+<tr <?php if(isset($_GET['c_id'])) && $_GET['c_id'] == $c_id) echo 'style="background-color: #f0f0f0;"'; ?>>
 <td><?php echo $i; ?></td>
 <td><?php echo $c_name; ?></td>
 <td><?php echo $c_email; ?></td>
