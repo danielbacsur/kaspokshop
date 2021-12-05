@@ -168,7 +168,6 @@
                                     <a href="#" class="text-uppercase text-extra-small alt-font margin-20px-right font-weight-500 "><i class="feather icon-feather-heart align-middle margin-5px-right"></i>Kívánságlista</a>
                                     <a href="#" class="text-uppercase text-extra-small alt-font margin-20px-right font-weight-500 "><i class="feather icon-feather-shuffle align-middle margin-5px-right"></i>Megosztás</a>
                                 </div>
-                                <input type="hidden" id="pro_id" name="pro_id" value="<?php echo $pro_id; ?>">
                             </form>
                             <?php
                                 if(isset($_POST['add_to_cart'])){
@@ -176,11 +175,17 @@
                                     $product_qty = $_POST['quantity'];
                                     $product_size = $_POST['color1'];
                                     $product_color = $_POST['color2'];
-                                        $query = "insert into cart (p_id,ip_add,qty,p_price,size,color) values ('$pro_id','$ip_add','$product_qty','$pro_price','$product_size', '$product_color')";
+                                    $check_product = "select * from cart where ip_add='$ip_add' AND p_id='$p_id' AND color='$product_color' AND size='$product_size'";
+                                    $run_check = mysqli_query($con,$check_product);
+                                    if(mysqli_num_rows($run_check)>0) {
+                                        echo "<script>alert('Ez a termék már hozzá lett adva a kosárhoz!')</script>";
+                                        echo "<script>window.open('$pro_url','_self')</script>";
+                                    }
+                                    else {
+                                        $query = "insert into cart (p_id,ip_add,qty,p_price,size,color) values ('$pro_id','$ip_add','$product_qty','$pro_psp_price','$product_size', '$product_color')";
                                         $run_query = mysqli_query($db,$query);
-                                        echo "<script>console.log('".$pro_id.", ".$ip_add.", ".$product_qty.", ".$pro_price.", ".$product_size.", ".$product_color."')</script>";
-                                        echo "<script>alert('A teméket hozzáadtuk a kosárhoz!')</script>";
                                         echo "<script>window.open('shop.php','_self')</script>";
+                                    }
                                 }
                             ?>
                             <div class="d-flex alt-font margin-4-rem-top align-items-center">
