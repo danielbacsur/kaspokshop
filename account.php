@@ -227,6 +227,7 @@
                                                 $c_name = $_POST['c_name'];
                                                 $c_email = $_POST['c_email'];
                                                 $c_pass = $_POST['c_pass'];
+                                                $c_pass_hash = hash("sha256", $c_pass);
                                                 $c_country = $_POST['c_country'];
                                                 $c_city = $_POST['c_city'];
                                                 $c_contact = $_POST['c_contact'];
@@ -239,7 +240,7 @@
                                                     echo "<script>alert('Ez az email cím már regisztrálva lett. Próbálj másikat.')</script>";
                                                     exit();
                                                 }
-                                                $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_ip) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_ip')";
+                                                $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_ip) values ('$c_name','$c_email','$c_pass_hash','$c_country','$c_city','$c_contact','$c_address','$c_ip')";
                                                 $run_customer = mysqli_query($con,$insert_customer);
                                                 $sel_cart = "select * from cart where ip_add='$c_ip'";
                                                 $run_cart = mysqli_query($con,$sel_cart);
