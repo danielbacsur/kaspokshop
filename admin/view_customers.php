@@ -50,7 +50,7 @@ $c_city = $row_c['customer_city'];
 $c_contact = $row_c['customer_contact'];
 $i++;
 ?>
-<tr>
+<tr style="background-color: green;">
 <td><?php echo $i; ?></td>
 <td><?php echo $c_name; ?></td>
 <td><?php echo $c_email; ?></td>
