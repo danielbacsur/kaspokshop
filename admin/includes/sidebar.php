@@ -279,7 +279,7 @@ else {
 </li>
 
 <li>
-<a href="index.php?admin_profile=<?php echo $admin_id; ?>"> Fiók Szerkesztése </a>
+<a href="index.php?edit_admin=<?php echo $admin_id; ?>"> Fiók Szerkesztése </a>
 </li>
 
 </ul>

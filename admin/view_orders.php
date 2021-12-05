@@ -30,6 +30,7 @@ else { ?>
                             </thead><!-- thead Ends -->
                             <tbody><!-- tbody Starts -->
                                 <?php
+                                $i = 0;
                                 $get_orders = "select * from orders";
                                 $run_orders = mysqli_query($con,$get_orders);
                                 while ($row_orders = mysqli_fetch_array($run_orders)) {
@@ -68,7 +69,7 @@ else { ?>
                                     $due_amount = $row_customer_order['due_amount'];
                                     ?>
                                     <tr>
-                                        <td><?php echo $order_id; ?></td>
+                                        <td><?php echo $i; ?></td>
                                         <td>
                                             <a href="index.php?view_customers&c_id=<?php echo $c_id; ?>"><?php echo $customer_name; ?></a>
                                         </td>
@@ -92,7 +93,8 @@ else { ?>
                                             <a href="#">Jóváhagyás</a>
                                         </td>
                                     </tr>
-                                <?php } ?>
+                                <?php $i++;
+                                } ?>
                             </tbody><!-- tbody Ends -->
                         </table><!-- table table-bordered table-hover table-striped Ends -->
                     </div><!-- table-responsive Ends -->
