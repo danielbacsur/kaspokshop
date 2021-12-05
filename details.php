@@ -176,10 +176,6 @@
                                     $product_qty = $_POST['quantity'];
                                     $product_size = $_POST['color1'];
                                     $product_color = $_POST['color2'];
-                                    $get_price = "select * from products where product_id='$p_id'";
-                                        $run_price = mysqli_query($con,$get_price);
-                                        $row_price = mysqli_fetch_array($run_price);
-                                        $pro_price = $row_price['product_psp_price'];
                                         $query = "insert into cart (p_id,ip_add,qty,p_price,size,color) values ('$pro_id','$ip_add','$product_qty','$pro_price','$product_size', '$product_color')";
                                         $run_query = mysqli_query($db,$query);
                                         echo "<script>console.log('".$pro_id.", ".$ip_add.", ".$product_qty.", ".$pro_price.", ".$pro_price.", ".$product_color."')</script>";
