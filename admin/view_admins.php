@@ -14,10 +14,10 @@ else { ?>
                         <table class="table table-bordered table-hover table-striped" >
                             <thead>
                                 <tr>
-                                <th>Név</th>
-                                <th>Email</th>
-                                <th>Kontakt</th>
-                                <th>Törlés</th>
+                                    <th>Név</th>
+                                    <th>Email</th>
+                                    <th>Kontakt</th>
+                                    <th>Törlés</th>
                                 </tr>
                             </thead>
                             <tbody>
