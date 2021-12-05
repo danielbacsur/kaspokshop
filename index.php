@@ -58,7 +58,7 @@
 							<ul class="blog-masonry blog-wrapper grid grid-loading grid-3col xl-grid-3col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large">
 								<li class="grid-sizer"></li>
 								<?php
-                                $get_products = "select * from blog";
+                                $get_products = "select * from blogs";
                                 $run_products = mysqli_query($con,$get_products);
                                 while($row_products = mysqli_fetch_array($run_products)) {
                                     $blog_id = $row_products['blog_id'];
