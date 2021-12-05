@@ -220,33 +220,6 @@ else {
 
 
 
-<li><!-- manufacturer li Starts -->
-
-<a href="#" data-toggle="collapse" data-target="#manufacturers"><!-- anchor Starts -->
-
-<i class="fa fa-fw fa-briefcase"></i> Manufacturers
-
-<i class="fa fa-fw fa-caret-down"></i>
-
-
-</a><!-- anchor Ends -->
-
-<ul id="manufacturers" class="collapse"><!-- ul collapse Starts -->
-
-<li>
-<a href="index.php?insert_manufacturer"> Insert Manufacturer </a>
-</li>
-
-<li>
-<a href="index.php?view_manufacturers"> View Manufacturers </a>
-</li>
-
-</ul><!-- ul collapse Ends -->
-
-
-</li><!-- manufacturer li Ends -->
-
-
 <li><!-- li Starts -->
 
 <a href="#" data-toggle="collapse" data-target="#p_cat">
@@ -314,11 +287,11 @@ else {
 <ul id="blog" class="collapse">
 
 <li>
-<a href="index.php?insert_blog"> Insert blog </a>
+<a href="index.php?insert_blog"> Insert Blog </a>
 </li>
 
 <li>
-<a href="index.php?view_blog"> View blog </a>
+<a href="index.php?view_blogs"> View Blog </a>
 </li>
 
 </ul>
@@ -359,17 +332,6 @@ else {
 </ul>
 
 </li><!-- contact us li Ends -->
-
-<li><!-- about us li Starts -->
-
-<a href="index.php?edit_about_us">
-
-<i class="fa fa-fw fa-edit"></i> Edit About Us Page
-
-</a>
-
-</li><!-- about us li Ends -->
-
 
 <li><!-- Coupons Section li Starts -->
 
@@ -439,16 +401,6 @@ else {
 <a href="index.php?view_orders">
 
 <i class="fa fa-fw fa-list"></i> View Orders
-
-</a>
-
-</li>
-
-<li>
-
-<a href="index.php?view_payments">
-
-<i class="fa fa-fw fa-pencil"></i> View Payments
 
 </a>
 

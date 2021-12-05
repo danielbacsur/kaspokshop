@@ -249,8 +249,8 @@ include("edit_about_us.php");
 if(isset($_GET['insert_blog'])){
 include("insert_blog.php");
 }
-if(isset($_GET['view_blog'])){
-include("view_blog.php");
+if(isset($_GET['view_blogs'])){
+include("view_blogs.php");
 }
 if(isset($_GET['delete_blog'])){
 include("delete_blog.php");
