@@ -36,7 +36,7 @@ $pro_qty = $row_cart['qty'];
 
 $sub_total = $row_cart['p_price']*$pro_qty;
 
-$insert_pending_order = "insert into orders (customer_id,product_id,qty,color_primary, color_secondary,order_status) values ('$customer_id','$pro_id','$pro_qty','$pro_color_primary', '$peo_color_secondary','$status')";
+$insert_pending_order = "insert into orders (customer_id,product_id,qty,color_primary, color_secondary,order_status) values ('$customer_id','$pro_id','$pro_qty','$pro_color_primary', '$pro_color_secondary','$status')";
 
 $run_pending_order = mysqli_query($con,$insert_pending_order);
 
