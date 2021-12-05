@@ -70,7 +70,7 @@ else {
         $update_admin = "update admins set admin_name='$admin_name',admin_email='$admin_email',admin_pass='$admin_pass',admin_contact='$admin_contact' where admin_id='$admin_id'";
         $run_admin = mysqli_query($con,$update_admin);
         if($run_admin){
-            echo "<script>alert('A fiók szerekesztése sikeres!')</script>";
+            echo "<script>alert('Admin szerekesztése sikeres!')</script>";
             echo "<script>window.open('login.php','_self')</script>";
             session_destroy();
         }
