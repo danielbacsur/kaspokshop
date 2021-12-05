@@ -31,17 +31,18 @@ else {
 <th>Invoice</th>
 <th>Product</th>
 <th>Qty</th>
-<th>Size</th>
+<th>Szin A</th>
+<th>Szin B</th>
 <th>Order Date</th>
 <th>Total Amount</th>
 <th>Status</th>
-<th>Action</th>
+<th>Jóváhagyás</th>
 </tr>
 </thead><!-- thead Ends -->
 <tbody><!-- tbody Starts -->
 <?php
 $i = 0;
-$get_orders = "select * from pending_orders";
+$get_orders = "select * from orders";
 $run_orders = mysqli_query($con,$get_orders);
 while ($row_orders = mysqli_fetch_array($run_orders)) {
 $order_id = $row_orders['order_id'];
@@ -49,7 +50,8 @@ $c_id = $row_orders['customer_id'];
 $invoice_no = $row_orders['invoice_no'];
 $product_id = $row_orders['product_id'];
 $qty = $row_orders['qty'];
-$size = $row_orders['size'];
+$color_primary = $row_orders['color_primary'];
+$color_secondary = $row_orders['color_secondary'];
 $order_status = $row_orders['order_status'];
 $get_products = "select * from products where product_id='$product_id'";
 $run_products = mysqli_query($con,$get_products);
@@ -71,7 +73,8 @@ echo $customer_email;
 <td bgcolor="orange" ><?php echo $invoice_no; ?></td>
 <td><?php echo $product_title; ?></td>
 <td><?php echo $qty; ?></td>
-<td><?php echo $size; ?></td>
+<td><?php echo $color_primary; ?></td>
+<td><?php echo $color_secondary; ?></td>
 <td>
 <?php
 $get_customer_order = "select * from customer_orders where order_id='$order_id'";
@@ -86,16 +89,16 @@ echo $order_date;
 <td>
 <?php
 if($order_status=='pending'){
-echo $order_status='<div style="color:red;">Pending</div>';
+echo $order_status='<div style="color:red;">Függőben</div>';
 }
 else{
-echo $order_status='Completed';
+echo $order_status='Sikeres';
 }
 ?>
 </td>
 <td>
-<a href="index.php?order_delete=<?php echo $order_id; ?>" >
-<i class="fa fa-trash-o" ></i> Delete
+<a href="#" >
+<i class="fa fa-trash-o" ></i> Jóváhagyás
 </a>
 </td>
 </tr>
