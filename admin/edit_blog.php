@@ -31,11 +31,9 @@ else {
                             </div>
                         </div><!-- form-group Ends -->
                         <div class="form-group"><!-- form-group Starts -->
-                            <label class="col-md-3 control-label"> Káp: </label>
+                            <label class="col-md-3 control-label"> Kép: </label>
                             <div class="col-md-6">
                                 <input type="file" name="blog_image" class="form-control">
-                                <br>
-                                <img src="blog_images/<?php echo $blog_image; ?>" width="70" height="70" >
                             </div>
                         </div><!-- form-group Ends -->
                         <div class="form-group"><!-- form-group Starts -->
