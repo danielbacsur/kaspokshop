@@ -117,22 +117,19 @@
                                 <div class="margin-20px-bottom">
                                     <label class="text-extra-dark-gray text-extra-small font-weight-500 alt-font text-uppercase w-60px">Szín A</label>
                                     <ul class="alt-font shop-color">
-                                        <li>
-                                            <input class="d-none" type="radio" id="color-11" name="color1" value="Fekete" checked />
-                                            <label for="color-11" class="width-80"><span style="background-color: black "></span></label>
-                                        </li>
-                                        <li>
-                                            <input class="d-none" type="radio" id="color-12" name="color1" value="Fehér"/>
-                                            <label for="color-12" class="width-80"><span style="background-color: lemonchiffon"></span></label>
-                                        </li>
-                                        <li>
-                                            <input class="d-none" type="radio" id="color-13" name="color1" value="Kék"/>
-                                            <label for="color-13" class="width-80"><span style="background-color: dodgerblue"></span></label>
-                                        </li>
-                                        <li>
-                                            <input class="d-none" type="radio" id="color-14" name="color1" value="Piros"/>
-                                            <label for="color-14" class="width-80"><span style="background-color: indianred"></span></label>
-                                        </li>
+                                        <?php
+                                        $select_colors = "select * from colors";
+                                        $run_colors = mysqli_query($con,$select_colors);
+                                        while($row_colors = mysqli_fetch_array($run_colors)){
+                                            $color_id = $row_colors['id'];
+                                            $color_name = $row_colors['name'];
+                                            $color_code = $row_colors['code'];
+                                            ?>
+                                            <li>
+                                                <input class="d-none" type="radio" id="color-1<? echo $color_id; ?>" name="color1" value="<? echo $color_id ?>" checked />
+                                                <label for="color-1<?php echo $color_id; ?>" class="width-80"><span style="background-color: <?php echo $color_code; ?>"></span></label>
+                                            </li>
+                                        <?php } ?>
                                     </ul>
                                 </div>
                                 <div class="margin-20px-bottom">
@@ -147,7 +144,7 @@
                                             $color_code = $row_colors['code'];
                                             ?>
                                             <li>
-                                                <input class="d-none" type="radio" id="color-2<? echo $color_id; ?>" name="color2" value="<? echo $color_name; ?>" checked />
+                                                <input class="d-none" type="radio" id="color-2<? echo $color_id; ?>" name="color2" value="<? echo $color_id; ?>" checked />
                                                 <label for="color-2<?php echo $color_id; ?>" class="width-80"><span style="background-color: <?php echo $color_code; ?>"></span></label>
                                             </li>
                                         <?php } ?>
