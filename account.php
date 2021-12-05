@@ -94,7 +94,8 @@
                                                 echo "<script>console.log('aa');</script>";
                                                 $customer_email = $_POST['c_email'];
                                                 $customer_pass = $_POST['c_pass'];
-                                                $select_customer = "select * from customers where customer_email='$customer_email' AND customer_pass='$customer_pass'";
+                                                $customer_pass_hash = hash("sha256", $customer_pass)
+                                                $select_customer = "select * from customers where customer_email='$customer_email' AND customer_pass='$customer_pass_hash'";
                                                 $run_customer = mysqli_query($con,$select_customer);
                                                 $get_ip = getRealUserIp();
                                                 echo "<script>console.log('ab');</script>";
