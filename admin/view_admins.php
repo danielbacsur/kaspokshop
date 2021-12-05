@@ -48,7 +48,7 @@ $admin_contact = $row_admin['admin_contact'];
 <td><?php echo $admin_contact; ?></td>
 <td>
 <a href="index.php?user_delete=<?php echo $admin_id; ?>" >
-<i class="fa fa-trash-o" ></i> Delete
+<i class="fa fa-trash-o" ></i> Törlés
 </a>
 </td>
 </tr>

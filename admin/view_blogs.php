@@ -23,7 +23,7 @@ else {
 </div><!-- panel-heading Ends -->
 <div class="panel-body"><!-- panel-body Starts -->
 <?php
-$get_blog = "select * from blog";
+$get_blog = "select * from blogs";
 $run_blog = mysqli_query($con,$get_blog);
 while($row_blog = mysqli_fetch_array($run_blog)){
 $blog_id = $row_blog['blog_id'];
