@@ -26,12 +26,10 @@ else {
 <table class="table table-bordered table-hover table-striped" ><!-- table table-bordered table-hover table-striped Starts -->
 <thead><!-- thead Starts -->
 <tr>
-<th>User Name</th>
+<th>Név</th>
 <th>Email</th>
-<th>Image</th>
-<th>Country</th>
-<th>Job</th>
-<th>Delete</th>
+<th>Kontakt</th>
+<th>Törlés</th>
 </tr>
 </thead><!-- thead Ends -->
 <tbody><!-- tbody Starts -->
@@ -42,16 +40,12 @@ while($row_admin = mysqli_fetch_array($run_admin)){
 $admin_id = $row_admin['admin_id'];
 $admin_name = $row_admin['admin_name'];
 $admin_email = $row_admin['admin_email'];
-$admin_image = $row_admin['admin_image'];
-$admin_country = $row_admin['admin_country'];
-$admin_job = $row_admin['admin_job'];
+$admin_contact = $row_admin['admin_contact'];
 ?>
 <tr>
 <td><?php echo $admin_name; ?></td>
 <td><?php echo $admin_email; ?></td>
-<td><img src="admin_images/<?php echo $admin_image; ?>" width="60" height="60" ></td>
-<td><?php echo $admin_country; ?></td>
-<td><?php echo $admin_job; ?></td>
+<td><?php echo $admin_contact; ?></td>
 <td>
 <a href="index.php?user_delete=<?php echo $admin_id; ?>" >
 <i class="fa fa-trash-o" ></i> Delete
