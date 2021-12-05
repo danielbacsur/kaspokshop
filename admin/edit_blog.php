@@ -12,12 +12,15 @@ else {
         $blog_title = $row_blog['blog_title'];
         $blog_image = $row_blog['blog_blog'];
         $blog_desc = $row_blog['blog_desc'];
+        $new_s_image = $row_blog['blog_image'];
     } ?>
     <div class="row"><!-- 2 row Starts -->
         <div class="col-lg-12"><!-- col-lg-12 Starts -->
             <div class="panel panel-default"><!-- panel panel-default Starts -->
                 <div class="panel-heading"><!-- panel-heading Starts -->
-                    <h3 class="panel-title"> Blog Szerkesztése </h3>
+                    <h3 class="panel-title">
+                        <i class="fa fa-money fa-fw"></i> Blog Szerkesztése
+                    </h3>
                 </div><!-- panel-heading Ends -->
                 <div class="panel-body"><!-- panel-body Starts -->
                     <form class="form-horizontal" action="" method="post" enctype="multipart/form-data"><!-- form-horizontal Starts -->
@@ -27,7 +30,15 @@ else {
                                 <input type="text" name="blog_title" class="form-control" value="<?php echo $blog_title; ?>">
                             </div>
                         </div><!-- form-group Ends -->
-                            <div class="form-group"><!-- form-group Starts -->
+                        <div class="form-group"><!-- form-group Starts -->
+                            <label class="col-md-3 control-label"> Káp: </label>
+                            <div class="col-md-6">
+                                <input type="file" name="blog_image" class="form-control">
+                                <br>
+                                <img src="blog_images/<?php echo $blog_image; ?>" width="70" height="70" >
+                            </div>
+                        </div><!-- form-group Ends -->
+                        <div class="form-group"><!-- form-group Starts -->
                             <label class="col-md-3 control-label"> Leirás: </label>
                             <div class="col-md-6">
                                 <textarea name="blog_desc" class="form-control" rows="10" cols="19">
@@ -50,8 +61,12 @@ else {
     if(isset($_POST['update'])){
         $blog_title = $_POST['blog_title'];
         $blog_desc = $_POST['blog_desc'];
-        $blog_button = $_POST['blog_button'];
-        $blog_url = $_POST['blog_url'];
+        $blog_image = $_FILES['blog_image']['name'];
+        $tmp_image = $_FILES['blog_image']['tmp_name'];
+        if(empty($blog_image)){
+            $blog_image = $new_s_image;
+        }
+        move_uploaded_file($tmp_image,"blog_images/$blog_image");
         $update_blog = "update blog set blog_title='$blog_title',blog_image='$blog_image',blog_desc='$blog_desc' where blog_id='$blog_id'";
         $run_blog = mysqli_query($con,$update_blog);
         if($run_blog){
