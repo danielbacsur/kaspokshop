@@ -131,7 +131,7 @@
                                 </div>
                                 <div class="col-lg-4">
                                     <div class="bg-light-gray padding-50px-all lg-padding-30px-tb lg-padding-20px-lr md-padding-20px-tb">
-                                        <span class="alt-font text-large text-extra-dark-gray margin-15px-bottom d-inline-block font-weight-500">Cart totals</span>
+                                        <span class="alt-font text-large text-extra-dark-gray margin-15px-bottom d-inline-block font-weight-500">Összegzés</span>
                                             <table class="w-100 total-price-table">
                                                 <tbody>
                                                     <tr class="shipping">
