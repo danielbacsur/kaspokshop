@@ -69,12 +69,12 @@
                                                         $pro_qty = $row_cart['qty'];
                                                         $only_price = $row_cart['p_price'];
                                                         $select_color1 = "select * from colors where id='$pro_color'";
-                                                            $run_color1 = mysqli_query($con,$select_colors1);
+                                                            $run_color1 = mysqli_query($con,$select_color1);
                                                             $row_color1 = mysqli_fetch_array($run_color1);
                                                             $color_name1 = $row_color1['name'];
 
                                                             $select_color2 = "select * from colors where id='$pro_size'";
-                                                            $run_color2 = mysqli_query($con,$select_colors2);
+                                                            $run_color2 = mysqli_query($con,$select_color2);
                                                             $row_color2 = mysqli_fetch_array($run_color2);
                                                             $color_name2 = $row_color2['name'];
 
