@@ -58,6 +58,16 @@ $run_products = mysqli_query($con,$get_products);
 $row_products = mysqli_fetch_array($run_products);
 $product_title = $row_products['product_title'];
 $i++;
+
+$select_color1 = "select * from colors where id='$color_primary'";
+$run_color1 = mysqli_query($con,$select_color1);
+$row_color1 = mysqli_fetch_array($run_color1);
+$color_name1 = $row_color1['name'];
+
+$select_color2 = "select * from colors where id='$color_secondary'";
+$run_color2 = mysqli_query($con,$select_color2);
+$row_color2 = mysqli_fetch_array($run_color2);
+$color_name2 = $row_color2['name'];
 ?>
 <tr>
 <td><?php echo $i; ?></td>
@@ -73,8 +83,8 @@ echo $customer_email;
 <td bgcolor="orange" ><?php echo $invoice_no; ?></td>
 <td><?php echo $product_title; ?></td>
 <td><?php echo $qty; ?></td>
-<td><?php echo $color_primary; ?></td>
-<td><?php echo $color_secondary; ?></td>
+<td><?php echo $color_name1; ?></td>
+<td><?php echo $color_name2; ?></td>
 <td>
 <?php
 $get_customer_order = "select * from customer_orders where order_id='$order_id'";
