@@ -168,11 +168,12 @@
                                     <a href="#" class="text-uppercase text-extra-small alt-font margin-20px-right font-weight-500 "><i class="feather icon-feather-heart align-middle margin-5px-right"></i>Kívánságlista</a>
                                     <a href="#" class="text-uppercase text-extra-small alt-font margin-20px-right font-weight-500 "><i class="feather icon-feather-shuffle align-middle margin-5px-right"></i>Megosztás</a>
                                 </div>
+                                <input type="hidden" id="pro_id" name="pro_id" value="<?php echo $pro_id; ?>">
                             </form>
                             <?php
                                 if(isset($_POST['add_to_cart'])){
                                     $ip_add = getRealUserIp();
-                                    $p_id = $pro_id;
+                                    $p_id = $_POST['pro_id'];
                                     $product_qty = $_POST['quantity'];
                                     $product_size = $_POST['color1'];
                                     $product_color = $_POST['color2'];
