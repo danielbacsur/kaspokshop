@@ -97,7 +97,6 @@
                                                     <tr> 
                                                         <td class="product-remove">
                                                             <button name="remove" type="submit" value="<?php echo $cart_id; ?>" class="btn-default text-large">&times;</button>
-                                                            <input
                                                         </td>
                                                         <td class="product-thumbnail"><a href="<?php echo $product_url; ?>"><img class="cart-product-image" src="admin/product_images/<?php echo $product_img1; ?>" alt=""></a></td>
                                                         <td class="product-name">
