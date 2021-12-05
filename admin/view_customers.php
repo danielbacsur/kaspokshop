@@ -8,7 +8,7 @@ else {
 <div class="col-lg-12"><!-- col-lg-12 Starts -->
 <ol class="breadcrumb"><!-- breadcrumb Starts -->
 <li class="active">
-<i class="fa fa-dashboard"></i> Dashboard / View Customers
+<i class="fa fa-dashboard"></i> Admin Panel / Fiókok Megtekintése
 </li>
 </ol><!-- breadcrumb Ends -->
 </div><!-- col-lg-12 Ends -->
@@ -18,7 +18,7 @@ else {
 <div class="panel panel-default"><!-- panel panel-default Starts -->
 <div class="panel-heading"><!-- panel-heading Starts -->
 <h3 class="panel-title"><!-- panel-title Starts -->
-<i class="fa fa-money fa-fw"></i> View Customers
+<i class="fa fa-money fa-fw"></i> Fiókok Megtekintése
 </h3><!-- panel-title Ends -->
 </div><!-- panel-heading Ends -->
 <div class="panel-body" ><!-- panel-body Starts -->
@@ -27,13 +27,12 @@ else {
 <thead><!-- thead Starts -->
 <tr>
 <th>#</th>
-<th>Name</th>
+<th>Név</th>
 <th>Email</th>
-<th>Image</th>
-<th>Country</th>
-<th>City</th>
-<th>Phone Number</th>
-<th>Delete</th>
+<th>Ország</th>
+<th>Város</th>
+<th>Kontakt</th>
+<th>Törlés</th>
 </tr>
 </thead><!-- thead Ends -->
 <tbody><!-- tbody Starts -->
@@ -55,13 +54,12 @@ $i++;
 <td><?php echo $i; ?></td>
 <td><?php echo $c_name; ?></td>
 <td><?php echo $c_email; ?></td>
-<td><img src="../customer/customer_images/<?php echo $c_image; ?>" width="60" height="60" ></td>
 <td><?php echo $c_country; ?></td>
 <td><?php echo $c_city; ?></td>
 <td><?php echo $c_contact; ?></td>
 <td>
 <a href="index.php?customer_delete=<?php echo $c_id; ?>" >
-<i class="fa fa-trash-o" ></i> Delete
+<i class="fa fa-trash-o" ></i> Törles
 </a>
 </td>
 </tr>
