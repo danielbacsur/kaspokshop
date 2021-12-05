@@ -203,7 +203,7 @@
 if(isset($_POST['remove'])){
     $remove_id = $_POST['remove'];
 
-    $delete_product = "delete from cart where  where id='$remove_id'";
+    $delete_product = "delete from cart where id='$remove_id'";
     
     $run_delete = mysqli_query($con,$delete_product);
     
