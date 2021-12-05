@@ -120,15 +120,17 @@
                                         <?php
                                         $select_colors = "select * from colors";
                                         $run_colors = mysqli_query($con,$select_colors);
+                                        $counter = 0;
                                         while($row_colors = mysqli_fetch_array($run_colors)){
                                             $color_id = $row_colors['id'];
                                             $color_name = $row_colors['name'];
                                             $color_code = $row_colors['code'];
                                             ?>
                                             <li>
-                                                <input class="d-none" type="radio" id="color-1<? echo $color_id; ?>" name="color1" value="<? echo $color_id ?>" checked />
+                                                <input class="d-none" type="radio" id="color-1<? echo $color_id; ?>" name="color1" value="<? echo $color_id ?>" <?php if(counter==0) echo "checked"; ?> />
                                                 <label for="color-1<?php echo $color_id; ?>" class="width-80"><span style="background-color: <?php echo $color_code; ?>"></span></label>
                                             </li>
+                                            counter++;
                                         <?php } ?>
                                     </ul>
                                 </div>
@@ -138,15 +140,17 @@
                                         <?php
                                         $select_colors = "select * from colors";
                                         $run_colors = mysqli_query($con,$select_colors);
+                                        $counter = 0;
                                         while($row_colors = mysqli_fetch_array($run_colors)){
                                             $color_id = $row_colors['id'];
                                             $color_name = $row_colors['name'];
                                             $color_code = $row_colors['code'];
                                             ?>
                                             <li>
-                                                <input class="d-none" type="radio" id="color-2<? echo $color_id; ?>" name="color2" value="<? echo $color_id; ?>" checked />
+                                                <input class="d-none" type="radio" id="color-2<? echo $color_id; ?>" name="color2" value="<? echo $color_id; ?>" <?php if(counter==0) echo "checked"; ?> />
                                                 <label for="color-2<?php echo $color_id; ?>" class="width-80"><span style="background-color: <?php echo $color_code; ?>"></span></label>
                                             </li>
+                                            counter++;
                                         <?php } ?>
                                     </ul>
                                 </div>
