@@ -8,7 +8,7 @@ else {
 <div class="col-lg-12"><!-- col-lg-12 Starts -->
 <ol class="breadcrumb"><!-- breadcrumb Starts -->
 <li class="active">
-<i class="fa fa-dashboard"></i> Admin Panel / Fiókok Megtekintése
+<i class="fa fa-dashboard"></i> Admin Panel / Vevők Megtekintése
 </li>
 </ol><!-- breadcrumb Ends -->
 </div><!-- col-lg-12 Ends -->
@@ -18,7 +18,7 @@ else {
 <div class="panel panel-default"><!-- panel panel-default Starts -->
 <div class="panel-heading"><!-- panel-heading Starts -->
 <h3 class="panel-title"><!-- panel-title Starts -->
-<i class="fa fa-money fa-fw"></i> Fiókok Megtekintése
+<i class="fa fa-money fa-fw"></i> Vevők Megtekintése
 </h3><!-- panel-title Ends -->
 </div><!-- panel-heading Ends -->
 <div class="panel-body" ><!-- panel-body Starts -->

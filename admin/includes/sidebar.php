@@ -241,7 +241,7 @@ else {
 
 <a href="index.php?view_customers">
 
-<i class="fa fa-fw fa-edit"></i> Fiókok Megtekintése
+<i class="fa fa-fw fa-edit"></i> Vevők Megtekintése
 
 </a>
 
