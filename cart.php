@@ -64,8 +64,8 @@
                                                     while($row_cart = mysqli_fetch_array($run_cart)){
                                                         $cart_id = $row_cart['id'];
                                                         $pro_id = $row_cart['p_id'];
-                                                        $pro_color = $row_cart['color'];
-                                                        $pro_size = $row_cart['size'];
+                                                        $pro_color = $row_cart['color_primary'];
+                                                        $pro_size = $row_cart['color_secondary'];
                                                         $pro_qty = $row_cart['qty'];
                                                         $only_price = $row_cart['p_price'];
                                                         $select_color1 = "select * from colors where id='$pro_color'";
