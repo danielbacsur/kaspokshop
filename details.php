@@ -175,7 +175,7 @@
                                     $product_qty = $_POST['quantity'];
                                     $product_size = $_POST['color1'];
                                     $product_color = $_POST['color2'];
-                                    $check_product = "select * from cart where ip_add='$ip_add' AND p_id='$p_id' AND color='$product_color' AND size='$product_size'";
+                                    $check_product = "select * from cart where ip_add='$ip_add' AND p_id='$pro_id' AND color='$product_color' AND size='$product_size'";
                                     $run_check = mysqli_query($con,$check_product);
                                     if(mysqli_num_rows($run_check)>0) {
                                         echo "<script>alert('Ez a termék már hozzá lett adva a kosárhoz!')</script>";
