@@ -15,7 +15,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-12 col-lg-5 col-md-6 col-sm-7 full-screen md-h-650px sm-h-500px d-flex flex-column justify-content-center padding-8-rem-tb">
-							<h1 class="alt-font font-weight-600 title-large text-black letter-spacing-minus-4px margin-4-half-rem-bottom sm-letter-spacing-minus-1-half xs-w-65" style="line-height: 2em;"><img src="images/kaspok.png" alt="" style="width: auto; height: 32%;"><br>diákcég a Poliból</h1>
+							<h1 class="alt-font font-weight-600 title-large text-black letter-spacing-minus-4px margin-4-half-rem-bottom sm-letter-spacing-minus-1-half xs-w-65" style="line-height: 1.2em;"><img src="images/kaspok.png" alt="" style="width: auto; height: 32%;"><br>diákcég a Poliból</h1>
 							<a href="shop.php" class="btn btn-extra-large btn-link btn-transparent-dark-gray btn-box-shadow text-extra-dark-gray btn-rounded align-self-start font-weight-600">Vásárolj most!<span class="bg-white"></span></a>
 						</div>
 					</div>
