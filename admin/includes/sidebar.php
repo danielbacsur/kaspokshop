@@ -37,93 +37,6 @@ else {
 
 </div><!-- navbar-header Ends -->
 
-<ul class="nav navbar-right top-nav" ><!-- nav navbar-right top-nav Starts -->
-
-<li class="dropdown" ><!-- dropdown Starts -->
-
-<a href="#" class="dropdown-toggle" data-toggle="dropdown" ><!-- dropdown-toggle Starts -->
-
-<i class="fa fa-user" ></i>
-
-<?php echo $admin_name; ?> <b class="caret" ></b>
-
-
-</a><!-- dropdown-toggle Ends -->
-
-<ul class="dropdown-menu" ><!-- dropdown-menu Starts -->
-
-<li><!-- li Starts -->
-
-<a href="index.php?user_profile=<?php echo $admin_id; ?>" >
-
-<i class="fa fa-fw fa-user" ></i> Profile
-
-
-</a>
-
-</li><!-- li Ends -->
-
-<li><!-- li Starts -->
-
-<a href="index.php?view_products" >
-
-<i class="fa fa-fw fa-envelope" ></i> Products 
-
-<span class="badge" ><?php echo $count_products; ?></span>
-
-
-</a>
-
-</li><!-- li Ends -->
-
-<li><!-- li Starts -->
-
-<a href="index.php?view_customers" >
-
-<i class="fa fa-fw fa-gear" ></i> Customers
-
-<span class="badge" ><?php echo $count_customers; ?></span>
-
-
-</a>
-
-</li><!-- li Ends -->
-
-<li><!-- li Starts -->
-
-<a href="index.php?view_p_cats" >
-
-<i class="fa fa-fw fa-gear" ></i> Product Categories
-
-<span class="badge" ><?php echo $count_p_categories; ?></span>
-
-
-</a>
-
-</li><!-- li Ends -->
-
-<li class="divider"></li>
-
-<li><!-- li Starts -->
-
-<a href="logout.php">
-
-<i class="fa fa-fw fa-power-off"> </i> Log Out
-
-</a>
-
-</li><!-- li Ends -->
-
-</ul><!-- dropdown-menu Ends -->
-
-
-
-
-</li><!-- dropdown Ends -->
-
-
-</ul><!-- nav navbar-right top-nav Ends -->
-
 <div class="collapse navbar-collapse navbar-ex1-collapse"><!-- collapse navbar-collapse navbar-ex1-collapse Starts -->
 
 <ul class="nav navbar-nav side-nav"><!-- nav navbar-nav side-nav Starts -->
@@ -132,7 +45,7 @@ else {
 
 <a href="index.php?dashboard">
 
-<i class="fa fa-fw fa-dashboard"></i> Dashboard
+<i class="fa fa-fw fa-dashboard"></i> Főoldal
 
 </a>
 
@@ -142,7 +55,7 @@ else {
 
 <a href="#" data-toggle="collapse" data-target="#products">
 
-<i class="fa fa-fw fa-table"></i> Products
+<i class="fa fa-fw fa-table"></i> Termékek
 
 <i class="fa fa-fw fa-caret-down"></i>
 
@@ -152,11 +65,11 @@ else {
 <ul id="products" class="collapse">
 
 <li>
-<a href="index.php?insert_product"> Insert Products </a>
+<a href="index.php?insert_product"> Termék Hozzáadása </a>
 </li>
 
 <li>
-<a href="index.php?view_products"> View Products </a>
+<a href="index.php?view_products"> Termákek Megtekintése</a>
 </li>
 
 
@@ -168,7 +81,7 @@ else {
 
 <a href="#" data-toggle="collapse" data-target="#bundles">
 
-<i class="fa fa-fw fa-edit"></i> Bundles
+<i class="fa fa-fw fa-edit"></i> Csomagok
 
 <i class="fa fa-fw fa-caret-down"></i>
 
@@ -177,11 +90,11 @@ else {
 <ul id="bundles" class="collapse">
 
 <li>
-<a href="index.php?insert_bundle"> Insert Bundle </a>
+<a href="index.php?insert_bundle"> Csomag Hozzáadása </a>
 </li>
 
 <li>
-<a href="index.php?view_bundles"> View Bundles </a>
+<a href="index.php?view_bundles"> Csomagok Megtekintése </a>
 </li>
 
 </ul>
@@ -192,7 +105,7 @@ else {
 
 <a href="#" data-toggle="collapse" data-target="#relations"><!-- anchor Starts -->
 
-<i class="fa fa-fw fa-retweet"></i> Assign Products To Bundles Relations
+<i class="fa fa-fw fa-retweet"></i> Csomag Relációk
 
 <i class="fa fa-fw fa-caret-down"></i>
 
@@ -202,14 +115,14 @@ else {
 
 <li>
 
-<a href="index.php?insert_rel"> Insert Relation </a>
+<a href="index.php?insert_rel"> Reláció Hozzáadása</a>
 
 </li>
 
 
 <li>
 
-<a href="index.php?view_rel"> View Relations </a>
+<a href="index.php?view_rel"> Relációk Megtekintése</a>
 
 </li>
 
@@ -219,39 +132,11 @@ else {
 </li><!-- relations li Ends -->
 
 
-
-<li><!-- li Starts -->
-
-<a href="#" data-toggle="collapse" data-target="#p_cat">
-
-<i class="fa fa-fw fa-pencil"></i> Products Categories
-
-<i class="fa fa-fw fa-caret-down"></i>
-
-
-</a>
-
-<ul id="p_cat" class="collapse">
-
-<li>
-<a href="index.php?insert_p_cat"> Insert Product Category </a>
-</li>
-
-<li>
-<a href="index.php?view_p_cats"> View Products Categories </a>
-</li>
-
-
-</ul>
-
-</li><!-- li Ends -->
-
-
 <li><!-- li Starts -->
 
 <a href="#" data-toggle="collapse" data-target="#cat">
 
-<i class="fa fa-fw fa-arrows-v"></i> Categories
+<i class="fa fa-fw fa-arrows-v"></i> Kategóriák
 
 <i class="fa fa-fw fa-caret-down"></i>
 
@@ -260,11 +145,11 @@ else {
 <ul id="cat" class="collapse">
 
 <li>
-<a href="index.php?insert_cat"> Insert Category </a>
+<a href="index.php?insert_cat"> Kategória Hozzáadása </a>
 </li>
 
 <li>
-<a href="index.php?view_cats"> View Categories </a>
+<a href="index.php?view_cats"> Kategóriák Megtekintése </a>
 </li>
 
 
@@ -278,7 +163,7 @@ else {
 
 <a href="#" data-toggle="collapse" data-target="#blog">
 
-<i class="fa fa-fw fa-briefcase"></i> Blogs
+<i class="fa fa-fw fa-briefcase"></i> Blogok
 
 <i class="fa fa-fw fa-caret-down"></i>
 
@@ -287,11 +172,11 @@ else {
 <ul id="blog" class="collapse">
 
 <li>
-<a href="index.php?insert_blog"> Insert Blog </a>
+<a href="index.php?insert_blog"> Blog Hozzáadása </a>
 </li>
 
 <li>
-<a href="index.php?view_blogs"> View Blog </a>
+<a href="index.php?view_blogs"> Blogok Megtekintése </a>
 </li>
 
 </ul>
@@ -299,45 +184,11 @@ else {
 </li><!-- blog section li Ends -->
 
 
-<li><!-- contact us li Starts -->
-
-<a href="#" data-toggle="collapse" data-target="#contact_us"><!-- anchor Starts -->
-
-<i class="fa fa-fw fa-pencil"> </i> Contact Us Section
-
-<i class="fa fa-fw fa-caret-down"></i>
-
-</a><!-- anchor Ends -->
-
-<ul id="contact_us" class="collapse">
-
-<li>
-
-<a href="index.php?edit_contact_us"> Edit Contact Us </a>
-
-</li>
-
-<li>
-
-<a href="index.php?insert_enquiry"> Insert Enquiry Type </a>
-
-</li>
-
-<li>
-
-<a href="index.php?view_enquiry"> View Enquiry Types </a>
-
-</li>
-
-</ul>
-
-</li><!-- contact us li Ends -->
-
 <li><!-- Coupons Section li Starts -->
 
 <a href="#" data-toggle="collapse" data-target="#coupons"><!-- anchor Starts -->
 
-<i class="fa fa-fw fa-arrows-v"></i> Coupons
+<i class="fa fa-fw fa-arrows-v"></i> Kuponok
 
 <i class="fa fa-fw fa-caret-down"></i>
 
@@ -346,11 +197,11 @@ else {
 <ul id="coupons" class="collapse"><!-- ul collapse Starts -->
 
 <li>
-<a href="index.php?insert_coupon"> Insert Coupon </a>
+<a href="index.php?insert_coupon"> Kupon Hozzáadása </a>
 </li>
 
 <li>
-<a href="index.php?view_coupons"> View Coupons </a>
+<a href="index.php?view_coupons"> Kuponok Megtekintése </a>
 </li>
 
 </ul><!-- ul collapse Ends -->
@@ -363,7 +214,7 @@ else {
 
 <a href="#" data-toggle="collapse" data-target="#terms" ><!-- anchor Starts -->
 
-<i class="fa fa-fw fa-table"></i> Terms
+<i class="fa fa-fw fa-table"></i> Szabályok
 
 <i class="fa fa-fw fa-caret-down"></i>
 
@@ -372,11 +223,11 @@ else {
 <ul id="terms" class="collapse"><!-- ul collapse Starts -->
 
 <li>
-<a href="index.php?insert_term"> Insert Terms </a> 
+<a href="index.php?insert_term"> Szabály Hozzáadása </a> 
 </li>
 
 <li>
-<a href="index.php?view_terms"> View Terms </a> 
+<a href="index.php?view_terms"> Szobályok Megtekintése </a> 
 </li>
 
 </ul><!-- ul collapse Ends -->
@@ -390,7 +241,7 @@ else {
 
 <a href="index.php?view_customers">
 
-<i class="fa fa-fw fa-edit"></i> View Customers
+<i class="fa fa-fw fa-edit"></i> Fiókok Megtekintése
 
 </a>
 
@@ -400,7 +251,7 @@ else {
 
 <a href="index.php?view_orders">
 
-<i class="fa fa-fw fa-list"></i> View Orders
+<i class="fa fa-fw fa-list"></i> Rendelések Megtekintése
 
 </a>
 
@@ -420,15 +271,15 @@ else {
 <ul id="admins" class="collapse">
 
 <li>
-<a href="index.php?insert_admin"> Admin hozzáadása </a>
+<a href="index.php?insert_admin"> Admin Hozzáadása </a>
 </li>
 
 <li>
-<a href="index.php?view_admins"> Adminok megtekintése </a>
+<a href="index.php?view_admins"> Adminok Megtekintése </a>
 </li>
 
 <li>
-<a href="index.php?admin_profile=<?php echo $admin_id; ?>"> Fiók szerkesztése </a>
+<a href="index.php?admin_profile=<?php echo $admin_id; ?>"> Fiók Szerkesztése </a>
 </li>
 
 </ul>
