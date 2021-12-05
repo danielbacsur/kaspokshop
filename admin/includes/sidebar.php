@@ -439,7 +439,7 @@ else {
 
 <a href="logout.php">
 
-<i class="fa fa-fw fa-power-off"></i> Log Out
+<i class="fa fa-fw fa-power-off"></i> Kijelentkezés
 
 </a>
 

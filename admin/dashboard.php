@@ -9,7 +9,7 @@ else {
 <!-- <h1 class="page-header">Dashboard</h1> -->
 <ol class="breadcrumb"><!-- breadcrumb Starts -->
 <li class="active">
-<i class="fa fa-dashboard"></i> Dashboard
+<i class="fa fa-dashboard"></i> Admin Panel
 </li>
 </ol><!-- breadcrumb Ends -->
 </div><!-- col-lg-12 Ends -->
@@ -24,13 +24,13 @@ else {
 </div><!-- col-xs-3 Ends -->
 <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 <div class="huge"> <?php echo $count_products; ?> </div>
-<div>Products</div>
+<div>Termékek</div>
 </div><!-- col-xs-9 text-right Ends -->
 </div><!-- panel-heading row Ends -->
 </div><!-- panel-heading Ends -->
 <a href="index.php?view_products">
 <div class="panel-footer"><!-- panel-footer Starts -->
-<span class="pull-left"> View Details </span>
+<span class="pull-left"> Részletek megtekintése </span>
 <span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
 <div class="clearfix"></div>
 </div><!-- panel-footer Ends -->
@@ -46,13 +46,13 @@ else {
 </div><!-- col-xs-3 Ends -->
 <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 <div class="huge"> <?php echo $count_customers; ?> </div>
-<div>Customers</div>
+<div>Fiókok</div>
 </div><!-- col-xs-9 text-right Ends -->
 </div><!-- panel-heading row Ends -->
 </div><!-- panel-heading Ends -->
 <a href="index.php?view_customers">
 <div class="panel-footer"><!-- panel-footer Starts -->
-<span class="pull-left"> View Details </span>
+<span class="pull-left"> Részletek megtekintése </span>
 <span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
 <div class="clearfix"></div>
 </div><!-- panel-footer Ends -->
@@ -68,13 +68,13 @@ else {
 </div><!-- col-xs-3 Ends -->
 <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 <div class="huge"> <?php echo $count_p_categories; ?> </div>
-<div>Products Categories</div>
+<div>Termék kategóriák</div>
 </div><!-- col-xs-9 text-right Ends -->
 </div><!-- panel-heading row Ends -->
 </div><!-- panel-heading Ends -->
 <a href="index.php?view_p_cats">
 <div class="panel-footer"><!-- panel-footer Starts -->
-<span class="pull-left"> View Details </span>
+<span class="pull-left"> Részletek megtekintése </span>
 <span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
 <div class="clearfix"></div>
 </div><!-- panel-footer Ends -->
@@ -90,13 +90,13 @@ else {
 </div><!-- col-xs-3 Ends -->
 <div class="col-xs-9 text-right"><!-- col-xs-9 text-right Starts -->
 <div class="huge"> <?php echo $count_total_orders; ?> </div>
-<div>Orders</div>
+<div>Rendelések</div>
 </div><!-- col-xs-9 text-right Ends -->
 </div><!-- panel-heading row Ends -->
 </div><!-- panel-heading Ends -->
 <a href="index.php?view_orders">
 <div class="panel-footer"><!-- panel-footer Starts -->
-<span class="pull-left"> View Details </span>
+<span class="pull-left"> Részletek megtekintése </span>
 <span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
 <div class="clearfix"></div>
 </div><!-- panel-footer Ends -->
@@ -142,7 +142,7 @@ else {
             </div><!-- panel-heading Ends -->
             <a href="index.php?view_orders">
             <div class="panel-footer"><!-- panel-footer Starts -->
-            <span class="pull-left"> View Details </span>
+            <span class="pull-left"> Részletek megtekintése </span>
             <span class="pull-right"> <i class="fa fa-arrow-circle-right"></i> </span>
             <div class="clearfix"></div>
             </div><!-- panel-footer Ends -->

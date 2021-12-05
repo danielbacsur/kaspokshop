@@ -56,7 +56,7 @@ $run_delete = mysqli_query($con,$delete_cart);
 
 
 
-
+/*
 
 // Email Receiver Name for SMTP Email
 $receiver_name 	= 'Sikeres Vásárlónk!';
@@ -115,7 +115,7 @@ $name = $row_customer['customer_name'];
 echo "<script>alert('Rendelésed sikeresen rögzítettük! Köszönjük!')</script>";
 
 echo "<script>window.open('account.php','_self')</script>";
-
+*/
 }
 	
 ?>
