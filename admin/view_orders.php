@@ -80,7 +80,7 @@ else { ?>
                                         <td>
                                             <?php
                                             if($order_status=='pending') { ?>
-                                                Függőben
+                                                <div style="color:red;">Függőben</div>
                                             <?php } else { ?>
                                                 <div style="color:green;">Megerősítve</div>
                                             <?php } ?>
