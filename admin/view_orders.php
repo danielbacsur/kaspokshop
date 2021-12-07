@@ -81,7 +81,7 @@ else { ?>
                                             <?php
                                             if($order_status=='pending') { ?>
                                                 Függőben
-                                            <?php } else if($order_status == 'confirmed'){ ?>
+                                            <?php } else { ?>
                                                 <div style="color:green;">Megerősítve</div>
                                             <?php } ?>
                                         </td>
@@ -89,7 +89,7 @@ else { ?>
                                             <?php
                                             if($order_status=='pending') { ?>
                                                 <a href="index.php?confirm_order=<?php echo $order_id; ?>">Megerősítés</a>
-                                            <?php } else if($order_status == 'confirmed'){ ?>
+                                            <?php } else { ?>
                                                 <a href="index.php?cancel_order=<?php echo $order_id; ?>">Visszavonás</a>
                                             <?php } ?>
                                         </td>
