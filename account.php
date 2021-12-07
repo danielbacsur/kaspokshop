@@ -324,8 +324,9 @@
                                                                     if($order_status=='pending') { ?>
                                                                         <div class="text-red">Függőben</div>
                                                                     <?php } else { ?>
-                                                                        <div style="color:green;">Kézbesítve</div>
-                                                                    <?php } ?></td> 
+                                                                        <div class="text-green">Kézbesítve</div>
+                                                                    <?php } ?>
+                                                                </td> 
                                                             </tr>
                                                         <?php }
                                                     } ?>
