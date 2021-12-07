@@ -322,7 +322,7 @@
                                                                 <td class="product-status" data-title="Status">
                                                                     <?php
                                                                     if($order_status=='pending') { ?>
-                                                                        <div style="color:red;">Függőben</div>
+                                                                        <div class="text-red">Függőben</div>
                                                                     <?php } else { ?>
                                                                         <div style="color:green;">Kézbesítve</div>
                                                                     <?php } ?></td> 
