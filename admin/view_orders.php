@@ -31,7 +31,7 @@ else { ?>
                             <tbody><!-- tbody Starts -->
                                 <?php
                                 $i = 1;
-                                $get_orders = "select * from orders";
+                                $get_orders = "SELECT * from orders ORDER BY order_status";
                                 $run_orders = mysqli_query($con,$get_orders);
                                 while ($row_orders = mysqli_fetch_array($run_orders)) {
                                     $order_id = $row_orders['order_id'];
