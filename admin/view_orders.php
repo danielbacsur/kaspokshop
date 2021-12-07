@@ -84,13 +84,23 @@ else { ?>
                                             else
                                                 echo 'Megerősítve';
                                             ?>
+                                            <?php
+                                            if($order_status=='pending') { ?>
+                                                <div style="color:yellow;">Függőben</div>
+                                            <?php } else if($order_status == 'confirmed'){ ?>
+                                                <div style="color:green;">Megerősítve</div>
+                                            <?php } else { ?>
+                                                <div style="color:red;">Visszavonva</div>
+                                            <?php } ?>
                                         </td>
                                         <td>
                                             <?php
                                             if($order_status=='pending') { ?>
                                                 <a href="index.php?confirm_order=<?php echo $order_id; ?>">Megerősítés</a>
-                                            <?php } else { ?>
+                                            <?php } else if($order_status == 'confirmed'){ ?>
                                                 <a href="index.php?cancel_order=<?php echo $order_id; ?>">Visszavonás</a>
+                                            <?php } else { ?>
+                                                Visszavonva
                                             <?php } ?>
                                         </td>
                                     </tr>
