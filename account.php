@@ -287,7 +287,7 @@
                                                     $row_customer_id = mysqli_fetch_array($run_customer_id);
                                                     $customer_id = $row_customer_id['customer_id'];
 
-                                                    $select_cart = "select * from orders where ip_add='$ip_add'";
+                                                    $select_cart = "select * from orders where customer_id='$customer_id'";
                                                     $run_cart = mysqli_query($con,$select_cart);
                                                     $total = 0;
                                                     while($row_cart = mysqli_fetch_array($run_cart)){
