@@ -287,11 +287,11 @@
                                                     <tbody>
                                                         <?php
                                                         $mail = $_SESSION['customer_email'];
-                                                        $select_customer_id = "select * from customers where customer_email='$mail'";
+                                                        $select_customer_id = "SELECT * FROM customers WHERE customer_email='$mail'";
                                                         $run_customer_id = mysqli_query($con,$select_customer_id);
                                                         $row_customer_id = mysqli_fetch_array($run_customer_id);
                                                         $customer_id = $row_customer_id['customer_id'];
-                                                        $select_cart = "SELECT * FROM orders WHERE customer_id='$customer_id'";
+                                                        $select_cart = "SELECT * FROM orders WHERE customer_id='$customer_id' ORDER BY order_status DESC";
                                                         $run_cart = mysqli_query($con,$select_cart);
                                                         while($row_cart = mysqli_fetch_array($run_cart)){
                                                             $pro_id = $row_cart['product_id'];
