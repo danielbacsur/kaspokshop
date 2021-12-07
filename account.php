@@ -332,7 +332,7 @@
                                                             <span class="variation"> Szín: <b><?php echo $color_name1; ?> & <?php echo $color_name2; ?></b></span>
                                                         </td>
                                                         <td class="product-price" data-title="Price"><?php echo $only_price; ?> FT</td>
-                                                        <td class="product-subtotal" data-title="Total"><?php echo $pro_qty; ?> FT</td> 
+                                                        <td class="product-quantity" data-title="Quantity"><?php echo $pro_qty; ?></td> 
                                                         <td class="product-subtotal" data-title="Total"><?php echo $sub_total; ?> FT</td> 
                                                     </tr>
                                                     <?php }} ?>
