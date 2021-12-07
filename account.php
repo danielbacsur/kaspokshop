@@ -265,15 +265,15 @@
                         </div>
                     <? } else { ?>
                         <div id="orders" class="tab-pane fade in active show">
-                        <div class="row justify-content-center">
+                            <div class="row justify-content-center">
                                 <div class="col-12 col-lg-10">
                                     <div class="row justify-content-center">
                                         <div class="col-12 col-xl-6 col-lg-7 text-center margin-4-half-rem-bottom md-margin-3-rem-bottom">
-                                            <span class="alt-font font-weight-500 text-dark-orange text-uppercase letter-spacing-1px d-block margin-5px-bottom">Még nincs fiókod??? Az hogy?</span>
-                                            <h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Regisztráld fiókodat!</h4>
+                                            <span class="alt-font font-weight-500 text-dark-orange text-uppercase letter-spacing-1px d-block margin-5px-bottom">Rendeléseden dolgozunk!</span>
+                                            <h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Rendeléseid</h4>
                                         </div>
                                         <div class="col-12">
-                                        <table class="table cart-products margin-60px-bottom md-margin-40px-bottom sm-no-margin-bottom">
+                                                <table class="table cart-products margin-60px-bottom md-margin-40px-bottom sm-no-margin-bottom">
                                                     <thead>
                                                         <tr>
                                                             <th scope="col" class="alt-font"></th>
@@ -291,7 +291,7 @@
                                                         $run_customer_id = mysqli_query($con,$select_customer_id);
                                                         $row_customer_id = mysqli_fetch_array($run_customer_id);
                                                         $customer_id = $row_customer_id['customer_id'];
-                                                        $select_cart = "SELECT * FROM orders WHERE customer_id='$customer_id' AND order_status='pending'";
+                                                        $select_cart = "SELECT * FROM orders WHERE customer_id='$customer_id'";
                                                         $run_cart = mysqli_query($con,$select_cart);
                                                         while($row_cart = mysqli_fetch_array($run_cart)){
                                                             $pro_id = $row_cart['product_id'];
