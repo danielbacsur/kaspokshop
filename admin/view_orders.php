@@ -87,7 +87,7 @@ else { ?>
                                         </td>
                                         <td>
                                             <?php
-                                            if($order_status!='pending') { ?>
+                                            if($order_status=='pending') { ?>
                                                 <a href="index.php?confirm_order=<?php echo $order_id; ?>">Megerősítés</a>
                                             <?php } else { ?>
                                                 <a href="index.php?cancel_order=<?php echo $order_id; ?>">Visszavonás</a>
