@@ -93,8 +93,6 @@ else { ?>
                                                 <a href="index.php?confirm_order=<?php echo $order_id; ?>">Megerősítés</a>
                                             <?php } else if($order_status == 'confirmed'){ ?>
                                                 <a href="index.php?cancel_order=<?php echo $order_id; ?>">Visszavonás</a>
-                                            <?php } else { ?>
-                                                Visszavonva
                                             <?php } ?>
                                         </td>
                                     </tr>
