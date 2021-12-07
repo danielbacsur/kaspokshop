@@ -249,7 +249,7 @@
                                                 if($check_cart>0){
                                                     $_SESSION['customer_email']=$c_email;
                                                     echo "<script>alert('Fiókodat sikeresen regisztráltuk!')</script>";
-                                                    echo "<script>window.open('checkout.php','_self')</script>";
+                                                    echo "<script>window.open('cart.php','_self')</script>";
                                                 } else {
                                                     $_SESSION['customer_email']=$c_email;
                                                     echo "<script>alert('Fiókodat sikeresen regisztráltuk!')</script>";
