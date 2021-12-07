@@ -80,9 +80,9 @@ else { ?>
                                         <td>
                                             <?php
                                             if($order_status=='pending')
-                                                echo $order_status='<div style="color:red;">Függőben</div>';
+                                                echo '<div style="color:red;">Függőben</div>';
                                             else
-                                                echo $order_status='Megerősítve';
+                                                echo 'Megerősítve';
                                             ?>
                                         </td>
                                         <td>
@@ -90,7 +90,7 @@ else { ?>
                                             if($order_status=='pending') { ?>
                                                 <a href="index.php?confirm_order=<?php echo $order_id; ?>">Megerősítés</a>
                                             <?php } else { ?>
-                                                <a href="#">Visszavonás</a>
+                                                <a href="index.php?cancel_order=<?php echo $order_id; ?>">Visszavonás</a>
                                             <?php } ?>
                                         </td>
                                     </tr>
