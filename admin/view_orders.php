@@ -63,12 +63,6 @@ else { ?>
                                     $run_customer = mysqli_query($con,$get_customer);
                                     $row_customer = mysqli_fetch_array($run_customer);
                                     $customer_name = $row_customer['customer_name'];
-
-                                    $get_customer_order = "select * from customer_orders where order_id='$order_id'";
-                                    $run_customer_order = mysqli_query($con,$get_customer_order);
-                                    $row_customer_order = mysqli_fetch_array($run_customer_order);
-                                    $order_date = $row_customer_order['order_date'];
-                                    $due_amount = $row_customer_order['due_amount'];
                                     ?>
                                     <tr>
                                         <td><?php echo $i; ?></td>
