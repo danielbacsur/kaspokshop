@@ -79,14 +79,8 @@ else { ?>
                                         <td><?php echo $order_total; ?> FT</td>
                                         <td>
                                             <?php
-                                            if($order_status=='pending')
-                                                echo '<div style="color:red;">Függőben</div>';
-                                            else
-                                                echo 'Megerősítve';
-                                            ?>
-                                            <?php
                                             if($order_status=='pending') { ?>
-                                                <div style="color:yellow;">Függőben</div>
+                                                <div style="color:orange;">Függőben</div>
                                             <?php } else if($order_status == 'confirmed'){ ?>
                                                 <div style="color:green;">Megerősítve</div>
                                             <?php } else { ?>
