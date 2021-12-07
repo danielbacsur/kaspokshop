@@ -45,320 +45,311 @@
             <div class="container">
                 <div class="tab-content">
                     <?php if(!isset($_SESSION['customer_email'])) { ?>
-                    <!-- start tab item -->
-                    <div id="login" class="tab-pane fade in active show">
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-lg-10">
-                                <div class="row justify-content-center">
-                                    <div class="col-12 col-xl-6 col-lg-7 text-center margin-4-half-rem-bottom md-margin-3-rem-bottom">
-                                        <span class="alt-font font-weight-500 text-dark-orange text-uppercase letter-spacing-1px d-block margin-5px-bottom">Visszatérő vásárlónk vagy?</span>
-                                        <h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Jelentkezz be!</h4>
-                                    </div>
-                                    <div class="col-12">
-                                        <form hidden action="" method="post">
-                                            <div class="row row-cols-1 row-cols-md-2">
-                                                <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
-                                                    <input class="medium-input bg-white margin-25px-bottom required" type="text" name="c_email" placeholder="A Neved">
-                                                </div>
-                                                <div class="col margin-4-rem-bottom sm-margin-10px-bottom">
-                                                    <input class="medium-input bg-white margin-25px-bottom required" type="password" name="c_pass" placeholder="A Neved">
-                                                </div>
-                                                <div class="col text-start sm-margin-30px-bottom">
-                                                    <span for="terms_condition" class="text-small d-inline-block align-top w-85">Elfelejtetted a jelszavad?<a href="#" target="_blank" class="text-decoration-underline text-extra-dark-gray">Jelszó helyreállítása</a>.</span>
-                                                </div>
-                                                <div class="col text-center text-md-end">
-                                                    <button class="btn btn-medium btn-rounded btn-transparent-dark-gray mb-0 submit" type="submit" name="login" value="Login">Üzenet küldése</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                        <form action="" method="post" ><!--form Starts -->
-
-                                        <div class="form-group" ><!-- form-group Starts -->
-                                        <label>Email</label>
-                                        <input type="text" class="form-control" name="c_email" required >
-                                        </div><!-- form-group Ends -->
-                                        <div class="form-group" ><!-- form-group Starts -->
-                                        <label>Jel</label>
-                                        <input type="password" class="form-control" name="c_pass" required >
-                                        <h4 hidden align="center">
-                                        <a href="forgot_pass.php"> FP </a>
-                                        </h4>
-                                        </div><!-- form-group Ends -->
-                                        <div class="text-center" ><!-- text-center Starts -->
-                                        <button name="login" value="Login" class="btn btn-primary" > Bejelenkezés</button>
-                                        </div><!-- text-center Ends -->
-                                        </form><!--form Ends -->
-                                        <!-- end contact form -->
-                                        <?php
-                                            if(isset($_POST['login'])){
-                                                echo "<script>console.log('aa');</script>";
-                                                $customer_email = $_POST['c_email'];
-                                                $customer_pass = $_POST['c_pass'];
-                                                $customer_pass_hash = hash("sha256", $customer_pass);
-                                                $select_customer = "select * from customers where customer_email='$customer_email' AND customer_pass='$customer_pass_hash'";
-                                                $run_customer = mysqli_query($con,$select_customer);
-                                                $get_ip = getRealUserIp();
-                                                echo "<script>console.log('ab');</script>";
-                                                $check_customer = mysqli_num_rows($run_customer);
-                                                $select_cart = "select * from cart where ip_add='$get_ip'";
-                                                $run_cart = mysqli_query($con,$select_cart);
-                                                $check_cart = mysqli_num_rows($run_cart);
-                                                echo "<script>console.log('ac');</script>";
-                                                if($check_customer==0){
-                                                    echo "<script>alert('Hibás email cím vagy jelszó!')</script>";
-                                                    exit();
-                                                    echo "<script>console.log('ad');</script>";
-                                                }
-                                                if($check_customer==1 AND $check_cart==0){
-                                                    $_SESSION['customer_email']=$customer_email;
-                                                    echo "<script>alert('Sikeresen bejelentkeztél!')</script>";
-                                                    echo "<script>window.open('account.php','_self')</script>";
-                                                    echo "<script>console.log('ae');</script>";
-                                                }
-                                                else {
-                                                    $_SESSION['customer_email']=$customer_email;
-                                                    echo "<script>alert('Sikeresen bejelentkeztél!')</script>";
-                                                    echo "<script>window.open('cart.php','_self')</script>";
-                                                    echo "<script>console.log('af');</script>";
-                                                } 
-                                                echo "<script>console.log('az');</script>";
-                                            }
-                                            echo "<script>console.log('ax');</script>";
-                                        ?>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end tab item -->
-                    <!-- start tab item -->
-                    <div id="register" class="tab-pane fade">
-                        <div class="row justify-content-center">
-                            <div class="col-12 col-lg-10">
-                                <div class="row justify-content-center">
-                                    <div class="col-12 col-xl-6 col-lg-7 text-center margin-4-half-rem-bottom md-margin-3-rem-bottom">
-                                        <span class="alt-font font-weight-500 text-dark-orange text-uppercase letter-spacing-1px d-block margin-5px-bottom">Még nincs fiókod??? Az hogy?</span>
-                                        <h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Regisztráld fiókodat!</h4>
-                                    </div>
-                                    <div class="col-12">
-                                        <form hidden action="email-templates/contact-form.php" method="post">
-                                            <div class="row row-cols-1 row-cols-md-2">
-                                                <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
-                                                    <input class="medium-input bg-white margin-25px-bottom required" type="text" name="name" placeholder="A Neved">
-                                                    <input class="medium-input bg-white margin-25px-bottom required" type="email" name="email" placeholder="Email címed">
-                                                    <input class="medium-input bg-white mb-0" type="tel" name="phone" placeholder="Telefonszámod">
-                                                </div>
-                                                <div class="col margin-4-rem-bottom sm-margin-10px-bottom">
-                                                    <textarea class="medium-textarea h-200px bg-white" name="comment" placeholder="Üzeneted ✌️"></textarea>
-                                                </div>
-                                                <div class="col text-start sm-margin-30px-bottom">
-                                                    <input type="checkbox" name="terms_condition" id="terms_condition" value="1" class="terms-condition d-inline-block align-top w-auto mb-0 margin-5px-top margin-10px-right">
-                                                    <label for="terms_condition" class="text-small d-inline-block align-top w-85">Elfogadom az Általános szerződési és Adatvédelmi <a href="#" target="_blank" class="text-decoration-underline text-extra-dark-gray">feltételeket</a>.</label>
-                                                </div>
-                                                <div class="col text-center text-md-end">
-                                                    <input type="hidden" name="redirect" value="">
-                                                    <button class="btn btn-medium btn-rounded btn-transparent-dark-gray mb-0 submit" type="submit">Üzenet küldése</button>
-                                                </div>
-                                            </div>
-                                            <div class="form-results d-none"></div>
-                                        </form>
-                                        
-                                        <form action="" method="post" enctype="multipart/form-data" ><!-- form Starts -->
-                                        <div class="form-group" ><!-- form-group Starts -->
-                                        <label>Neved</label>
-                                        <input type="text" class="form-control" name="c_name" required>
-                                        </div><!-- form-group Ends -->
-                                        <div class="form-group"><!-- form-group Starts -->
-                                        <label> Email címed</label>
-                                        <input type="text" class="form-control" name="c_email" required>
-                                        </div><!-- form-group Ends -->
-                                        <div class="form-group"><!-- form-group Starts -->
-                                        <label> Jelszavad </label>
-                                        <div class="input-group"><!-- input-group Starts -->
-                                        <span class="input-group-addon"><!-- input-group-addon Starts -->
-                                        <i class="fa fa-check tick1"> </i>
-                                        <i class="fa fa-times cross1"> </i>
-                                        </span><!-- input-group-addon Ends -->
-                                        <input type="password" class="form-control" id="pass" name="c_pass" required>
-                                        <span class="input-group-addon"><!-- input-group-addon Starts -->
-                                        <div id="meter_wrapper"><!-- meter_wrapper Starts -->
-                                        <span id="pass_type"> </span>
-                                        <div id="meter"> </div>
-                                        </div><!-- meter_wrapper Ends -->
-                                        </span><!-- input-group-addon Ends -->
-                                        </div><!-- input-group Ends -->
-                                        </div><!-- form-group Ends -->
-                                        <div class="form-group"><!-- form-group Starts -->
-                                        <label> Jelszó megerősítése</label>
-                                        <div class="input-group"><!-- input-group Starts -->
-                                        <span class="input-group-addon"><!-- input-group-addon Starts -->
-                                        <i class="fa fa-check tick2"> </i>
-                                        <i class="fa fa-times cross2"> </i>
-                                        </span><!-- input-group-addon Ends -->
-                                        <input type="password" class="form-control confirm" id="con_pass" required>
-                                        </div><!-- input-group Ends -->
-                                        </div><!-- form-group Ends -->
-                                        <div class="form-group"><!-- form-group Starts -->
-                                        <label> Ország</label>
-                                        <input type="text" class="form-control" name="c_country" required>
-                                        </div><!-- form-group Ends -->
-                                        <div class="form-group"><!-- form-group Starts -->
-                                        <label> Város </label>
-                                        <input type="text" class="form-control" name="c_city" required>
-                                        </div><!-- form-group Ends -->
-                                        <div class="form-group"><!-- form-group Starts -->
-                                        <label> Telefonszám</label>
-                                        <input type="text" class="form-control" name="c_contact" required>
-                                        </div><!-- form-group Ends -->
-                                        <div class="form-group"><!-- form-group Starts -->
-                                        <label> Lakcím </label>
-                                        <input type="text" class="form-control" name="c_address" required>
-                                        </div><!-- form-group Ends -->
-                                        <div class="form-group"><!-- form-group Starts -->
-                                        </div><!-- form-group Ends -->
-                                        <div class="text-center"><!-- text-center Starts -->
-                                        <button type="submit" name="register" class="btn btn-primary">
-                                        <i class="fa fa-user-md"></i> Regisztrálás
-                                        </button>
-                                        </div><!-- text-center Ends -->
-                                        </form><!-- form Ends -->
-
-                                        <?php
-                                        if(isset($_POST['register'])){
-                                                $c_name = $_POST['c_name'];
-                                                $c_email = $_POST['c_email'];
-                                                $c_pass = $_POST['c_pass'];
-                                                $c_pass_hash = hash("sha256", $c_pass);
-                                                $c_country = $_POST['c_country'];
-                                                $c_city = $_POST['c_city'];
-                                                $c_contact = $_POST['c_contact'];
-                                                $c_address = $_POST['c_address'];
-                                                $c_ip = getRealUserIp();
-                                                $get_email = "select * from customers where customer_email='$c_email'";
-                                                $run_email = mysqli_query($con,$get_email);
-                                                $check_email = mysqli_num_rows($run_email);
-                                                if($check_email == 1){
-                                                    echo "<script>alert('Ez az email cím már regisztrálva lett. Próbálj másikat.')</script>";
-                                                    exit();
-                                                }
-                                                $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_ip) values ('$c_name','$c_email','$c_pass_hash','$c_country','$c_city','$c_contact','$c_address','$c_ip')";
-                                                $run_customer = mysqli_query($con,$insert_customer);
-                                                $sel_cart = "select * from cart where ip_add='$c_ip'";
-                                                $run_cart = mysqli_query($con,$sel_cart);
-                                                $check_cart = mysqli_num_rows($run_cart);
-                                                if($check_cart>0){
-                                                    $_SESSION['customer_email']=$c_email;
-                                                    echo "<script>alert('Fiókodat sikeresen regisztráltuk!')</script>";
-                                                    echo "<script>window.open('cart.php','_self')</script>";
-                                                } else {
-                                                    $_SESSION['customer_email']=$c_email;
-                                                    echo "<script>alert('Fiókodat sikeresen regisztráltuk!')</script>";
-                                                    echo "<script>window.open('index.php','_self')</script>";
-                                                }
-                                        }
-                                        ?>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <? } else { ?>
-                    <div id="orders" class="tab-pane fade in active show">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-lg-10">
-                                <div class="row justify-content-center">
-                                <div class="col-12 col-xl-6 col-lg-7 text-center margin-4-half-rem-bottom md-margin-3-rem-bottom">
-                                        <span class="alt-font font-weight-500 text-dark-orange text-uppercase letter-spacing-1px d-block margin-5px-bottom">Még nincs fiókod??? Az hogy?</span>
-                                        <h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Regisztráld fiókodat!</h4>
-                                    </div>
+                        <!-- start tab item -->
+                        <div id="login" class="tab-pane fade in active show">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-lg-10">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 col-xl-6 col-lg-7 text-center margin-4-half-rem-bottom md-margin-3-rem-bottom">
+                                            <span class="alt-font font-weight-500 text-dark-orange text-uppercase letter-spacing-1px d-block margin-5px-bottom">Visszatérő vásárlónk vagy?</span>
+                                            <h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Jelentkezz be!</h4>
+                                        </div>
                                         <div class="col-12">
-                                            <table class="table cart-products margin-60px-bottom md-margin-40px-bottom sm-no-margin-bottom">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col" class="alt-font"></th>
-                                                        <th scope="col" class="alt-font">Tétel</th>
-                                                        <th scope="col" class="alt-font">Ár</th>
-                                                        <th scope="col" class="alt-font">Mennyiség</th>
-                                                        <th scope="col" class="alt-font">Total</th>
-                                                        <th scope="col" class="alt-font">Státusz</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php
-                                                    $mail = $_SESSION['customer_email'];
-                                                    $select_customer_id = "select * from customers where customer_email='$mail'";
-                                                    $run_customer_id = mysqli_query($con,$select_customer_id);
-                                                    $row_customer_id = mysqli_fetch_array($run_customer_id);
-                                                    $customer_id = $row_customer_id['customer_id'];
-                                                    $select_cart = "select * from orders where customer_id='$customer_id'";
+                                            <form hidden action="" method="post">
+                                                <div class="row row-cols-1 row-cols-md-2">
+                                                    <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
+                                                        <input class="medium-input bg-white margin-25px-bottom required" type="text" name="c_email" placeholder="A Neved">
+                                                    </div>
+                                                    <div class="col margin-4-rem-bottom sm-margin-10px-bottom">
+                                                        <input class="medium-input bg-white margin-25px-bottom required" type="password" name="c_pass" placeholder="A Neved">
+                                                    </div>
+                                                    <div class="col text-start sm-margin-30px-bottom">
+                                                        <span for="terms_condition" class="text-small d-inline-block align-top w-85">Elfelejtetted a jelszavad?<a href="#" target="_blank" class="text-decoration-underline text-extra-dark-gray">Jelszó helyreállítása</a>.</span>
+                                                    </div>
+                                                    <div class="col text-center text-md-end">
+                                                        <button class="btn btn-medium btn-rounded btn-transparent-dark-gray mb-0 submit" type="submit" name="login" value="Login">Üzenet küldése</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <form action="" method="post" ><!--form Starts -->
+
+                                            <div class="form-group" ><!-- form-group Starts -->
+                                            <label>Email</label>
+                                            <input type="text" class="form-control" name="c_email" required >
+                                            </div><!-- form-group Ends -->
+                                            <div class="form-group" ><!-- form-group Starts -->
+                                            <label>Jel</label>
+                                            <input type="password" class="form-control" name="c_pass" required >
+                                            <h4 hidden align="center">
+                                            <a href="forgot_pass.php"> FP </a>
+                                            </h4>
+                                            </div><!-- form-group Ends -->
+                                            <div class="text-center" ><!-- text-center Starts -->
+                                            <button name="login" value="Login" class="btn btn-primary" > Bejelenkezés</button>
+                                            </div><!-- text-center Ends -->
+                                            </form><!--form Ends -->
+                                            <!-- end contact form -->
+                                            <?php
+                                                if(isset($_POST['login'])){
+                                                    echo "<script>console.log('aa');</script>";
+                                                    $customer_email = $_POST['c_email'];
+                                                    $customer_pass = $_POST['c_pass'];
+                                                    $customer_pass_hash = hash("sha256", $customer_pass);
+                                                    $select_customer = "select * from customers where customer_email='$customer_email' AND customer_pass='$customer_pass_hash'";
+                                                    $run_customer = mysqli_query($con,$select_customer);
+                                                    $get_ip = getRealUserIp();
+                                                    echo "<script>console.log('ab');</script>";
+                                                    $check_customer = mysqli_num_rows($run_customer);
+                                                    $select_cart = "select * from cart where ip_add='$get_ip'";
                                                     $run_cart = mysqli_query($con,$select_cart);
-                                                    while($row_cart = mysqli_fetch_array($run_cart)){
-                                                        $pro_id = $row_cart['product_id'];
-                                                        $pro_color = $row_cart['color_primary'];
-                                                        $pro_size = $row_cart['color_secondary'];
-                                                        $pro_qty = $row_cart['qty'];
-                                                        $only_price = $row_cart['total'];
-                                                        $order_status = $row_cart['order_status'];
-                                                        $select_color1 = "select * from colors where id='$pro_color'";
-                                                        $run_color1 = mysqli_query($con,$select_color1);
-                                                        $row_color1 = mysqli_fetch_array($run_color1);
-                                                        $color_name1 = $row_color1['name'];
-                                                        $select_color2 = "select * from colors where id='$pro_size'";
-                                                        $run_color2 = mysqli_query($con,$select_color2);
-                                                        $row_color2 = mysqli_fetch_array($run_color2);
-                                                        $color_name2 = $row_color2['name'];
-                                                        $get_products = "select * from products where product_id='$pro_id'";
-                                                        $run_products = mysqli_query($con,$get_products);
-                                                        while($row_products = mysqli_fetch_array($run_products)){
-                                                            $product_title = $row_products['product_title'];
-                                                            $product_img1 = $row_products['product_img1'];
-                                                            $product_url = $row_products['product_url'];
-                                                            $sub_total = $only_price*$pro_qty;
-                                                            ?>
-                                                            <tr>
-                                                                <td class="product-thumbnail"><a href="<?php echo $product_url; ?>"><img class="cart-product-image" src="admin/product_images/<?php echo $product_img1; ?>" alt=""></a></td>
-                                                                <td class="product-name">
-                                                                    <a href="<?php echo $product_url; ?>"><?php echo $product_title; ?></a>
-                                                                    <span class="variation"> Szín: <b><?php echo $color_name1; ?> & <?php echo $color_name2; ?></b></span>
-                                                                </td>
-                                                                <td class="product-price" data-title="Price"><?php echo $only_price; ?> FT</td>
-                                                                <td class="product-quantity" data-title="Quantity"><?php echo $pro_qty; ?></td> 
-                                                                <td class="product-subtotal" data-title="Total"><?php echo $sub_total; ?> FT</td> 
-                                                                <td class="product-status" data-title="Status">
-                                                                    <?php
-                                                                    if($order_status=='pending') { ?>
-                                                                        <div class="text-red">Függőben</div>
-                                                                    <?php } else { ?>
-                                                                        <div class="text-green">Kézbesítve</div>
-                                                                    <?php } ?>
-                                                                </td> 
-                                                            </tr>
-                                                        <?php }
-                                                    } ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="col-md-6 md-margin-50px-bottom sm-margin-20px-bottom"> 
-                                            <div class="coupon-code-panel">
-                                                <input type="text" placeholder="Kupon Kód">
-                                                <a href="#" class="btn apply-coupon-btn text-uppercase">Jóváhagyás</a>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6 text-center text-md-end md-margin-50px-bottom btn-dual">
-                                            <a type="submit" name="update" class="btn btn-fancy btn-small btn-transparent-light-gray me-0">Kosár frissítése</a>
+                                                    $check_cart = mysqli_num_rows($run_cart);
+                                                    echo "<script>console.log('ac');</script>";
+                                                    if($check_customer==0){
+                                                        echo "<script>alert('Hibás email cím vagy jelszó!')</script>";
+                                                        exit();
+                                                        echo "<script>console.log('ad');</script>";
+                                                    }
+                                                    if($check_customer==1 AND $check_cart==0){
+                                                        $_SESSION['customer_email']=$customer_email;
+                                                        echo "<script>alert('Sikeresen bejelentkeztél!')</script>";
+                                                        echo "<script>window.open('account.php','_self')</script>";
+                                                        echo "<script>console.log('ae');</script>";
+                                                    }
+                                                    else {
+                                                        $_SESSION['customer_email']=$customer_email;
+                                                        echo "<script>alert('Sikeresen bejelentkeztél!')</script>";
+                                                        echo "<script>window.open('cart.php','_self')</script>";
+                                                        echo "<script>console.log('af');</script>";
+                                                    } 
+                                                    echo "<script>console.log('az');</script>";
+                                                }
+                                                echo "<script>console.log('ax');</script>";
+                                            ?>
                                         </div>
                                     </div>
-                                                </div>
-                                                </div>
-                    </div>
-                    <div id="settings" class="tab-pane fade">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-xl-5 col-lg-6 md-margin-50px-bottom">
-                                <p>Ez a menüpont jelenleg nem elérhető. Kérjük próbáld meg később.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <!-- end tab item -->
+                        <!-- start tab item -->
+                        <div id="register" class="tab-pane fade">
+                            <div class="row justify-content-center">
+                                <div class="col-12 col-lg-10">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 col-xl-6 col-lg-7 text-center margin-4-half-rem-bottom md-margin-3-rem-bottom">
+                                            <span class="alt-font font-weight-500 text-dark-orange text-uppercase letter-spacing-1px d-block margin-5px-bottom">Még nincs fiókod??? Az hogy?</span>
+                                            <h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Regisztráld fiókodat!</h4>
+                                        </div>
+                                        <div class="col-12">
+                                            <form hidden action="email-templates/contact-form.php" method="post">
+                                                <div class="row row-cols-1 row-cols-md-2">
+                                                    <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
+                                                        <input class="medium-input bg-white margin-25px-bottom required" type="text" name="name" placeholder="A Neved">
+                                                        <input class="medium-input bg-white margin-25px-bottom required" type="email" name="email" placeholder="Email címed">
+                                                        <input class="medium-input bg-white mb-0" type="tel" name="phone" placeholder="Telefonszámod">
+                                                    </div>
+                                                    <div class="col margin-4-rem-bottom sm-margin-10px-bottom">
+                                                        <textarea class="medium-textarea h-200px bg-white" name="comment" placeholder="Üzeneted ✌️"></textarea>
+                                                    </div>
+                                                    <div class="col text-start sm-margin-30px-bottom">
+                                                        <input type="checkbox" name="terms_condition" id="terms_condition" value="1" class="terms-condition d-inline-block align-top w-auto mb-0 margin-5px-top margin-10px-right">
+                                                        <label for="terms_condition" class="text-small d-inline-block align-top w-85">Elfogadom az Általános szerződési és Adatvédelmi <a href="#" target="_blank" class="text-decoration-underline text-extra-dark-gray">feltételeket</a>.</label>
+                                                    </div>
+                                                    <div class="col text-center text-md-end">
+                                                        <input type="hidden" name="redirect" value="">
+                                                        <button class="btn btn-medium btn-rounded btn-transparent-dark-gray mb-0 submit" type="submit">Üzenet küldése</button>
+                                                    </div>
+                                                </div>
+                                                <div class="form-results d-none"></div>
+                                            </form>
+                                            
+                                            <form action="" method="post" enctype="multipart/form-data" ><!-- form Starts -->
+                                            <div class="form-group" ><!-- form-group Starts -->
+                                            <label>Neved</label>
+                                            <input type="text" class="form-control" name="c_name" required>
+                                            </div><!-- form-group Ends -->
+                                            <div class="form-group"><!-- form-group Starts -->
+                                            <label> Email címed</label>
+                                            <input type="text" class="form-control" name="c_email" required>
+                                            </div><!-- form-group Ends -->
+                                            <div class="form-group"><!-- form-group Starts -->
+                                            <label> Jelszavad </label>
+                                            <div class="input-group"><!-- input-group Starts -->
+                                            <span class="input-group-addon"><!-- input-group-addon Starts -->
+                                            <i class="fa fa-check tick1"> </i>
+                                            <i class="fa fa-times cross1"> </i>
+                                            </span><!-- input-group-addon Ends -->
+                                            <input type="password" class="form-control" id="pass" name="c_pass" required>
+                                            <span class="input-group-addon"><!-- input-group-addon Starts -->
+                                            <div id="meter_wrapper"><!-- meter_wrapper Starts -->
+                                            <span id="pass_type"> </span>
+                                            <div id="meter"> </div>
+                                            </div><!-- meter_wrapper Ends -->
+                                            </span><!-- input-group-addon Ends -->
+                                            </div><!-- input-group Ends -->
+                                            </div><!-- form-group Ends -->
+                                            <div class="form-group"><!-- form-group Starts -->
+                                            <label> Jelszó megerősítése</label>
+                                            <div class="input-group"><!-- input-group Starts -->
+                                            <span class="input-group-addon"><!-- input-group-addon Starts -->
+                                            <i class="fa fa-check tick2"> </i>
+                                            <i class="fa fa-times cross2"> </i>
+                                            </span><!-- input-group-addon Ends -->
+                                            <input type="password" class="form-control confirm" id="con_pass" required>
+                                            </div><!-- input-group Ends -->
+                                            </div><!-- form-group Ends -->
+                                            <div class="form-group"><!-- form-group Starts -->
+                                            <label> Ország</label>
+                                            <input type="text" class="form-control" name="c_country" required>
+                                            </div><!-- form-group Ends -->
+                                            <div class="form-group"><!-- form-group Starts -->
+                                            <label> Város </label>
+                                            <input type="text" class="form-control" name="c_city" required>
+                                            </div><!-- form-group Ends -->
+                                            <div class="form-group"><!-- form-group Starts -->
+                                            <label> Telefonszám</label>
+                                            <input type="text" class="form-control" name="c_contact" required>
+                                            </div><!-- form-group Ends -->
+                                            <div class="form-group"><!-- form-group Starts -->
+                                            <label> Lakcím </label>
+                                            <input type="text" class="form-control" name="c_address" required>
+                                            </div><!-- form-group Ends -->
+                                            <div class="form-group"><!-- form-group Starts -->
+                                            </div><!-- form-group Ends -->
+                                            <div class="text-center"><!-- text-center Starts -->
+                                            <button type="submit" name="register" class="btn btn-primary">
+                                            <i class="fa fa-user-md"></i> Regisztrálás
+                                            </button>
+                                            </div><!-- text-center Ends -->
+                                            </form><!-- form Ends -->
+
+                                            <?php
+                                            if(isset($_POST['register'])){
+                                                    $c_name = $_POST['c_name'];
+                                                    $c_email = $_POST['c_email'];
+                                                    $c_pass = $_POST['c_pass'];
+                                                    $c_pass_hash = hash("sha256", $c_pass);
+                                                    $c_country = $_POST['c_country'];
+                                                    $c_city = $_POST['c_city'];
+                                                    $c_contact = $_POST['c_contact'];
+                                                    $c_address = $_POST['c_address'];
+                                                    $c_ip = getRealUserIp();
+                                                    $get_email = "select * from customers where customer_email='$c_email'";
+                                                    $run_email = mysqli_query($con,$get_email);
+                                                    $check_email = mysqli_num_rows($run_email);
+                                                    if($check_email == 1){
+                                                        echo "<script>alert('Ez az email cím már regisztrálva lett. Próbálj másikat.')</script>";
+                                                        exit();
+                                                    }
+                                                    $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_ip) values ('$c_name','$c_email','$c_pass_hash','$c_country','$c_city','$c_contact','$c_address','$c_ip')";
+                                                    $run_customer = mysqli_query($con,$insert_customer);
+                                                    $sel_cart = "select * from cart where ip_add='$c_ip'";
+                                                    $run_cart = mysqli_query($con,$sel_cart);
+                                                    $check_cart = mysqli_num_rows($run_cart);
+                                                    if($check_cart>0){
+                                                        $_SESSION['customer_email']=$c_email;
+                                                        echo "<script>alert('Fiókodat sikeresen regisztráltuk!')</script>";
+                                                        echo "<script>window.open('cart.php','_self')</script>";
+                                                    } else {
+                                                        $_SESSION['customer_email']=$c_email;
+                                                        echo "<script>alert('Fiókodat sikeresen regisztráltuk!')</script>";
+                                                        echo "<script>window.open('index.php','_self')</script>";
+                                                    }
+                                            }
+                                            ?>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <? } else { ?>
+                        <div id="orders" class="tab-pane fade in active show">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-lg-10">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 col-xl-6 col-lg-7 text-center margin-4-half-rem-bottom md-margin-3-rem-bottom">
+                                            <span class="alt-font font-weight-500 text-dark-orange text-uppercase letter-spacing-1px d-block margin-5px-bottom">Még nincs fiókod??? Az hogy?</span>
+                                            <h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Regisztráld fiókodat!</h4>
+                                        </div>
+                                            <div class="col-12">
+                                                <table class="table cart-products margin-60px-bottom md-margin-40px-bottom sm-no-margin-bottom">
+                                                    <thead>
+                                                        <tr>
+                                                            <th scope="col" class="alt-font"></th>
+                                                            <th scope="col" class="alt-font">Tétel</th>
+                                                            <th scope="col" class="alt-font">Ár</th>
+                                                            <th scope="col" class="alt-font">Mennyiség</th>
+                                                            <th scope="col" class="alt-font">Total</th>
+                                                            <th scope="col" class="alt-font">Státusz</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php
+                                                        $mail = $_SESSION['customer_email'];
+                                                        $select_customer_id = "select * from customers where customer_email='$mail'";
+                                                        $run_customer_id = mysqli_query($con,$select_customer_id);
+                                                        $row_customer_id = mysqli_fetch_array($run_customer_id);
+                                                        $customer_id = $row_customer_id['customer_id'];
+                                                        $select_cart = "select * from orders where customer_id='$customer_id'";
+                                                        $run_cart = mysqli_query($con,$select_cart);
+                                                        while($row_cart = mysqli_fetch_array($run_cart)){
+                                                            $pro_id = $row_cart['product_id'];
+                                                            $pro_color = $row_cart['color_primary'];
+                                                            $pro_size = $row_cart['color_secondary'];
+                                                            $pro_qty = $row_cart['qty'];
+                                                            $only_price = $row_cart['total'];
+                                                            $order_status = $row_cart['order_status'];
+                                                            $select_color1 = "select * from colors where id='$pro_color'";
+                                                            $run_color1 = mysqli_query($con,$select_color1);
+                                                            $row_color1 = mysqli_fetch_array($run_color1);
+                                                            $color_name1 = $row_color1['name'];
+                                                            $select_color2 = "select * from colors where id='$pro_size'";
+                                                            $run_color2 = mysqli_query($con,$select_color2);
+                                                            $row_color2 = mysqli_fetch_array($run_color2);
+                                                            $color_name2 = $row_color2['name'];
+                                                            $get_products = "select * from products where product_id='$pro_id'";
+                                                            $run_products = mysqli_query($con,$get_products);
+                                                            while($row_products = mysqli_fetch_array($run_products)){
+                                                                $product_title = $row_products['product_title'];
+                                                                $product_img1 = $row_products['product_img1'];
+                                                                $product_url = $row_products['product_url'];
+                                                                $sub_total = $only_price*$pro_qty;
+                                                                ?>
+                                                                <tr>
+                                                                    <td class="product-thumbnail"><a href="<?php echo $product_url; ?>"><img class="cart-product-image" src="admin/product_images/<?php echo $product_img1; ?>" alt=""></a></td>
+                                                                    <td class="product-name">
+                                                                        <a href="<?php echo $product_url; ?>"><?php echo $product_title; ?></a>
+                                                                        <span class="variation"> Szín: <b><?php echo $color_name1; ?> & <?php echo $color_name2; ?></b></span>
+                                                                    </td>
+                                                                    <td class="product-price" data-title="Price"><?php echo $only_price; ?> FT</td>
+                                                                    <td class="product-quantity" data-title="Quantity"><?php echo $pro_qty; ?></td> 
+                                                                    <td class="product-subtotal" data-title="Total"><?php echo $sub_total; ?> FT</td> 
+                                                                    <td class="product-status" data-title="Status">
+                                                                        <?php
+                                                                        if($order_status=='pending') { ?>
+                                                                            <div class="text-red">Függőben</div>
+                                                                        <?php } else { ?>
+                                                                            <div class="text-green">Kézbesítve</div>
+                                                                        <?php } ?>
+                                                                    </td> 
+                                                                </tr>
+                                                            <?php }
+                                                        } ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="settings" class="tab-pane fade">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-xl-5 col-lg-6 md-margin-50px-bottom">
+                                    <p>Ez a menüpont jelenleg nem elérhető. Kérjük próbáld meg később.</p>
+                                </div>
+                            </div>
+                        </div>
                     <?php } ?>
                 </div>
             </div>
