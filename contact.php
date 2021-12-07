@@ -33,30 +33,6 @@
                                 <h4 class="alt-font font-weight-600 text-extra-dark-gray mb-0 letter-spacing-minus-1px">Dobj ránk egy üzenetet!</h4>
                             </div>
                             <div class="col-12">
-                                <!-- start contact form --> <!--
-                                <form name="gform" id="gform" enctype="text/plain" action="https://docs.google.com/forms/d/e/1FAIpQLSdkJMUsfRZP1Fr8UHgFdj9UPA7yJMN0xrsiirDPXOhY7MhKvw/formResponse?" onsubmit="submitted=true;">
-                                    <div class="row row-cols-1 row-cols-md-2">
-                                        <div class="col margin-4-rem-bottom sm-margin-25px-bottom">
-                                            <input class="medium-input bg-white margin-25px-bottom required" type="text" name="entry.901324002" id="entry.901324002" placeholder="A Neved">
-                                            <input class="medium-input bg-white margin-25px-bottom required" type="email" name="entry.1426107432" id="entry.1426107432" placeholder="Email címed">
-                                            <input class="medium-input bg-white mb-0" type="tel" name="entry.1423736763" id="entry.1423736763" placeholder="Telefonszámod">
-                                        </div>
-                                        <div class="col margin-4-rem-bottom sm-margin-10px-bottom">
-                                            <textarea class="medium-textarea h-200px bg-white" name="entry.821912921" id="entry.821912921" placeholder="Üzeneted ✌️"></textarea>
-                                        </div>
-                                        <div class="col text-start sm-margin-30px-bottom">
-                                            <input type="checkbox" name="terms_condition" id="terms_condition" value="1" class="terms-condition d-inline-block align-top w-auto mb-0 margin-5px-top margin-10px-right">
-                                            <label for="terms_condition" class="text-small d-inline-block align-top w-85">Elfogadom az Általános szerződési és Adatvédelmi <a href="#" target="_blank" class="text-decoration-underline text-extra-dark-gray">feltételeket</a>.</label>
-                                        </div>
-                                        <div class="col text-center text-md-end">
-                                            <input type="hidden" name="redirect" value="">
-                                            <button class="btn btn-medium btn-rounded btn-transparent-dark-gray mb-0 submit" type="submit">Üzenet küldése</button>
-                                        </div>
-                                    </div>
-                                    <div class="form-results d-none"></div>
-                                </form> -->
-                                <!-- end contact form -->
-                                <!-- start contact form -->
                                 <form action="email-templates/contact-form.php" method="post">
                                     <div class="row row-cols-1 row-cols-md-2">
                                         <div class="col margin-4-rem-bottom sm-margin-25px-bottom">

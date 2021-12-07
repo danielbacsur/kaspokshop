@@ -266,6 +266,8 @@
                     <? } else { ?>
                     <div id="orders" class="tab-pane fade in active show">
                         <div class="row align-items-center">
+                            <div class="col-12 col-lg-10">
+                                <div class="row justify-content-center">
                                         <div class="col-12">
                                             <table class="table cart-products margin-60px-bottom md-margin-40px-bottom sm-no-margin-bottom">
                                                 <thead>
@@ -343,6 +345,8 @@
                                             <a type="submit" name="update" class="btn btn-fancy btn-small btn-transparent-light-gray me-0">Kosár frissítése</a>
                                         </div>
                                     </div>
+                                                </div>
+                                                </div>
                     </div>
                     <div id="settings" class="tab-pane fade">
                         <div class="row align-items-center">
