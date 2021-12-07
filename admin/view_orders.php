@@ -25,7 +25,7 @@ else { ?>
                                     <th>Dátum</th>
                                     <th>Összeg</th>
                                     <th>Státusz</th>
-                                    <th>Jóváhagyás</th>
+                                    <th>Művelet</th>
                                 </tr>
                             </thead><!-- thead Ends -->
                             <tbody><!-- tbody Starts -->
@@ -81,26 +81,16 @@ else { ?>
                                             <?php
                                             if($order_status=='pending') { ?>
                                                 <div style="color:red;">Függőben</div>
-                                            <?php } else if($order_status=='confirmed') { ?>
-                                                <div style="color:green;">Megerősítve</div>
                                             <?php } else {?>
-                                                <div style="color:green;">Lemondva</div>
+                                                <div style="color:green;">Megerősítve</div>
                                             <?php } ?>
                                         </td>
                                         <td>
                                             <?php
                                             if($order_status!='pending') { ?>
-                                                <a href="index.php?suspend_order=<?php echo $order_id; ?>">Lemondás</a>
-                                            <?php } else { ?>
-                                                <a href="index.php?suspend_order=<?php echo $order_id; ?>"><del>Lemondás</del></a>
-                                            <?php } if ($order_status!='canceled') { ?>
-                                                <a href="index.php?cancel_order=<?php echo $order_id; ?>">Visszavonás</a>
-                                            <?php } else { ?>
-                                                <a href="index.php?cancel_order=<?php echo $order_id; ?>"><del>Visszavonás</del></a>
-                                            <?php } if ($order_status!='confirmed') { ?>
                                                 <a href="index.php?confirm_order=<?php echo $order_id; ?>">Megerősítés</a>
                                             <?php } else { ?>
-                                                <a href="index.php?confirm_order=<?php echo $order_id; ?>"><del>Megerősítés</del></a>
+                                                <a href="index.php?cancel_order=<?php echo $order_id; ?>"><del>Visszavonás</del></a>
                                             <?php } ?>
                                         </td>
                                     </tr>
