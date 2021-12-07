@@ -80,7 +80,7 @@ else { ?>
                                         <td>
                                             <?php
                                             if($order_status=='pending') { ?>
-                                                <div style="color:orange;">Függőben</div>
+                                                Függőben
                                             <?php } else if($order_status == 'confirmed'){ ?>
                                                 <div style="color:green;">Megerősítve</div>
                                             <?php } else { ?>
