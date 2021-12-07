@@ -295,12 +295,11 @@
                                                     $run_cart = mysqli_query($con,$select_cart);
                                                     $total = 0;
                                                     while($row_cart = mysqli_fetch_array($run_cart)){
-                                                        $cart_id = $row_cart['id'];
-                                                        $pro_id = $row_cart['p_id'];
+                                                        $pro_id = $row_cart['product_id'];
                                                         $pro_color = $row_cart['color_primary'];
                                                         $pro_size = $row_cart['color_secondary'];
                                                         $pro_qty = $row_cart['qty'];
-                                                        $only_price = $row_cart['p_price'];
+                                                        $only_price = $row_cart['total'];
                                                         $select_color1 = "select * from colors where id='$pro_color'";
                                                             $run_color1 = mysqli_query($con,$select_color1);
                                                             $row_color1 = mysqli_fetch_array($run_color1);
@@ -327,10 +326,7 @@
                                                             $_SESSION['pro_qty'] = $pro_qty;
                                                             $total += $sub_total;
                                                             ?>
-                                                    <tr> 
-                                                        <td class="product-remove">
-                                                            <button name="remove" type="submit" value="<?php echo $cart_id; ?>" class="btn-default text-large">&times;</button>
-                                                        </td>
+                                                    <tr>
                                                         <td class="product-thumbnail"><a href="<?php echo $product_url; ?>"><img class="cart-product-image" src="admin/product_images/<?php echo $product_img1; ?>" alt=""></a></td>
                                                         <td class="product-name">
                                                             <a href="<?php echo $product_url; ?>"><?php echo $product_title; ?></a>
