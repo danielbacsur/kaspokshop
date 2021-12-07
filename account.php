@@ -265,11 +265,94 @@
                     </div>
                     <? } else { ?>
                     <div id="orders" class="tab-pane fade in active show">
-                        <div class="row align-items-center">
-                            <div class="col-12 col-xl-5 col-lg-6 md-margin-50px-bottom">
-                                <p>Ez a menüpont jelenleg nem elérhető. Kérjük próbáld meg később.</p>
-                            </div>
-                        </div>
+                    <div class="row align-items-center">
+                                        <div class="col-12">
+                                            <table class="table cart-products margin-60px-bottom md-margin-40px-bottom sm-no-margin-bottom">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" class="alt-font"></th>
+                                                        <th scope="col" class="alt-font"></th>
+                                                        <th scope="col" class="alt-font">Product</th>
+                                                        <th scope="col" class="alt-font">Price</th>
+                                                        <th scope="col" class="alt-font">Quantity</th>
+                                                        <th scope="col" class="alt-font">Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr> 
+                                                        <td class="product-remove">
+                                                            <a href="#" class="btn-default text-large">&times;</a>
+                                                        </td>
+                                                        <td class="product-thumbnail"><a href="single-product.html"><img class="cart-product-image" src="https://via.placeholder.com/600x765" alt=""></a></td>
+                                                        <td class="product-name">
+                                                            <a href="single-product.html">Burberry London</a>
+                                                            <span class="variation"> Size: L</span>
+                                                        </td>
+                                                        <td class="product-price" data-title="Price">$350.00</td>
+                                                        <td class="product-quantity" data-title="Quantity">
+                                                            <div class="quantity">
+                                                                <label class="screen-reader-text">Quantity</label>
+                                                                <input type="button" value="-" class="qty-minus qty-btn" data-quantity="minus" data-field="quantity">
+                                                                <input class="input-text qty-text" type="number" name="quantity" value="1">
+                                                                <input type="button" value="+" class="qty-plus qty-btn" data-quantity="plus" data-field="quantity">
+                                                            </div>
+                                                        </td> 
+                                                        <td class="product-subtotal" data-title="Total">$350.00</td> 
+                                                    </tr>
+                                                    <tr> 
+                                                        <td class="product-remove">
+                                                            <a href="#" class="btn-default text-large">&times;</a>
+                                                        </td>
+                                                        <td class="product-thumbnail"><a href="single-product.html"><img class="cart-product-image" src="https://via.placeholder.com/600x765" alt=""></a></td>
+                                                        <td class="product-name">
+                                                            <a href="single-product.html">Down Bomber</a>
+                                                            <span class="variation">Size: L</span>
+                                                        </td>
+                                                        <td class="product-price" data-title="Price">$10.00</td>
+                                                        <td class="product-quantity" data-title="Quantity">
+                                                            <div class="quantity">
+                                                                <label class="screen-reader-text">Quantity</label>
+                                                                <input type="button" value="-" class="qty-minus qty-btn" data-quantity="minus" data-field="quantity">
+                                                                <input class="input-text qty-text" type="number" name="quantity" value="1">
+                                                                <input type="button" value="+" class="qty-plus qty-btn" data-quantity="plus" data-field="quantity">
+                                                            </div>
+                                                        </td>
+                                                        <td class="product-subtotal" data-title="Total">$10.00</td> 
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="product-remove">
+                                                            <a href="#" class="btn-default text-large">&times;</a> 
+                                                        </td>
+                                                        <td class="product-thumbnail"><a href="single-product.html"><img class="cart-product-image" src="https://via.placeholder.com/600x765" alt=""></a></td>
+                                                        <td class="product-name">
+                                                            <a href="single-product.html">Isabel Marant</a>
+                                                            <span class="variation">Size: L</span>
+                                                        </td>
+                                                        <td class="product-price" data-title="Price">$299.00</td>
+                                                        <td class="product-quantity" data-title="Quantity">
+                                                            <div class="quantity">
+                                                                <label class="screen-reader-text">Quantity</label>
+                                                                <input type="button" value="-" class="qty-minus qty-btn" data-quantity="minus" data-field="quantity">
+                                                                <input class="input-text qty-text" type="number" name="quantity" value="1">
+                                                                <input type="button" value="+" class="qty-plus qty-btn" data-quantity="plus" data-field="quantity">
+                                                            </div>
+                                                        </td>
+                                                        <td class="product-subtotal" data-title="Total">$299.00</td> 
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="col-md-6 md-margin-50px-bottom sm-margin-20px-bottom"> 
+                                            <div class="coupon-code-panel">
+                                                <input type="text" placeholder="Coupon code">
+                                                <a href="#" class="btn apply-coupon-btn text-uppercase">Apply</a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 text-center text-md-end md-margin-50px-bottom btn-dual">
+                                            <a href="#" class="btn btn-fancy btn-small btn-transparent-light-gray">Empty cart</a>
+                                            <a href="#" class="btn btn-fancy btn-small btn-transparent-light-gray me-0">Update cart</a>
+                                        </div>
+                                    </div>
                     </div>
                     <div id="settings" class="tab-pane fade">
                         <div class="row align-items-center">
