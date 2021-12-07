@@ -42,6 +42,8 @@ else { ?>
                                     $color_primary = $row_orders['color_primary'];
                                     $color_secondary = $row_orders['color_secondary'];
                                     $order_status = $row_orders['order_status'];
+                                    $order_total = $row_orders['total'];
+                                    $order_date = $row_orders['date'];
                                     $get_products = "select * from products where product_id='$product_id'";
                                     $run_products = mysqli_query($con,$get_products);
                                     $row_products = mysqli_fetch_array($run_products);
@@ -80,7 +82,7 @@ else { ?>
                                         <td>
                                             <?php echo $order_date; ?>
                                         </td>
-                                        <td>$<?php echo $due_amount; ?></td>
+                                        <td>$<?php echo $order_total; ?></td>
                                         <td>
                                             <?php
                                             if($order_status=='pending')
