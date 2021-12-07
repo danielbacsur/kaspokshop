@@ -293,7 +293,7 @@
                                                         $pro_size = $row_cart['color_secondary'];
                                                         $pro_qty = $row_cart['qty'];
                                                         $only_price = $row_cart['total'];
-                                                        $order_status = $row_cart['status'];
+                                                        $order_status = $row_cart['order_status'];
                                                         $select_color1 = "select * from colors where id='$pro_color'";
                                                         $run_color1 = mysqli_query($con,$select_color1);
                                                         $row_color1 = mysqli_fetch_array($run_color1);
