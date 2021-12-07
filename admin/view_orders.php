@@ -91,9 +91,9 @@ else { ?>
                                             <?php
                                             if($order_status!='pending') { ?>
                                                 <a href="index.php?suspend_order=<?php echo $order_id; ?>">Lemondás</a>
-                                            <?php } if ($order_status!='pending') { ?>
+                                            <?php } if ($order_status!='canceled') { ?>
                                                 <a href="index.php?cancel_order=<?php echo $order_id; ?>">Visszavonás</a>
-                                            <?php } if ($order_status!='pending') { ?>
+                                            <?php } if ($order_status!='confirmed') { ?>
                                                 <a href="index.php?confirm_order=<?php echo $order_id; ?>">Megerősítés</a>
                                             <?php } ?>
                                         </td>
