@@ -76,7 +76,7 @@ else { ?>
                                         <td>
                                             <?php echo $order_date; ?>
                                         </td>
-                                        <td>$<?php echo $order_total; ?></td>
+                                        <td><?php echo $order_total; ?> FT</td>
                                         <td>
                                             <?php
                                             if($order_status=='pending')
