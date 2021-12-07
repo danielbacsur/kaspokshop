@@ -2,6 +2,7 @@
 if(!isset($_SESSION['admin_email'])){
     echo "<script>window.open('login.php','_self')</script>";
 } else {
+    echo "<script>console.log('alma')</script>";
     if(isset($_GET['confirm_order'])){
         $delete_id = $_GET['confirm_order'];
         $delete_order = "UPDATE `orders` SET `order_status` = 'confirmed' WHERE order_id` = $delete_id;";
