@@ -265,92 +265,96 @@
                     </div>
                     <? } else { ?>
                     <div id="orders" class="tab-pane fade in active show">
-                    <div class="row align-items-center">
+                        <div class="row align-items-center">
                                         <div class="col-12">
                                             <table class="table cart-products margin-60px-bottom md-margin-40px-bottom sm-no-margin-bottom">
                                                 <thead>
                                                     <tr>
                                                         <th scope="col" class="alt-font"></th>
                                                         <th scope="col" class="alt-font"></th>
-                                                        <th scope="col" class="alt-font">Product</th>
-                                                        <th scope="col" class="alt-font">Price</th>
-                                                        <th scope="col" class="alt-font">Quantity</th>
+                                                        <th scope="col" class="alt-font">Tétel</th>
+                                                        <th scope="col" class="alt-font">Ár</th>
+                                                        <th scope="col" class="alt-font">Mennyiség</th>
                                                         <th scope="col" class="alt-font">Total</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+                                                    <?php
+                                                    $mail = $_SESSION['customer_email'];
+
+                                                    $select_customer_id = "select * from customers where customer_email='$mail'";
+                                                    $run_customer_id = mysqli_query($con,$select_customer_id);
+                                                    $row_customer_id = mysqli_fetch_array($run_customer_id);
+                                                    $customer_id = $row_customer_id['customer_id'];
+
+                                                    $select_cart = "select * from orders where ip_add='$ip_add'";
+                                                    $run_cart = mysqli_query($con,$select_cart);
+                                                    $total = 0;
+                                                    while($row_cart = mysqli_fetch_array($run_cart)){
+                                                        $cart_id = $row_cart['id'];
+                                                        $pro_id = $row_cart['p_id'];
+                                                        $pro_color = $row_cart['color_primary'];
+                                                        $pro_size = $row_cart['color_secondary'];
+                                                        $pro_qty = $row_cart['qty'];
+                                                        $only_price = $row_cart['p_price'];
+                                                        $select_color1 = "select * from colors where id='$pro_color'";
+                                                            $run_color1 = mysqli_query($con,$select_color1);
+                                                            $row_color1 = mysqli_fetch_array($run_color1);
+                                                            $color_name1 = $row_color1['name'];
+
+                                                            $select_color2 = "select * from colors where id='$pro_size'";
+                                                            $run_color2 = mysqli_query($con,$select_color2);
+                                                            $row_color2 = mysqli_fetch_array($run_color2);
+                                                            $color_name2 = $row_color2['name'];
+
+
+                                                        $get_products = "select * from products where product_id='$pro_id'";
+                                                        $run_products = mysqli_query($con,$get_products);
+
+
+                                                        while($row_products = mysqli_fetch_array($run_products)){
+                                                            
+
+
+                                                            $product_title = $row_products['product_title'];
+                                                            $product_img1 = $row_products['product_img1'];
+                                                            $product_url = $row_products['product_url'];
+                                                            $sub_total = $only_price*$pro_qty;
+                                                            $_SESSION['pro_qty'] = $pro_qty;
+                                                            $total += $sub_total;
+                                                            ?>
                                                     <tr> 
                                                         <td class="product-remove">
-                                                            <a href="#" class="btn-default text-large">&times;</a>
+                                                            <button name="remove" type="submit" value="<?php echo $cart_id; ?>" class="btn-default text-large">&times;</button>
                                                         </td>
-                                                        <td class="product-thumbnail"><a href="single-product.html"><img class="cart-product-image" src="https://via.placeholder.com/600x765" alt=""></a></td>
+                                                        <td class="product-thumbnail"><a href="<?php echo $product_url; ?>"><img class="cart-product-image" src="admin/product_images/<?php echo $product_img1; ?>" alt=""></a></td>
                                                         <td class="product-name">
-                                                            <a href="single-product.html">Burberry London</a>
-                                                            <span class="variation"> Size: L</span>
+                                                            <a href="<?php echo $product_url; ?>"><?php echo $product_title; ?></a>
+                                                            <span class="variation"> Szín: <b><?php echo $color_name1; ?> & <?php echo $color_name2; ?></b></span>
                                                         </td>
-                                                        <td class="product-price" data-title="Price">$350.00</td>
+                                                        <td class="product-price" data-title="Price"><?php echo $only_price; ?> FT</td>
                                                         <td class="product-quantity" data-title="Quantity">
                                                             <div class="quantity">
-                                                                <label class="screen-reader-text">Quantity</label>
+                                                                <label class="screen-reader-text">Mennyiség</label>
                                                                 <input type="button" value="-" class="qty-minus qty-btn" data-quantity="minus" data-field="quantity">
-                                                                <input class="input-text qty-text" type="number" name="quantity" value="1">
+                                                                <input class="input-text qty-text" type="number" name="quantity" value="<?php echo $pro_qty; ?>">
                                                                 <input type="button" value="+" class="qty-plus qty-btn" data-quantity="plus" data-field="quantity">
                                                             </div>
                                                         </td> 
-                                                        <td class="product-subtotal" data-title="Total">$350.00</td> 
+                                                        <td class="product-subtotal" data-title="Total"><?php echo $sub_total; ?> FT</td> 
                                                     </tr>
-                                                    <tr> 
-                                                        <td class="product-remove">
-                                                            <a href="#" class="btn-default text-large">&times;</a>
-                                                        </td>
-                                                        <td class="product-thumbnail"><a href="single-product.html"><img class="cart-product-image" src="https://via.placeholder.com/600x765" alt=""></a></td>
-                                                        <td class="product-name">
-                                                            <a href="single-product.html">Down Bomber</a>
-                                                            <span class="variation">Size: L</span>
-                                                        </td>
-                                                        <td class="product-price" data-title="Price">$10.00</td>
-                                                        <td class="product-quantity" data-title="Quantity">
-                                                            <div class="quantity">
-                                                                <label class="screen-reader-text">Quantity</label>
-                                                                <input type="button" value="-" class="qty-minus qty-btn" data-quantity="minus" data-field="quantity">
-                                                                <input class="input-text qty-text" type="number" name="quantity" value="1">
-                                                                <input type="button" value="+" class="qty-plus qty-btn" data-quantity="plus" data-field="quantity">
-                                                            </div>
-                                                        </td>
-                                                        <td class="product-subtotal" data-title="Total">$10.00</td> 
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="product-remove">
-                                                            <a href="#" class="btn-default text-large">&times;</a> 
-                                                        </td>
-                                                        <td class="product-thumbnail"><a href="single-product.html"><img class="cart-product-image" src="https://via.placeholder.com/600x765" alt=""></a></td>
-                                                        <td class="product-name">
-                                                            <a href="single-product.html">Isabel Marant</a>
-                                                            <span class="variation">Size: L</span>
-                                                        </td>
-                                                        <td class="product-price" data-title="Price">$299.00</td>
-                                                        <td class="product-quantity" data-title="Quantity">
-                                                            <div class="quantity">
-                                                                <label class="screen-reader-text">Quantity</label>
-                                                                <input type="button" value="-" class="qty-minus qty-btn" data-quantity="minus" data-field="quantity">
-                                                                <input class="input-text qty-text" type="number" name="quantity" value="1">
-                                                                <input type="button" value="+" class="qty-plus qty-btn" data-quantity="plus" data-field="quantity">
-                                                            </div>
-                                                        </td>
-                                                        <td class="product-subtotal" data-title="Total">$299.00</td> 
-                                                    </tr>
+                                                    <?php }} ?>
                                                 </tbody>
                                             </table>
                                         </div>
                                         <div class="col-md-6 md-margin-50px-bottom sm-margin-20px-bottom"> 
                                             <div class="coupon-code-panel">
-                                                <input type="text" placeholder="Coupon code">
-                                                <a href="#" class="btn apply-coupon-btn text-uppercase">Apply</a>
+                                                <input type="text" placeholder="Kupon Kód">
+                                                <a href="#" class="btn apply-coupon-btn text-uppercase">Jóváhagyás</a>
                                             </div>
                                         </div>
                                         <div class="col-md-6 text-center text-md-end md-margin-50px-bottom btn-dual">
-                                            <a href="#" class="btn btn-fancy btn-small btn-transparent-light-gray">Empty cart</a>
-                                            <a href="#" class="btn btn-fancy btn-small btn-transparent-light-gray me-0">Update cart</a>
+                                            <a type="submit" name="update" class="btn btn-fancy btn-small btn-transparent-light-gray me-0">Kosár frissítése</a>
                                         </div>
                                     </div>
                     </div>
