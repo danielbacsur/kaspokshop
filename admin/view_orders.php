@@ -82,11 +82,11 @@ else { ?>
                                             if($order_status=='pending')
                                                 echo $order_status='<div style="color:red;">Függőben</div>';
                                             else
-                                                echo $order_status='Kézbesítve';
+                                                echo $order_status='Megerősítve';
                                             ?>
                                         </td>
                                         <td>
-                                            <a href="#">Megerősítve</a>
+                                            <a href="index.php?confirm_order=<?php echo $order_id; ?>">Megerősítés</a>
                                         </td>
                                     </tr>
                                 <?php $i++;
