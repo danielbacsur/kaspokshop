@@ -275,67 +275,60 @@
                                                         <th scope="col" class="alt-font">Ár</th>
                                                         <th scope="col" class="alt-font">Mennyiség</th>
                                                         <th scope="col" class="alt-font">Total</th>
+                                                        <th scope="col" class="alt-font">Státusz</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <?php
                                                     $mail = $_SESSION['customer_email'];
-
                                                     $select_customer_id = "select * from customers where customer_email='$mail'";
                                                     $run_customer_id = mysqli_query($con,$select_customer_id);
                                                     $row_customer_id = mysqli_fetch_array($run_customer_id);
                                                     $customer_id = $row_customer_id['customer_id'];
-
-                                                    echo '<script> console.log("alma");</script>';
-                                                    echo "<script> console.log('$customer_id');</script>";
-
-
                                                     $select_cart = "select * from orders where customer_id='$customer_id'";
                                                     $run_cart = mysqli_query($con,$select_cart);
-                                                    $total = 0;
                                                     while($row_cart = mysqli_fetch_array($run_cart)){
                                                         $pro_id = $row_cart['product_id'];
                                                         $pro_color = $row_cart['color_primary'];
                                                         $pro_size = $row_cart['color_secondary'];
                                                         $pro_qty = $row_cart['qty'];
                                                         $only_price = $row_cart['total'];
+                                                        $order_status = $row_cart['status'];
                                                         $select_color1 = "select * from colors where id='$pro_color'";
-                                                            $run_color1 = mysqli_query($con,$select_color1);
-                                                            $row_color1 = mysqli_fetch_array($run_color1);
-                                                            $color_name1 = $row_color1['name'];
-
-                                                            $select_color2 = "select * from colors where id='$pro_size'";
-                                                            $run_color2 = mysqli_query($con,$select_color2);
-                                                            $row_color2 = mysqli_fetch_array($run_color2);
-                                                            $color_name2 = $row_color2['name'];
-
-
+                                                        $run_color1 = mysqli_query($con,$select_color1);
+                                                        $row_color1 = mysqli_fetch_array($run_color1);
+                                                        $color_name1 = $row_color1['name'];
+                                                        $select_color2 = "select * from colors where id='$pro_size'";
+                                                        $run_color2 = mysqli_query($con,$select_color2);
+                                                        $row_color2 = mysqli_fetch_array($run_color2);
+                                                        $color_name2 = $row_color2['name'];
                                                         $get_products = "select * from products where product_id='$pro_id'";
                                                         $run_products = mysqli_query($con,$get_products);
-
-
                                                         while($row_products = mysqli_fetch_array($run_products)){
-                                                            
-
-
                                                             $product_title = $row_products['product_title'];
                                                             $product_img1 = $row_products['product_img1'];
                                                             $product_url = $row_products['product_url'];
                                                             $sub_total = $only_price*$pro_qty;
-                                                            $_SESSION['pro_qty'] = $pro_qty;
-                                                            $total += $sub_total;
                                                             ?>
-                                                    <tr>
-                                                        <td class="product-thumbnail"><a href="<?php echo $product_url; ?>"><img class="cart-product-image" src="admin/product_images/<?php echo $product_img1; ?>" alt=""></a></td>
-                                                        <td class="product-name">
-                                                            <a href="<?php echo $product_url; ?>"><?php echo $product_title; ?></a>
-                                                            <span class="variation"> Szín: <b><?php echo $color_name1; ?> & <?php echo $color_name2; ?></b></span>
-                                                        </td>
-                                                        <td class="product-price" data-title="Price"><?php echo $only_price; ?> FT</td>
-                                                        <td class="product-quantity" data-title="Quantity"><?php echo $pro_qty; ?></td> 
-                                                        <td class="product-subtotal" data-title="Total"><?php echo $sub_total; ?> FT</td> 
-                                                    </tr>
-                                                    <?php }} ?>
+                                                            <tr>
+                                                                <td class="product-thumbnail"><a href="<?php echo $product_url; ?>"><img class="cart-product-image" src="admin/product_images/<?php echo $product_img1; ?>" alt=""></a></td>
+                                                                <td class="product-name">
+                                                                    <a href="<?php echo $product_url; ?>"><?php echo $product_title; ?></a>
+                                                                    <span class="variation"> Szín: <b><?php echo $color_name1; ?> & <?php echo $color_name2; ?></b></span>
+                                                                </td>
+                                                                <td class="product-price" data-title="Price"><?php echo $only_price; ?> FT</td>
+                                                                <td class="product-quantity" data-title="Quantity"><?php echo $pro_qty; ?></td> 
+                                                                <td class="product-subtotal" data-title="Total"><?php echo $sub_total; ?> FT</td> 
+                                                                <td class="product-status" data-title="Status">
+                                                                    <?php
+                                                                    if($order_status=='pending') { ?>
+                                                                        <div style="color:red;">Függőben</div>
+                                                                    <?php } else { ?>
+                                                                        <div style="color:green;">Kézbesítve</div>
+                                                                    <?php } ?></td> 
+                                                            </tr>
+                                                        <?php }
+                                                    } ?>
                                                 </tbody>
                                             </table>
                                         </div>

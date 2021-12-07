@@ -82,7 +82,7 @@ else { ?>
                                             if($order_status=='pending')
                                                 echo $order_status='<div style="color:red;">Függőben</div>';
                                             else
-                                                echo $order_status='Sikeres';
+                                                echo $order_status='Kézbesítve';
                                             ?>
                                         </td>
                                         <td>
