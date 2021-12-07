@@ -11,7 +11,7 @@ if(!isset($_SESSION['admin_email'])){
             echo "<script>alert('Rendelés Megerősitése sikeres!')</script>";
             echo "<script>window.open('index.php?view_orders','_self')</script>";
         }
-        echo "<script>console.log('$delete_id')</script>";
+        echo "<script>console.log('$run_delete')</script>";
 
     }
 } ?>
