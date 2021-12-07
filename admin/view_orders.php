@@ -83,8 +83,6 @@ else { ?>
                                                 Függőben
                                             <?php } else if($order_status == 'confirmed'){ ?>
                                                 <div style="color:green;">Megerősítve</div>
-                                            <?php } else { ?>
-                                                <div style="color:red;">Visszavonva</div>
                                             <?php } ?>
                                         </td>
                                         <td>
