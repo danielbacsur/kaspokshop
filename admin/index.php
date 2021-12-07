@@ -123,6 +123,9 @@ include("view_orders.php");
 if(isset($_GET['order_delete'])){
 include("order_delete.php");
 }
+if(isset($_GET['confirm_order'])){
+    include("confirm_order.php");
+    }
 if(isset($_GET['view_payments'])){
 include("view_payments.php");
 }
