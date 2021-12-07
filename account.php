@@ -291,7 +291,7 @@
                                                         $run_customer_id = mysqli_query($con,$select_customer_id);
                                                         $row_customer_id = mysqli_fetch_array($run_customer_id);
                                                         $customer_id = $row_customer_id['customer_id'];
-                                                        $select_cart = "select * from orders where customer_id='$customer_id'";
+                                                        $select_cart = "SELECT * FROM orders WHERE customer_id='$customer_id', order_status='pending'";
                                                         $run_cart = mysqli_query($con,$select_cart);
                                                         while($row_cart = mysqli_fetch_array($run_cart)){
                                                             $pro_id = $row_cart['product_id'];
