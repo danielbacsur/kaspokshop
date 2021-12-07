@@ -86,7 +86,12 @@ else { ?>
                                             ?>
                                         </td>
                                         <td>
-                                            <a href="index.php?confirm_order=<?php echo $order_id; ?>">Megerősítés</a>
+                                            <?php
+                                            if($order_status=='pending') { ?>
+                                                <a href="index.php?confirm_order=<?php echo $order_id; ?>">Megerősítés</a>
+                                            <?php } else { ?>
+                                                <a href="#">Visszavonás</a>
+                                            <?php } ?>
                                         </td>
                                     </tr>
                                 <?php $i++;
