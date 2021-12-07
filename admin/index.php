@@ -124,8 +124,11 @@ if(isset($_GET['confirm_order'])){
 include("confirm_order.php");
 }
 if(isset($_GET['cancel_order'])){
-    include("cancel_order.php");
-    }
+include("cancel_order.php");
+}
+if(isset($_GET['suspend_order'])){
+include("suspend_order.php");
+}
 if(isset($_GET['view_payments'])){
 include("view_payments.php");
 }

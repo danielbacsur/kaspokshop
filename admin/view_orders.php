@@ -17,9 +17,9 @@ else { ?>
                             <thead><!-- thead Starts -->
                                 <tr>
                                     <th>#</th>
-                                    <th>Customer</th>
-                                    <th>Product</th>
-                                    <th>Qty</th>
+                                    <th>Vevő</th>
+                                    <th>Termék</th>
+                                    <th>Mennyiség</th>
                                     <th>Elsődleges Szin</th>
                                     <th>Másodlagos Szin</th>
                                     <th>Dátum</th>
@@ -81,16 +81,20 @@ else { ?>
                                             <?php
                                             if($order_status=='pending') { ?>
                                                 <div style="color:red;">Függőben</div>
-                                            <?php } else { ?>
+                                            <?php } else if($order_status=='confirmed') { ?>
                                                 <div style="color:green;">Megerősítve</div>
+                                            <?php } else {?>
+                                                <div style="color:green;">Lemondva</div>
                                             <?php } ?>
                                         </td>
                                         <td>
                                             <?php
-                                            if($order_status=='pending') { ?>
-                                                <a href="index.php?confirm_order=<?php echo $order_id; ?>">Megerősítés</a>
-                                            <?php } else { ?>
+                                            if($order_status!='pending') { ?>
+                                                <a href="index.php?suspend_order=<?php echo $order_id; ?>">Lemondás</a>
+                                            <?php } if ($order_status!='pending') { ?>
                                                 <a href="index.php?cancel_order=<?php echo $order_id; ?>">Visszavonás</a>
+                                            <?php } if ($order_status!='pending') { ?>
+                                                <a href="index.php?confirm_order=<?php echo $order_id; ?>">Megerősítés</a>
                                             <?php } ?>
                                         </td>
                                     </tr>
