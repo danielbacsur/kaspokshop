@@ -271,7 +271,6 @@
                                                 <thead>
                                                     <tr>
                                                         <th scope="col" class="alt-font"></th>
-                                                        <th scope="col" class="alt-font"></th>
                                                         <th scope="col" class="alt-font">Tétel</th>
                                                         <th scope="col" class="alt-font">Ár</th>
                                                         <th scope="col" class="alt-font">Mennyiség</th>
@@ -333,14 +332,7 @@
                                                             <span class="variation"> Szín: <b><?php echo $color_name1; ?> & <?php echo $color_name2; ?></b></span>
                                                         </td>
                                                         <td class="product-price" data-title="Price"><?php echo $only_price; ?> FT</td>
-                                                        <td class="product-quantity" data-title="Quantity">
-                                                            <div class="quantity">
-                                                                <label class="screen-reader-text">Mennyiség</label>
-                                                                <input type="button" value="-" class="qty-minus qty-btn" data-quantity="minus" data-field="quantity">
-                                                                <input class="input-text qty-text" type="number" name="quantity" value="<?php echo $pro_qty; ?>">
-                                                                <input type="button" value="+" class="qty-plus qty-btn" data-quantity="plus" data-field="quantity">
-                                                            </div>
-                                                        </td> 
+                                                        <td class="product-subtotal" data-title="Total"><?php echo $pro_qty; ?> FT</td> 
                                                         <td class="product-subtotal" data-title="Total"><?php echo $sub_total; ?> FT</td> 
                                                     </tr>
                                                     <?php }} ?>
