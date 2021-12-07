@@ -117,7 +117,6 @@ $product_id = $_POST['product_id'];
 $update_coupon = "update coupons set product_id='$product_id',coupon_title='$coupon_title',coupon_price='$coupon_price',coupon_code='$coupon_code',coupon_limit='$coupon_limit',coupon_used='$c_used' where coupon_id='$c_id'";
 $run_coupon = mysqli_query($con,$update_coupon);
 if($run_coupon){
-echo "<script>alert('One Coupon Has Been Updated')</script>";
 echo "<script>window.open('index.php?view_coupons','_self')</script>";
 }
 }

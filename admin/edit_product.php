@@ -274,7 +274,6 @@ move_uploaded_file($temp_name3,"product_images/$product_img3");
 $update_product = "update products set p_cat_id='$product_cat',cat_id='$cat',manufacturer_id='$manufacturer_id',date=NOW(),product_title='$product_title',product_url='$product_url',product_img1='$product_img1',product_img2='$product_img2',product_img3='$product_img3',product_price='$product_price',product_psp_price='$psp_price',product_desc='$product_desc',product_features='$product_features',product_video='$product_video',product_keywords='$product_keywords',product_label='$product_label',status='$status' where product_id='$p_id'";
 $run_product = mysqli_query($con,$update_product);
 if($run_product){
-echo "<script> alert('Product has been updated successfully') </script>";
 echo "<script>window.open('index.php?view_products','_self')</script>";
 }
 }

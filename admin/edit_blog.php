@@ -68,7 +68,6 @@ else {
         $update_blog = "update blog set blog_title='$blog_title',blog_image='$blog_image',blog_desc='$blog_desc' where blog_id='$blog_id'";
         $run_blog = mysqli_query($con,$update_blog);
         if($run_blog){
-            echo "<script>alert('Blog Szerkesztése sikeres!')</script>";
             echo "<script>window.open('index.php?view_blog','_self')</script>";
         }
     }

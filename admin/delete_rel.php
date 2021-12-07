@@ -10,7 +10,6 @@ $delete_id = $_GET['delete_rel'];
 $delete_rel = "delete from bundle_product_relation where rel_id='$delete_id'";
 $run_delete = mysqli_query($con,$delete_rel);
 if($run_delete){
-echo "<script>alert('One Relation Has Been Deleted')</script>";
 echo "<script>window.open('index.php?view_rel','_self')</script>";
 }
 }

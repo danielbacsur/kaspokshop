@@ -11,7 +11,6 @@ if(!isset($_SESSION['admin_email'])){
 
         $run_delete = mysqli_query($con,$delete_order);
         if($run_delete){
-            echo "<script>alert('Rendelés Megerősitése sikeres!')</script>";
             echo "<script>window.open('index.php?view_orders','_self')</script>";
         }
         echo "<script>console.log('$delete_id')</script>";

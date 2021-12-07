@@ -104,7 +104,6 @@ $bundle_id = $_POST['bundle_id'];
 $update_rel = "update bundle_product_relation set rel_title='$rel_title',product_id='$product_id',bundle_id='$bundle_id' where rel_id='$r_id'";
 $run_rel = mysqli_query($con,$update_rel);
 if($run_rel){
-echo "<script>alert('Relation Has Been Updated')</script>";
 echo "<script> window.open('index.php?view_rel','_self') </script>";
 }
 }

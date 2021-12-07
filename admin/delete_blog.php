@@ -8,7 +8,6 @@ else {
         $delete_blog = "delete from blog where blog_id='$delete_id'";
         $run_delete = mysqli_query($con,$delete_blog);
         if($run_delete){
-            echo "<script>alert('One blog column Has Been Deleted')</script>";
             echo "<script>window.open('index.php?view_blog','_self')</script>";
         }
     }

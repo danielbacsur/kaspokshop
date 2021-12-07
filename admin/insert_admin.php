@@ -56,7 +56,6 @@ else { ?>
         $insert_admin = "insert into admins (admin_name,admin_email,admin_pass,admin_contact) values ('$admin_name','$admin_email','$admin_pass_hash','$admin_contact')";
         $run_admin = mysqli_query($con,$insert_admin);
         if($run_admin){
-            echo "<script>alert('Admin hozzáadása sikeres!')</script>";
             echo "<script>window.open('index.php?view_users','_self')</script>";
         }
     }

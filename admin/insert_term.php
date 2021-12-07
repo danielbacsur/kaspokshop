@@ -44,7 +44,6 @@ else { ?>
 		$insert_term = "insert into terms (term_title,term_link,term_desc) values ('$term_title','$term_link','$term_desc')";
 		$run_term = mysqli_query($con,$insert_term);
 		if($run_term){
-			echo "<script>alert('Szabály Hozzáadása sikeres!')</script>";
 			echo "<script>window.open('index.php?view_terms','_self')</script>";
 		}
 	}

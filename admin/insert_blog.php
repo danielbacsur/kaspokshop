@@ -86,7 +86,6 @@ move_uploaded_file($tmp_image,"blog_images/$blog_image");
 $insert_blog = "insert into blog (blog_title,blog_image,blog_desc,blog_button,blog_url) values ('$blog_title','$blog_image','$blog_desc','$blog_button','$blog_url')";
 $run_blog = mysqli_query($con,$insert_blog);
 if($run_blog){
-echo "<script>alert('New blog Column Has Been Inserted')</script>";
 echo "<script>window.open('index.php?view_blog','_self')</script>";
 }
 }

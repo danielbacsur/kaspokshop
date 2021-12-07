@@ -12,7 +12,6 @@ $run_delete = mysqli_query($con,$delete_pro);
 $delete_rel = "delete from bundle_product_relation where bundle_id='$delete_id'";
 $run_rel = mysqli_query($con,$delete_rel);
 if($run_rel){
-echo "<script>alert('One Bundle Has been deleted')</script>";
 echo "<script>window.open('index.php?view_bundles','_self')</script>";
 }
 }

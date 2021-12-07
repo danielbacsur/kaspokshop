@@ -82,7 +82,6 @@ $bundle_id = $_POST['bundle_id'];
 $insert_rel = "insert into bundle_product_relation (rel_title,product_id,bundle_id) values ('$rel_title','$product_id','$bundle_id')";
 $run_rel = mysqli_query($con,$insert_rel);
 if($run_rel){
-echo "<script>alert('New Relation Has Been Inserted')</script>";
 echo "<script>window.open('index.php?view_rel','_self')</script>";
 }
 }

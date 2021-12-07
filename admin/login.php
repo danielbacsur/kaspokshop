@@ -32,7 +32,6 @@ $run_admin = mysqli_query($con,$get_admin);
 $count = mysqli_num_rows($run_admin);
 if($count==1){
 $_SESSION['admin_email']=$admin_email;
-echo "<script>alert('Sikeresen bejelentkeztél az admin panelre!')</script>";
 echo "<script>window.open('index.php?dashboard','_self')</script>";
 }
 else {

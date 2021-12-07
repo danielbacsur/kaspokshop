@@ -85,7 +85,6 @@ $cat_image= $new_c_image;
 $update_cat = "update categories set cat_title='$cat_title',cat_top='$cat_top',cat_image='$cat_image' where cat_id='$c_id'";
 $run_cat = mysqli_query($con,$update_cat);
 if($run_cat){
-echo "<script>alert('One Category Has Been Updated')</script>";
 echo "<script>window.open('index.php?view_cats','_self')</script>";
 }
 }

@@ -105,7 +105,6 @@ else{
 $insert_coupon = "insert into coupons (product_id,coupon_title,coupon_price,coupon_code,coupon_limit,coupon_used) values ('$product_id','$coupon_title','$coupon_price','$coupon_code','$coupon_limit','$coupon_used')";
 $run_coupon = mysqli_query($con,$insert_coupon);
 if($run_coupon){
-echo "<script>alert('New Coupon Has Been Inserted')</script>";
 echo "<script>window.open('index.php?view_coupons','_self')</script>";
 }
 }
