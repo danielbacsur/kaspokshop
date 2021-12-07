@@ -287,6 +287,10 @@
                                                     $row_customer_id = mysqli_fetch_array($run_customer_id);
                                                     $customer_id = $row_customer_id['customer_id'];
 
+                                                    echo '<script> console.log("alma");</script>';
+                                                    echo "<script> console.log('$customer_id');</script>";
+
+
                                                     $select_cart = "select * from orders where customer_id='$customer_id'";
                                                     $run_cart = mysqli_query($con,$select_cart);
                                                     $total = 0;
