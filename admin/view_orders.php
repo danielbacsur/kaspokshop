@@ -86,7 +86,7 @@ else { ?>
                                             ?>
                                         </td>
                                         <td>
-                                            <a href="#">Jóváhagyás</a>
+                                            <a href="#">Megerősítve</a>
                                         </td>
                                     </tr>
                                 <?php $i++;

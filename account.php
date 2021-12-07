@@ -330,7 +330,7 @@
                                                                         if($order_status=='pending') { ?>
                                                                             <div class="text-red">Függőben</div>
                                                                         <?php } else { ?>
-                                                                            <div class="text-green">Kézbesítve</div>
+                                                                            <div class="text-green">Megerősítve</div>
                                                                         <?php } ?>
                                                                     </td> 
                                                                 </tr>
